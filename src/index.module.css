@@ -1,0 +1,34 @@
+@font-face {
+	font-family: 'Franklin Gothic Heavy';
+	src: url('./fonts/FranklinGothicHeavyRegular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Franklin Gothic Book';
+	src: url('./fonts/FranklinGothicBookRegular.ttf') format('truetype');
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+* {
+	box-sizing: content-box;
+}
+
+:root {
+	/* brand color guidelines */
+	--color-green: #49853e;
+	--color-ocean: #0071b8;
+	--color-sky: #009ede;
+	--color-rock: #58595b;
+
+	/* brand font guidelines */
+	/* p has Arial */
+	--p-font: Arial;
+	/* h1 has Franklin Gothic Heavy */
+	--h1-font: 'Franklin Gothic Heavy';
+	/* h2 or h3 has Franklin Gothic Book */
+	--h2-font: 'Franklin Gothic Book';
+}
