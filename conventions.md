@@ -1,4 +1,4 @@
-Defining variables: (has to be under root)
+Defining variables: (has to be under :root)
 '--element'-'pupose'-'name'
 EX. --color-sky: #009ede;
 EX. --btn-txt-size: 45px;

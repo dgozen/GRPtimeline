@@ -7,16 +7,6 @@
 	src: url('./fonts/FranklinGothicBookRegular.ttf') format('truetype');
 }
 
-html,
-body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-}
-* {
-	box-sizing: content-box;
-}
-
 :root {
 	/* brand color guidelines */
 	--color-green: #49853e;
@@ -31,4 +21,14 @@ body {
 	--h1-font: 'Franklin Gothic Heavy';
 	/* h2 or h3 has Franklin Gothic Book */
 	--h2-font: 'Franklin Gothic Book';
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+* {
+	box-sizing: content-box;
 }
