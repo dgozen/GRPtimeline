@@ -16,7 +16,7 @@ Naming components: (CamelCased)
 - Placed under a folder of the same name
 - Placed with the same name .module.css file
   'Element'+'Type/Purpose'
-  EX. EventYearDisplay
+  EX. DisplayEventYear
 
 Naming functions: (camelCased) - if it is a method used more than one place:
 'function'+'Purpose'+'Handler'
