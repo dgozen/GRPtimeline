@@ -1,23 +1,15 @@
 import React from 'react';
 import style from './App.module.css';
-import { BrowserRouter } from 'react-router-dom';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+  } from "react-router-dom";
 import axios from 'axios';
 import Timeline from './component/Timeline/Timeline';
-
-const timelineData = [
-	1950,
-	1951,
-	1952,
-	1953,
-	1954,
-	1955,
-	1956,
-	1957,
-	1958,
-	1959,
-	1960,
-	1961
-]
+import Year1950 from './component/pages/Year1950/Year1950';
+import Year1951 from './component/pages/Year1951/Year1951';
+import DefaultLayout from './component/pages/DefaultLayout/DefaultLayout';
 
 function App() {
 	axios
@@ -28,12 +20,15 @@ function App() {
 			console.log(category);
 		});
 	return (
-		<BrowserRouter>
-		{timelineData.map(item => (
-			<Timeline year={item} />
-		))}
-			
-		</BrowserRouter>
+		
+		<Router>
+			<DefaultLayout />
+			<Switch>
+				<Route exact path="/" component={Year1950}></Route>
+				<Route exact path="/1951" component={Year1951}></Route>
+				
+			</Switch>
+		</Router>
 	);
 }
 
