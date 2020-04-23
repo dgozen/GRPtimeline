@@ -1,0 +1,7 @@
+.boxStyle {
+	width: 260px;
+	height: 200px;
+	background-color: var(--color-sky);
+	border-radius: 45px;
+	text-align: center;
+}
