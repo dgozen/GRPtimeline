@@ -1,7 +1,28 @@
 .boxStyle {
-	width: 260px;
-	height: 200px;
-	background-color: var(--color-sky);
-	border-radius: 45px;
-	text-align: center;
+  display: grid;
+  grid-template-rows: 15% 60% 25%;
+  width: 260px;
+  height: 200px;
+  background-color: var(--color-sky);
+  border-radius: 45px;
+  text-align: center;
+  color: white;
+  font-family: var(--h2-font);
+  padding: 30px;
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+  font-size: var(--h2-size);
+}
+
+p {
+  margin-top: 0;
+  font-size: var(--p-size);
+}
+
+.linkPlacement {
+  justify-self: center;
+  align-self: center;
 }

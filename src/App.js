@@ -16,7 +16,7 @@ function App() {
 		<BrowserRouter>
 			<header>
 				<p className={classes.test}>Let the time line magic begin!</p>
-				<InformationBox title='Test' text='text' />
+				<InformationBox title='Test' text='USAID workshop, Enhancing resilience in the Horn of Africa: An evidence-based workshop on strategies for success ' />
 			</header>
 		</BrowserRouter>
 	);
