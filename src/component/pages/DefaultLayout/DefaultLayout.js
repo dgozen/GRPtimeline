@@ -1,5 +1,6 @@
 import React from "react"
 import Timeline from "../../Timeline/Timeline"
+import style from "./DefaultLayout.module.css"
 
 
 const timelineData = [
@@ -20,9 +21,11 @@ const timelineData = [
 
 const DefaultLayout = () => {
     return (
-        <div>{timelineData.map(item => (
+        <div className={style.list}>
+            {timelineData.map(item => (
             <Timeline year={item} />
-            ))}</div>
+            ))}
+        </div>
         
     )
 }
