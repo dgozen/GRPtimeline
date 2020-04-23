@@ -1,7 +1,7 @@
 import React from "react"
 import Timeline from "../../Timeline/Timeline"
 import style from "./DefaultLayout.module.css"
-
+import ButtonArrowSmall from "../../Buttons/ButtonArrowSmall/ButtonArrowSmall"
 
 const timelineData = [
 	"1950",
@@ -21,12 +21,19 @@ const timelineData = [
 
 const DefaultLayout = () => {
     return (
-        <div className={style.list}>
-            {timelineData.map(item => (
-            <Timeline year={item} />
-            ))}
+        <div className={style.container}>
+            <div className={style.list}>
+				<div className={style.buttonArrowUp}>
+					<ButtonArrowSmall />
+				</div>
+				{timelineData.map(item => (
+					<Timeline year={item} />
+				))}
+				<div className={style.buttonArrowDown}>
+					<ButtonArrowSmall />
+				</div>
+            </div>
         </div>
-        
     )
 }
 

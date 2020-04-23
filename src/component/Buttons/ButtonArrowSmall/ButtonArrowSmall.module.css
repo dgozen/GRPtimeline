@@ -1,0 +1,9 @@
+.button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.arrow {
+    width: 25px;
+}

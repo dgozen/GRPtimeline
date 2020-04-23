@@ -5,7 +5,9 @@ import { Link } from "react-router-dom"
 const Timeline = (props) => {
 
     return (
-                <Link to={props.year} className={style.listItem}><p>{props.year}</p></Link>
+        <div>
+            <Link to={props.year} className={style.link}><p>{props.year}</p></Link>
+        </div>
     )
 }
 
