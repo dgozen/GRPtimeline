@@ -21,6 +21,13 @@
 	--h1-font: 'Franklin Gothic Heavy';
 	/* h2 or h3 has Franklin Gothic Book */
 	--h2-font: 'Franklin Gothic Book';
+
+	--h1-size: 38px;
+	--h2-size: 24px;
+	--p-size: 18px;
+	--btn-txt: 14px;
+	--yrs-active: 30px;
+	--yrs-rgl: 18px;
 }
 
 html,
