@@ -1,7 +1,23 @@
 import React from 'react';
-import classes from './App.module.css';
+import style from './App.module.css';
 import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
+import Timeline from './component/Timeline/Timeline';
+
+const timelineData = [
+	1950,
+	1951,
+	1952,
+	1953,
+	1954,
+	1955,
+	1956,
+	1957,
+	1958,
+	1959,
+	1960,
+	1961
+]
 
 function App() {
 	axios
@@ -13,9 +29,10 @@ function App() {
 		});
 	return (
 		<BrowserRouter>
-			<header>
-				<p className={classes.test}>Let the time line magic begin!</p>
-			</header>
+		{timelineData.map(item => (
+			<Timeline year={item} />
+		))}
+			
 		</BrowserRouter>
 	);
 }
