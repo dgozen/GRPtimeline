@@ -7,14 +7,14 @@
 }
 
 .background {
-    background-image: url(../../assets/background.svg);
+    background-image: url(../../assets/newnewbackground.svg);
 	background-size: cover;
 	background-position: center, center;
-    transition: transform .8s;
+    transition: transform 1.5s;
     width: 110%;
-    height: 125%;
+    height: 105%;
     position: absolute;
-    top: -25%;
+    top: -5%;
     left: -10%;
 }
 .list {
