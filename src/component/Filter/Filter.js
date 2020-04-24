@@ -17,10 +17,10 @@ const Filter = () => {
             <label for="Event">Event</label>
 
             <input type="radio" id="Program" name="Category" value="Program"/>
-            <label for="Program">Program, platform or investment initiative</label>
+            <label for="Program">Program, platform or <br></br>investment initiative</label>
 
             <input type="radio" id="Framework" name="Category" value="Framework"/>
-            <label for="Framework">Framework: conceptual, evaluative, operational</label>
+            <label for="Framework">Framework: conceptual, <br></br> evaluative, operational</label>
           
         </div>
     );
