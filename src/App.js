@@ -34,7 +34,7 @@ function App() {
     
 		<Router>
     	<header>
-				<p className={classes.test}>Let the time line magic begin!</p>
+				<p className={style.test}>Let the time line magic begin!</p>
 				<InformationBox title='Test' text='USAID workshop, Enhancing resilience in the Horn of Africa: An evidence-based workshop on strategies for success ' />
 			</header>
 			<DefaultLayout />
