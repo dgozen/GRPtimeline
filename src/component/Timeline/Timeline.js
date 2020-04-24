@@ -16,7 +16,6 @@ const timelineData = [
 	"1958",
 	"1959",
 	"1960",
-	"1961",
 ]
 
 const numbers = [
@@ -51,7 +50,9 @@ const Timeline = () => {
 					<ButtonArrowSmall />
 				</div>
 				{timelineData.map(item => (
-					<button onClick={toggle}><Year year={item} /></button>
+					<button className={style.buttonYear} onClick={toggle}>
+						<Year year={item} />
+					</button>
 				))}
 				<div className={style.buttonArrowDown}>
 					<ButtonArrowSmall />
