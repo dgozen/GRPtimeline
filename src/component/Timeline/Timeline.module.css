@@ -2,8 +2,21 @@
     display: grid;
     grid-template-rows: 150%;
     grid-template-columns: 10% 90%;
+    position: relative;
+    
 }
 
+.background {
+    background-image: url(../../assets/background.svg);
+	background-size: cover;
+	background-position: center, center;
+    transition: transform .8s;
+    width: 110%;
+    height: 125%;
+    position: absolute;
+    top: -25%;
+    left: -10%;
+}
 .list {
     align-self: center;
     justify-self: center;
