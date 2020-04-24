@@ -1,7 +1,7 @@
 import React from "react"
 import Year from "./Year/Year"
 import style from "./Timeline.module.css"
-import ButtonArrowSmall from "../../Buttons/ButtonArrowSmall/ButtonArrowSmall"
+import ButtonArrowSmall from "../Buttons/ButtonArrowSmall/ButtonArrowSmall"
 
 const timelineData = [
 	"1950",
