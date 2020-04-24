@@ -1,8 +1,8 @@
 import React from "react";
-import style from "./Timeline.module.css";
+import style from "./Year.module.css";
 import { Link } from "react-router-dom"
 
-const Timeline = (props) => {
+const Year = (props) => {
 
     return (
         <div>
@@ -11,4 +11,4 @@ const Timeline = (props) => {
     )
 }
 
-export default Timeline;
+export default Year;
