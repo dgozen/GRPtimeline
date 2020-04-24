@@ -7,15 +7,15 @@
 }
 
 .background {
-    background-image: url(../../assets/newnewbackground.svg);
+    background-image: url(../../assets/latestlatestbackground.svg);
 	background-size: cover;
 	background-position: center, center;
-    transition: transform 1.5s;
-    width: 110%;
-    height: 105%;
+    transition: transform 0.9s;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    top: -5%;
-    left: -10%;
+    top: 0;
+    left: 0;
 }
 .list {
     align-self: center;
