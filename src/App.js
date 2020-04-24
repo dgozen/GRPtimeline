@@ -1,9 +1,6 @@
 import React from 'react';
 import Style from './App.module.css'
-import DefaultLayout from './component/pages/DefaultLayout/DefaultLayout';
 import RouterComponent from './component/pages/RouterComponent/RouterComponent';
-import { Router } from 'react-router-dom';
-
 
 export default function App() {
 	// axios
