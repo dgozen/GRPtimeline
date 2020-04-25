@@ -5,15 +5,17 @@ import InformationBox from '../../component/InformationBox/InformationBox';
 import arrowButton from '../../assets/arrow-button.svg';
 
 const InformationBoxLayout = (props) => {
+	const [activeIndex, setActiveIndex] = useState(0);
+	const [timelineLength, setTimelineLength] = useState(1);
+	const [activeYear, setActiveYear] = useState([]);
+
 	axios
 		.get('http://www.mocky.io/v2/5ea446a43000005900ce2ca3')
 		.then((response) => {
 			const responseData = response.data.timelineInfo;
 			const filteredYear = responseData.filter((item) => item.year === '2018');
+			setActiveYear(filteredYear);
 		});
-
-	const [activeIndex, setActiveIndex] = useState(0);
-	const [timelineLength, setTimelineLength] = useState(1);
 
 	const previousPageHandler = () => {
 		let index = activeIndex;
@@ -40,24 +42,16 @@ const InformationBoxLayout = (props) => {
 					onClick={previousPageHandler}
 				/>
 			</button>
-			<div className={style.box1}>
-				<InformationBox title='Test 1' text='Some text here' />
-			</div>
-			<div className={style.box2}>
-				<InformationBox title='Test 2' text='Some text here' />
-			</div>
-			<div className={style.box3}>
-				<InformationBox title='Test 3' text='Some text here' />
-			</div>
-			<div className={style.box4}>
-				<InformationBox title='Test 4' text='Some text here' />
-			</div>
-			<div className={style.box5}>
-				<InformationBox title='Test 5' text='Some text here' />
-			</div>
-			<div className={style.box6}>
-				<InformationBox title='Test 6' text='Some text here' />
-			</div>
+			{activeYear.map((component, index) => {
+				return (
+					<InformationBox
+						key={index}
+						title={component.title}
+						text={component.info}
+						link={component.link}
+					/>
+				);
+			})}
 			<button className={style.rightArrow}>
 				<img
 					src={arrowButton}

@@ -5,9 +5,9 @@ const ReadMoreLink = (props) => {
 	return (
 		//check target
 		<div>
-		<a href={props.link} target='_blank' className={style.linkStyle}>
-			Read More
-		</a>
+			<a href={props.link} target='_blank' className={style.linkStyle}>
+				Read More
+			</a>
 		</div>
 	);
 };
