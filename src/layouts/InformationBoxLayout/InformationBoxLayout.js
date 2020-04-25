@@ -1,63 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import style from './InformationBoxLayout.module.css';
 import InformationBox from '../../component/InformationBox/InformationBox';
 import arrowButton from '../../assets/arrow-button.svg';
 
 const InformationBoxLayout = (props) => {
-	const [activeIndex, setActiveIndex] = useState(0);
-	const [timelineLength, setTimelineLength] = useState(1);
 	const [activeYear, setActiveYear] = useState([]);
+	const [splitPages, setSplitPages] = useState([]);
 
-	axios
-		.get('http://www.mocky.io/v2/5ea446a43000005900ce2ca3')
-		.then((response) => {
-			const responseData = response.data.timelineInfo;
-			const filteredYear = responseData.filter((item) => item.year === '2018');
-			setActiveYear(filteredYear);
-		});
+	useEffect(() => {
+		axios
+			.get('http://www.mocky.io/v2/5ea446a43000005900ce2ca3')
+			.then((response) =>
+				setActiveYear(
+					response.data.timelineInfo.filter((item) => item.year === '2018')
+				)
+			);
+	}, []);
 
-	const previousPageHandler = () => {
-		let index = activeIndex;
-		let lengthArray = timelineLength;
+	const splitArray = (array) => {
+		const length = array.length;
+		const chunkedArray = [];
 
-		index < 1 ? (index = lengthArray - 1) : index--;
-		setActiveIndex(index);
-	};
-
-	const nextPageHandler = () => {
-		let index = activeIndex;
-		let length = timelineLength;
-
-		index === length - 1 ? (index = 0) : index++;
-		setActiveIndex(index);
+		for (let i = 0; i < length; i += 6) {
+			let slicedPieces = array.splice(i, i + 6);
+			chunkedArray.push(slicedPieces);
+		}
+		setSplitPages(chunkedArray);
 	};
 
 	return (
 		<div className={style.infoBoxLayoutStyle}>
 			<button className={style.leftArrow}>
-				<img
-					src={arrowButton}
-					alt='previous-page-button'
-					onClick={previousPageHandler}
-				/>
+				<img src={arrowButton} alt='previous-page-button' />
 			</button>
-			{activeYear.map((component, index) => {
-				return (
-					<InformationBox
-						key={index}
-						title={component.title}
-						text={component.info}
-						link={component.link}
-					/>
-				);
-			})}
+			{activeYear.length > 6
+				? splitArray(activeYear)
+				: activeYear.map((component, index) => {
+						return (
+							<InformationBox
+								key={index}
+								title={component.title}
+								text={component.info}
+								link={component.link}
+							/>
+						);
+				  })}
+			{console.log(splitPages)}
 			<button className={style.rightArrow}>
 				<img
 					src={arrowButton}
 					alt='next-page-button'
 					className={style.rotateArrowRight}
-					onClick={nextPageHandler}
 				/>
 			</button>
 		</div>
