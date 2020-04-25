@@ -1,7 +1,5 @@
 body {
-	background-image: url(./assets/1.svg);
-	background-size: cover;
-	background-position: center, center;
+	overflow: hidden;
 }
 
 .test {

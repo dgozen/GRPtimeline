@@ -15,8 +15,7 @@ import Year1957 from '../Year1957/Year1957';
 import Year1958 from '../Year1958/Year1958';
 import Year1959 from '../Year1959/Year1959';
 import Year1960 from '../Year1960/Year1960';
-import Year1961 from '../Year1961/Year1961';
-import Timeline from '../Timeline/Timeline';
+import Timeline from '../../Timeline/Timeline';
 
 
 export default function RouterComponent () {
@@ -36,7 +35,6 @@ export default function RouterComponent () {
 				<Route exact path="/1958" component={Year1958} />
 				<Route exact path="/1959" component={Year1959} />
 				<Route exact path="/1960" component={Year1960} />
-				<Route exact path="/1961" component={Year1961} />
             </Switch>
         </Router>
     )
