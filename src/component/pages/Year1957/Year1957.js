@@ -1,9 +1,11 @@
 import React from "react";
+import InformationBoxLayout from "../../InformationBoxLayout/InformationBoxLayout";
+
 
 const Year1957 = () => {
  return (
     <div>
-        <h2>1957</h2>
+        <InformationBoxLayout />
     </div>
  )
 }
