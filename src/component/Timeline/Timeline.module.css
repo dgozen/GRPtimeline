@@ -10,7 +10,7 @@
     background-image: url(../../assets/detailedbackground.svg);
 	background-size: cover;
 	background-position: center, center;
-    transition: transform 0.8s;
+    transition: transform 1.2s;
     width: 105vw;
     height: 105vh;
     position: absolute;
