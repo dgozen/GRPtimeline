@@ -1,0 +1,23 @@
+.buttonContainer {
+
+}
+
+.buttonStyle {
+    background: #0071B8;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+    left: 22.22%;
+    right: 22.22%;
+    top: 22.22%;
+    bottom: 22.22%;
+}
