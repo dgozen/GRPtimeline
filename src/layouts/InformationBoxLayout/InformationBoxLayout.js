@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import style from './InformationBoxLayout.module.css';
 import InformationBox from '../../component/InformationBox/InformationBox';
 import arrowButton from '../../assets/arrow-button.svg';
 
 const InformationBoxLayout = (props) => {
+	axios
+		.get('http://www.mocky.io/v2/5ea446a43000005900ce2ca3')
+		.then((response) => {
+			const responseData = response.data.timelineInfo;
+			const filteredYear = responseData.filter((item) => item.year === '2018');
+		});
+
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [timelineLength, setTimelineLength] = useState(1);
 
