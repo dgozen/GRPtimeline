@@ -2,8 +2,10 @@
 import React from "react";
 import Style from "./App.module.css";
 import RouterComponent from "./component/pages/RouterComponent/RouterComponent";
+import Filter from "./component/Filter/Filter";
 import InformationBoxLayout from "./layouts/InformationBoxLayout/InformationBoxLayout";
 import Header from './component/Header/Header';
+
 
 export default function App() {
   // axios
@@ -18,6 +20,7 @@ export default function App() {
 	  <Header />
       <RouterComponent />
       <InformationBoxLayout />
+	  <Filter />
     </div>
   );
 }
