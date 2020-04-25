@@ -1,45 +1,48 @@
 .infoBoxLayoutStyle {
-  width: 1200px;
-  height: 600px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 45px;
-  position: absolute;
-  top: 10%;
-  left: 15%;
-  display: grid;
-  grid-template-columns: 5% repeat(3, 1fr) 5%;
-  grid-template-rows: 50% 50%;
-  align-items: center;
-  justify-items: center;
-  padding: 60px 30px 60px 30px;
+	width: 1200px;
+	height: 600px;
+	background: rgba(255, 255, 255, 0.5);
+	border-radius: 45px;
+	position: absolute;
+	top: 10%;
+	left: 15%;
+	display: grid;
+	grid-template-columns: 5% repeat(3, 1fr) 5%;
+	grid-template-rows: 50% 50%;
+	align-items: center;
+	justify-items: center;
+	padding: 60px 30px 60px 30px;
 }
 
 .box1 {
-  grid-area: 1 / 2 / span 1 / span 1;
+	grid-area: 1 / 2 / span 1 / span 1;
 }
 .box2 {
-  grid-area: 1 / 3 / span 1 / span 1;
+	grid-area: 1 / 3 / span 1 / span 1;
 }
 .box3 {
-  grid-area: 1 / 4 / span 1 / span 1;
+	grid-area: 1 / 4 / span 1 / span 1;
 }
 .box4 {
-  grid-area: 2 / 2 / span 1 / span 1;
+	grid-area: 2 / 2 / span 1 / span 1;
 }
 .box5 {
-  grid-area: 2 / 3 / span 1 / span 1;
+	grid-area: 2 / 3 / span 1 / span 1;
 }
 .box6 {
-  grid-area: 2 / 4 / span 1 / span 1;
+	grid-area: 2 / 4 / span 1 / span 1;
 }
 
 .leftArrow {
-    grid-area: 1 / 1 / span 2 / span 1;
-   
+	grid-area: 1 / 1 / span 2 / span 1;
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
 }
-
 .rightArrow {
-    grid-area: 1 / 5 / span 2 / span 1;
-    transform: rotate(180deg);
-    
+	grid-area: 1 / 5 / span 2 / span 1;
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
+}
+.rotateArrowRight {
+	transform: rotate(180deg);
 }

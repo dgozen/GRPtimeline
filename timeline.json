@@ -3,121 +3,981 @@
 		{
 			"year": "1950",
 			"category": "event",
-			"info": "Concept of resilience fi_x005F_x001f_rst noted in psychology, “Maternal care and mental health” by John Bowlby, WHO",
+			"tittle": "Concept of resilience",
+			"info": "First noted in psychology, “Maternal care and mental health” by John Bowlby, WHO",
 			"link": "https://apps.who.int/iris/bitstream/handle/10665/40724/WHO_MONO_2_(part1).pdf;jsessionid=E24D41B690EEACD11A968BDB6359907F?sequence=1"
 		},
 		{
 			"year": "1973",
 			"category": "publication",
+			"tittle": "Publication",
 			"info": "\"Competence and adaptation in adult schizophrenic patients and children at risk\" by Norman Garmezy",
 			"link": "https://www.annualreviews.org/doi/abs/10.1146/annurev.es.04.110173.000245"
 		},
 		{
 			"year": "1973",
 			"category": "publication",
+			"tittle": "Publication",
 			"info": "“Resilience and Stability of Ecological Systems” by C.S. Holling",
 			"link": "https://www.annualreviews.org/doi/abs/10.1146/annurev.es.04.110173.000245"
 		},
 		{
 			"year": "1983",
 			"category": "trend",
+			"tittle": "Crisis",
 			"info": "Ethiopia famine and hunger crisis",
 			"link": ""
 		},
 		{
 			"year": "1985",
 			"category": "event",
+			"tittle": "FEWSNET",
 			"info": "Famine Early Warning Systems Network (FEWSNET) created",
 			"link": ""
 		},
 		{
 			"year": "1992",
 			"category": "trend",
-			"info": "UN Conference on Environment and Development (UNCED) in Rio, Brazil",
+			"tittle": "UN Conference ",
+			"info": "on Environment and Development (UNCED) in Rio, Brazil",
 			"link": ""
 		},
 		{
 			"year": "1995",
 			"category": "event",
+			"tittle": "MDG",
 			"info": "UN Millennium Development Goals (MDGs)",
 			"link": ""
 		},
 		{
 			"year": "1995",
 			"category": "program, platform, investment initiative",
+			"tittle": "Sustainable Livelihood",
 			"info": "Sustainable Livelihoods Framework",
 			"link": "https://hhi.harvard.edu/education/atha/content/sustainable-livelihoods-framework"
 		},
 		{
 			"year": "1996",
 			"category": "trend",
-			"info": "Mobile phones and SMS enter the mainstream",
+			"tittle": "Mobile phones",
+			"info": " and SMS enter the mainstream",
 			"link": ""
 		},
 		{
 			"year": "1999",
 			"category": "program, platform, investment initiative",
-			"info": "African Evaluation Association formed",
+			"tittle": "African Evaluation Association",
+			"info": "formed",
 			"link": "https://afrea.org/"
 		},
 		{
 			"year": "1999",
 			"category": "program, platform, investment initiative",
-			"info": "Resilience Alliance formed",
+			"tittle": "Resilience Alliance ",
+			"info": "formed",
 			"link": "https://www.resalliance.org/background"
 		},
 		{
 			"year": "2001",
 			"category": "publication",
-			"info": "\"Panarchy: Understanding Transformations in Systems of Humans and Nature\"by Lance Gunderston & C.S. Holling",
+			"tittle": "Publication",
+			"info": "\"Panarchy: Understanding Transformations in Systems of Humans and Nature\" by Lance Gunderston & C.S. Holling",
 			"link": "www.resalliance.org/index.php/panarchy"
 		},
 		{
 			"year": "2004",
 			"category": "trend",
-			"info": "Facebook’s website launches",
+			"tittle": "Facebook’s ",
+			"info": "website launches",
 			"link": ""
 		},
 		{
 			"year": "2004",
 			"category": "trend",
-			"info": "ndian Ocean tsunami",
+			"tittle": "Indian Ocean ",
+			"info": "tsunami",
 			"link": ""
 		},
 		{
 			"year": "2005",
 			"category": "trend",
-			"info": "Kyoto Protocol enters into force, UN Framework Convention on Climate Change (UNFCCC) COP10",
+			"tittle": "Kyoto Protocol ",
+			"info": "enters into force, UN Framework Convention on Climate Change (UNFCCC) COP10",
 			"link": "https://en.wikipedia.org/wiki/2005_United_Nations_Climate_Change_Conference"
 		},
 		{
 			"year": "2005",
 			"category": "trend",
-			"info": "CBA1: First conference on community-based adaptation to climate change",
+			"tittle": "CBA1: ",
+			"info": "First conference on community-based adaptation to climate change",
 			"link": "https://www.iied.org/1st-international-conference-community-based-adaptation-cba1"
 		},
 		{
 			"year": "2005",
 			"category": "trend",
-			"info": "Hurricane Katrina, a category 5 event, makes landfall on the Gulf Coast of the US",
+			"tittle": "Hurricane Katrina",
+			"info": "a category 5 event, makes landfall on the Gulf Coast of the US",
 			"link": "https://www.rand.org/blog/2015/09/what-hurricane-katrina-taught-us-about-community-resilience.html"
 		},
 		{
 			"year": "2005",
 			"category": "event",
-			"info": "Government of Ethiopia launches the Productive Safety Net Programme (PSNP)",
+			"tittle": "Government of Ethiopia",
+			"info": "launches the Productive Safety Net Programme (PSNP)",
 			"link": "https://www.wfp.org/sites/default/files/PSNP%20Factsheet.pdf"
 		},
 		{
 			"year": "2005",
 			"category": "framework: conceptual, evaluative, operational",
-			"info": "Hyogo Framework for Action led by UN Office for Disaster Risk Reduction (UNISDR)",
+			"tittle": "Hyogo Framework ",
+			"info": "for Action led by UN Office for Disaster Risk Reduction (UNISDR)",
 			"link": "https://www.undrr.org/"
 		},
 		{
 			"year": "2006",
 			"category": "trend",
-			"info": "TREND: Influx of funds after the Indian Ocean tsunami, Katrina and Haiti, which spurs further work and dialogue around disaster resilience and allows more disaster risk reduction with a focus on resilience",
+			"tittle": "TREND: ",
+			"info": "Influx of funds after the Indian Ocean tsunami, Katrina and Haiti, which spurs further work and dialogue around disaster resilience and allows more disaster risk reduction with a focus on resilience",
+			"link": ""
+		},
+		{
+			"year": "2006",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "Joint evaluation of the international response to the Indian Ocean tsunami, Tsunami Evaluation Coalition",
+			"link": ""
+		},
+		{
+			"year": "2007",
+			"category": "program, platform, investment initiative",
+			"tittle": "weADAPT ",
+			"info": "established",
+			"link": "https://www.weadapt.org/"
+		},
+		{
+			"year": "2007",
+			"category": "program, platform, investment initiative",
+			"tittle": "ACCCRN",
+			"info": "Asian Cities Climate Change Resilience Network (ACCCRN) established",
+			"link": "http://acccrn.net/"
+		},
+		{
+			"year": "2007",
+			"category": "program, platform, investment initiative",
+			"tittle": "ELAN",
+			"info": "Ecosystems and Livelihoods Adaptation Network (ELAN) established by IUCN and WWF",
+			"link": "https://www.portalces.org/sites/default/files/migrated/docs/ELAN.pdf"
+		},
+		{
+			"year": "2007",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "\"Characteristics of a Disaster-resilient Community: A Guidance Note\" by John Twigg",
+			"link": "http://lib.riskreductionafrica.org/bitstream/handle/123456789/623/characteristics%20of%20a.pdf?sequence=1"
+		},
+		{
+			"year": "2007",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "\"Measuring household resilience to food insecurity: Application to Palestinian households\" by FAO",
+			"link": "https://www.fsnnetwork.org/sites/default/files/measuring_household_resilience_to_food_insecurity.pdf"
+		},
+		{
+			"year": "2008",
+			"category": "event",
+			"tittle": "GICBA",
+			"info": "Global Initiative on Community Based Adaptation (GICBA) established",
+			"link": "https://www.weadapt.org/knowledge-base/community-based-adaptation-network-cba-network"
+		},
+		{
+			"year": "2008",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "RIMA",
+			"info": "Resilience index measurement and analysis (RIMA) in use",
+			"link": "http://www.fao.org/resilience/background/tools/rima/en/"
+		},
+		{
+			"year": "2009",
+			"category": "event",
+			"tittle": "Cyclone Nargis ",
+			"info": "hits North Indian Ocean",
+			"link": ""
+		},
+		{
+			"year": "2009",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "V2R",
+			"info": "Practical Action launches Vulnerability to Resilience (V2R) Framework",
+			"link": "https://practicalaction.org/page/18949/"
+		},
+		{
+			"year": "2009",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "CBA",
+			"info": "CARE develops Community-Based Adaptation (CBA) framework and tools",
+			"link": "https://careclimatechange.org/community-based-adaptation-in-practice/"
+		},
+		{
+			"year": "2010",
+			"category": "trend",
+			"tittle": "Shift ",
+			"info": "in emphasis from vulnerability to resilience",
+			"link": ""
+		},
+		{
+			"year": "2010",
+			"category": "trend",
+			"tittle": "Donors ",
+			"info": "begin to adjust the way they structure grants",
+			"link": ""
+		},
+		{
+			"year": "2010",
+			"category": "event",
+			"tittle": "Droughts ",
+			"info": "in Sahel and Horn of Africa",
+			"link": ""
+		},
+		{
+			"year": "2010",
+			"category": "event",
+			"tittle": "SEA ",
+			"info": "Change Community of Practice on Monitoring and Evaluating Climate Change Interventions established",
+			"link": "https://www.weadapt.org/organisation/sea-change-cop"
+		},
+		{
+			"year": "2010",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "ACCRA",
+			"info": "Africa Climate Change Resilience Alliance (ACCRA) Adaptive Capacity Framework established",
+			"link": "https://www.tandfonline.com/doi/abs/10.1080/17565529.2017.1374237"
+		},
+		{
+			"year": "2010",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "Evolving use of the Social Vulnerability Index (SVI) developed by Susan Cutter",
+			"link": ""
+		},
+		{
+			"year": "2011",
+			"category": "trend",
+			"tittle": "Shift in emphasis ",
+			"info": "from vulnerability to resilience",
+			"link": ""
+		},
+		{
+			"year": "2011",
+			"category": "trend",
+			"tittle": "El Niño and famine ",
+			"info": "in the Horn of Africa",
+			"link": ""
+		},
+		{
+			"year": "2011",
+			"category": "event",
+			"tittle": "HERR",
+			"info": "Humanitarian Emergency Response Review (HERR), DFID",
+			"link": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/67579/HERR.pdf"
+		},
+		{
+			"year": "2011",
+			"category": "event",
+			"tittle": "Droughts",
+			"info": "in Sahel and Horn of Africa",
+			"link": ""
+		},
+		{
+			"year": "2011",
+			"category": "program, platform, investment initiative",
+			"tittle": "PfR",
+			"info": "Partners for Resilience (PfR) established",
+			"link": "https://www.partnersforresilience.nl/en/"
+		},
+		{
+			"year": "2011",
+			"category": "program, platform, investment initiative",
+			"tittle": "Enhancing resilience ",
+			"info": "in the Horn of Africa: An evidence-based workshop on strategies for success",
+			"link": "https://www.agrilinks.org/library/usaid-resilience-workshop-keynote-address-video"
+		},
+		{
+			"year": "2011",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "Interagency Resilience Learning Group",
+			"info": " established and develops \"The characteristics of resilience building: A discussion paper\"",
+			"link": "http://technicalconsortium.org/wp-content/uploads/2014/05/The-Characteristics-of-Res_Building.pdf"
+		},
+		{
+			"year": "2011",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "\"Characteristics of a Safe and Resilient Community: Community Based Disaster Risk Reduction Study\" developed by International Federation of the Red Cross/Red Crescent Societies (IFRC)",
+			"link": "https://resourcecentre.savethechildren.net/node/6541/pdf/6541.pdf"
+		},
+		{
+			"year": "2012",
+			"category": "event",
+			"tittle": "Syria ",
+			"info": "Crisis",
+			"link": ""
+		},
+		{
+			"year": "2012",
+			"category": "event",
+			"tittle": "ACCCRN",
+			"info": "Mid-Term ACCCRN evaluation",
+			"link": "https://www.rockefellerfoundation.org/report/acccrn-midterm-evaluation/"
+		},
+		{
+			"year": "2012",
+			"category": "event",
+			"tittle": "Event",
+			"info": "Sendai Dialogue",
+			"link": "https://gfdrr.org/sites/gfdrr/files/sendai/sendai.html"
+		},
+		{
+			"year": "2012",
+			"category": "event",
+			"tittle": "TEDxSendai: ",
+			"info": "Natural Disasters",
+			"link": "https://www.ted.com/tedx/events/6400"
+		},
+		{
+			"year": "2012",
+			"category": "program, platform, investment initiative",
+			"tittle": "Saving for Change",
+			"info": "Saving for Change",
+			"link": "https://www.oxfamamerica.org/static/oa4/oxfam-america-sfc-ipa-bara-toplines.pdf"
+		},
+		{
+			"year": "2012",
+			"category": "program, platform, investment initiative",
+			"tittle": "JPC",
+			"info": "First USAID Join Planning Cell (JPC) in the Horn of Africa",
+			"link": "https://www.usaid.gov/resilience/joint-planning-cells"
+		},
+		{
+			"year": "2012",
+			"category": "program, platform, investment initiative",
+			"tittle": "FAO",
+			"info": "Building Disaster Resilience Programme, Pakistan",
+			"link": "http://www.fao.org/pakistan/news/detail-events/en/c/471276/"
+		},
+		{
+			"year": "2012",
+			"category": "program, platform, investment initiative",
+			"tittle": "FAO, UNICEF and WFP ",
+			"info": "Strategy for Enhancing Resilience, Somalia",
+			"link": "http://www.fao.org/fileadmin/templates/cfs_high_level_forum/documents/Brief-Resilience-_JointStrat_-_Final_Draft.pdf"
+		},
+		{
+			"year": "2012",
+			"category": "program, platform, investment initiative",
+			"tittle": "Resilience: ",
+			"info": "\"Resilience: New Utopia or new Tyranny?\" capacity framework published by Christophe Bene, Rachel Godfrey Wood, Andrew Newsham and Mark Davies",
+			"link": "https://www.ids.ac.uk/download.php?file=files/dmfile/Wp405.pdf"
+		},
+		{
+			"year": "2012",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "Building Resilience to Recurrent Crisis:",
+			"info": "\"USAID Policy and Program Guidance\"",
+			"link": "https://www.usaid.gov/sites/default/files/documents/1870/USAIDResiliencePolicyGuidanceDocument.pdf"
+		},
+		{
+			"year": "2012",
+			"category": "event",
+			"tittle": "Droughts ",
+			"info": "in Sahel and Horn of Africa",
+			"link": ""
+		},
+		{
+			"year": "2013",
+			"category": "trend",
+			"tittle": "USAID/TOPS program",
+			"info": " reinforces resilience as a key KM working group topic in food for peace and food security",
+			"link": ""
+		},
+		{
+			"year": "2013",
+			"category": "trend",
+			"tittle": "NGO M&E",
+			"info": "staff increasingly paying attention to growing need to understand resilience measurement and seriously struggle to support their own organizations staff and partners",
+			"link": ""
+		},
+		{
+			"year": "2013",
+			"category": "event",
+			"tittle": "ICCCAD",
+			"info": "International Centre for Climate Change and Development (ICCCAD) hosts Resilience Academy in Bangladesh",
+			"link": ""
+		},
+		{
+			"year": "2013",
+			"category": "event",
+			"tittle": "IFPRI 2020 Resilience Conference",
+			"info": "in Addis Ababa",
+			"link": "http://www.icccad.net/?s=resilience%20academ"
+		},
+		{
+			"year": "2013",
+			"category": "program, platform, investment initiative",
+			"tittle": "Rebuild ",
+			"info": "by Design",
+			"link": "https://www.ifpri.org/event/building-resilience-food-and-nutrition-security-0"
+		},
+		{
+			"year": "2013",
+			"category": "program, platform, investment initiative",
+			"tittle": "PRIME",
+			"info": "Pastoralist Areas Resilience Improvement through Marketing Expansion (PRIME)",
+			"link": "http://www.rebuildbydesign.org/"
+		},
+		{
+			"year": "2013",
+			"category": "program, platform, investment initiative",
+			"tittle": "REGAL-IR",
+			"info": "Resilience and Economic Growth in Arid Lands - Improving Resilience (REGAL-IR)",
+			"link": "https://www.prime-ethiopia.org/"
+		},
+		{
+			"year": "2013",
+			"category": "program, platform, investment initiative",
+			"tittle": "Resilience ",
+			"info": "in the Sahel Enhanced",
+			"link": "https://www.usaid.gov/sites/default/files/documents/1860/REGAL_IR.pdf"
+		},
+		{
+			"year": "2013",
+			"category": "program, platform, investment initiative",
+			"tittle": "100RC",
+			"info": "100 Resilient Cities (100RC) launched",
+			"link": "http://www.100resilientcities.org/#/-_/"
+		},
+		{
+			"year": "2013",
+			"category": "program, platform, investment initiative",
+			"tittle": "Know Your City",
+			"info": "Slum Dwellers International (SDI)",
+			"link": "https://knowyourcity.info/wp-content/uploads/2018/02/SDI_StateofSlums_LOW_FINAL.pdf"
+		},
+		{
+			"year": "2013",
+			"category": "program, platform, investment initiative",
+			"tittle": "Zurich Flood Resilience Alliance ",
+			"info": "launched",
+			"link": "https://www.zurich.com/en/corporate-responsibility/flood-resilience"
+		},
+		{
+			"year": "2013",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "TAMD",
+			"info": "Tracking Adaptation and Measuring Development (TAMD)",
+			"link": "https://www.iied.org/tracking-adaptation-measuring-development-tamd"
+		},
+		{
+			"year": "2013",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "ND-GAIN",
+			"info": "The Notre Dame Global Adaptation Index (ND-GAIN)",
+			"link": "https://gain.nd.edu/"
+		},
+		{
+			"year": "2013",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "Expert Consultation and formation ",
+			"info": "of Technical Working Groups for Resilience Measurement and Resource Mobilization, Food Security Information Network (FSIN)",
+			"link": "https://www.fsinplatform.org/"
+		},
+		{
+			"year": "2013",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "GOAL develops ARC-D toolkit",
+			"info": "“Analysis of Resilience of Communities to Disasters”",
+			"link": "https://www.goalglobal.org/files/ARC-D-Toolkit-User-Manual-2016.pdf"
+		},
+		{
+			"year": "2013",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "\"Community Resilience:L Conceptual Framework and Measurement - Feed the Future Learning Agenda \" by Tim Frankenberger",
+			"link": "https://www.agrilinks.org/sites/default/files/resource/files/FTF%20Learning_Agenda_Community_Resilience_Oct%202013.pdf"
+		},
+		{
+			"year": "2013",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "\"No Accident - Resilience and the inequality of risk\" by Oxfam",
+			"link": "https://www.oxfam.org/en/research/no-accident-resilience-and-inequality-risk"
+		},
+		{
+			"year": "2013",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "2010-2014 Emergency Capacity-building Project resilience handbook: \"Toward Resilience: A Guide to Disaster Risk Reduction and Climate Change Adaptation\"",
+			"link": "https://www.weadapt.org/knowledge-base/climate-services/toward-resilience"
+		},
+		{
+			"year": "2014",
+			"category": "program, platform, investment initiative",
+			"tittle": "Resilience",
+			"info": "in the Sahel Enhanced",
+			"link": "https://www.usaid.gov/sites/default/files/documents/1860/REGAL_IR.pdf"
+		},
+		{
+			"year": "2014",
+			"category": "trend",
+			"tittle": "TREND: ",
+			"info": "Growing appreciation of risks and uncertainty",
+			"link": ""
+		},
+		{
+			"year": "2014",
+			"category": "trend",
+			"tittle": "Migration",
+			"info": "becomes part of the resilience agenda",
+			"link": ""
+		},
+		{
+			"year": "2014",
+			"category": "trend",
+			"tittle": "The private sector",
+			"info": "especially in agriculture, begins talking about resilience",
+			"link": ""
+		},
+		{
+			"year": "2014",
+			"category": "event",
+			"tittle": "Hurricane ",
+			"info": "Sandy",
+			"link": ""
+		},
+		{
+			"year": "2014",
+			"category": "event",
+			"tittle": "Resilience 2014: ",
+			"info": "Resilience and Development - Mobilizing for Transformation, Conference, Montpelier",
+			"link": "https://www.resilience2014.org/"
+		},
+		{
+			"year": "2014",
+			"category": "event",
+			"tittle": "IFPRI 2020 Resilience Conference",
+			"info": "International Food Policy Research Institute (IFPRI) 2020 Resilience Conference: Building resilience for food and nutrition security",
+			"link": "https://www.ifpri.org/publication/2020-resilience-conference-website"
+		},
+		{
+			"year": "2014",
+			"category": "program, platform, investment initiative",
+			"tittle": "Building Resilience and Adaptation ",
+			"info": "to Climate Extremes and Disasters (BRACED)",
+			"link": "http://www.braced.org/"
+		},
+		{
+			"year": "2014",
+			"category": "program, platform, investment initiative",
+			"tittle": "Resilience Analysis Unit ",
+			"info": "of the Intergovernmental Authority on Development (IGAD) established",
+			"link": "www.iddrssib.igadhost.com/index.php/news/255-the-launch-of-the-resilience-analysis-unit-rau"
+		},
+		{
+			"year": "2014",
+			"category": "program, platform, investment initiative",
+			"tittle": "GRP",
+			"info": "Global Resilience Partnership (GRP) established",
+			"link": "http://www.globalresiliencepartnership.org/"
+		},
+		{
+			"year": "2014",
+			"category": "program, platform, investment initiative",
+			"tittle": "GCF",
+			"info": "Green Climate Fund (GCF) launched",
+			"link": "https://www.greenclimate.fund/"
+		},
+		{
+			"year": "2014",
+			"category": "program, platform, investment initiative",
+			"tittle": "USA’s Presidential Executive Order ",
+			"info": "on climate-resilient international development - Working Group on Climate-Resilient International Development established",
+			"link": "https://obamawhitehouse.archives.gov/the-press-office/2014/09/23/executive-order-climate-resilient-international-development"
+		},
+		{
+			"year": "2014",
+			"category": "program, platform, investment initiative",
+			"tittle": "Gender Practitioners Collaborative",
+			"info": "convenes, and develops Gender and Resilience Working Group",
+			"link": ""
+		},
+		{
+			"year": "2014",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "CRF",
+			"info": "City Resilience Framework (CRF) developed by Arup",
+			"link": "https://www.rockefellerfoundation.org/report/city-resilience-framework/"
+		},
+		{
+			"year": "2014",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "RAPTA",
+			"info": "Resilience, Adaptation Pathways and Transformation Assessment (RAPTA) Framework",
+			"link": "http://www.stapgef.org/sites/default/files/documents/Summary_RAPTA.pdf.-July-16.pdf"
+		},
+		{
+			"year": "2014",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "Publication of key paper on resilience measurement principles \"Rethinking Resilience: Prioritizing Gender Integration\" by Mercy Corps",
+			"link": "https://www.mercycorps.org/sites/default/files/Mercy%20Corps%20Gender%20and%20Resilience%20September%202014.pdf"
+		},
+		{
+			"year": "2014",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "\"Resilience Markers\" by ECHO",
+			"link": "https://ec.europa.eu/echo/files/policies/resilience/resilience_marker_guidance_en.pdf"
+		},
+		{
+			"year": "2014",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "\"The Resilience Dividend\" by Judith Rodin",
+			"link": "http://www.fsincop.net/fileadmin/user_upload/fsin/docs/resources/FSIN_29jan_WEB_medium%20res.pdf"
+		},
+		{
+			"year": "2014",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "\"Resilience Measurement Principles: Towards an agenda for measurement design\" by the Resilience Measurement Technical Working Group",
+			"link": ""
+		},
+		{
+			"year": "2014",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "CARE-Cornell Round Table Discussion on Reislience Measurement, discussion paper by Chris Barrett and Mark Constas \"Toward a theory of resilience for international development applications\"",
+			"link": "https://www.pnas.org/content/pnas/early/2014/09/18/1320880111.full.pdf"
+		},
+		{
+			"year": "2014",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "\"Measuring Resilience\" reflecting lessons from the design of evaluation methodologies, by Michael Bamberger and Oxfam America",
+			"link": "https://www.oxfamamerica.org/static/media/files/Measuring_Resilience_-_R4_Case_Study.pdf"
+		},
+		{
+			"year": "2015",
+			"category": "trend",
+			"tittle": "Broader relevance ",
+			"info": "of resilience",
+			"link": ""
+		},
+		{
+			"year": "2015",
+			"category": "event",
+			"tittle": "New version of RIMA",
+			"info": "Building Resilience and Adaptation to Climate Extremes and Disasters (BRACED) M&E Guidance Notes FAO develop new version of RIMA",
+			"link": "http://www.braced.org/resources/i/?id=761757df-7b3f-4cc0-9598-a684c40df788"
+		},
+		{
+			"year": "2015",
+			"category": "event",
+			"tittle": "Event",
+			"info": "FAO develop RIMA-II",
+			"link": "http://www.fao.org/3/a-i5298e.pdf"
+		},
+		{
+			"year": "2015",
+			"category": "event",
+			"tittle": "UN Sustainable Development Goals ",
+			"info": "(SDGs) finalized and published",
+			"link": "https://www.un.org/sustainabledevelopment/sustainable-development-goals/"
+		},
+		{
+			"year": "2015",
+			"category": "event",
+			"tittle": "Sendai Framework ",
+			"info": "for Disaster Risk Reduction 2015-2030, World Conference on Disaster Risk Reduction",
+			"link": ""
+		},
+		{
+			"year": "2015",
+			"category": "event",
+			"tittle": "Earthquake",
+			"info": "Aftermath of Nepal Earthquake",
+			"link": "https://www.undrr.org/publication/sendai-framework-disaster-risk-reduction-2015-2030"
+		},
+		{
+			"year": "2015",
+			"category": "event",
+			"tittle": "USAID ",
+			"info": "USAID established Resilience Centre",
+			"link": "https://www.usaid.gov/resilience/resources"
+		},
+		{
+			"year": "2015",
+			"category": "program, platform, investment initiative",
+			"tittle": "CILSS",
+			"info": "Comité permanent Inter-Etat de Lutte contre la Sécheresse au Sahel (CILSS) Technical Platform established",
+			"link": "https://arquivo.pt/wayback/20131107024654/http:/www.cilss.bf/"
+		},
+		{
+			"year": "2015",
+			"category": "program, platform, investment initiative",
+			"tittle": "Resilience ",
+			"info": "Resilience in Mali",
+			"link": ""
+		},
+		{
+			"year": "2015",
+			"category": "program, platform, investment initiative",
+			"tittle": "Zurich partners with GRP ",
+			"info": "to launch the Global Resilience Challenge Water Window",
+			"link": "https://www.zurich.com/en/media/news-releases/2015/2015-0825-01"
+		},
+		{
+			"year": "2015",
+			"category": "program, platform, investment initiative",
+			"tittle": "STRESS",
+			"info": "Mercy Corps develops Strategic Resilience Assessment (STRESS) Process",
+			"link": "https://www.mercycorps.org/research-resources/resilience/strategic-resilience-assessment"
+		},
+		{
+			"year": "2015",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "WHO develops",
+			"info": "\"Operational framework for building climate resilient health systems\"",
+			"link": "https://www.who.int/globalchange/publications/building-climate-resilient-health-systems/en/"
+		},
+		{
+			"year": "2015",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "\"Cracking the Code: Enhancing Emergency Response and Resilience in Complex Crises\", by Mercy Corps",
+			"link": "https://www.mercycorps.org/sites/default/files/Mercy_Corps_Cracking_the_code-Enhancing_emergency_response_resilience_in_complex_crises.pdf"
+		},
+		{
+			"year": "2015",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "\"The 3 A’s: tracking resilience across BRACED\" by ODI",
+			"link": "https://www.odi.org/publications/9840-3as-tracking-resilience-across-braced"
+		},
+		{
+			"year": "2016",
+			"category": "trend",
+			"tittle": "Broader relevance ",
+			"info": "of resilience",
+			"link": ""
+		},
+		{
+			"year": "2016",
+			"category": "event",
+			"tittle": "Epidemic",
+			"info": "West African Ebola Outbreak",
+			"link": ""
+		},
+		{
+			"year": "2016",
+			"category": "event",
+			"tittle": "Paris Climate Agreement",
+			"info": "enters into effect",
+			"link": "https://unfccc.int/process-and-meetings/the-paris-agreement/the-paris-agreement"
+		},
+		{
+			"year": "2016",
+			"category": "event",
+			"tittle": "World Humanitarian Summit develops ",
+			"info": "\"Agenda for Humanity\"",
+			"link": "https://www.measuringresilience.org/rmel-convenings"
+		},
+		{
+			"year": "2016",
+			"category": "event",
+			"tittle": "1st Convening of the RMEL CoP",
+			"info": "New York",
+			"link": "https://www.dropbox.com/s/nmkrycwtkf5a8ip/CoP%20Rome%20Convening%20Report.pdf?dl=0"
+		},
+		{
+			"year": "2016",
+			"category": "event",
+			"tittle": "2nd Convening of the RMEL CoP",
+			"info": "Rome",
+			"link": "https://www.dropbox.com/s/nmkrycwtkf5a8ip/CoP%20Rome%20Convening%20Report.pdf?dl=0"
+		},
+		{
+			"year": "2016",
+			"category": "event",
+			"tittle": "\"Toward Harmonized Metrics for Resilience Measurement\" ",
+			"info": "developed by the Resilience Measurement TWG of the FSIN",
+			"link": "https://www.fsinplatform.org/"
+		},
+		{
+			"year": "2016",
+			"category": "program, platform, investment initiative",
+			"tittle": "Christian Aid Resilience Framework",
+			"info": "Launched",
+			"link": "https://www.christianaid.org.uk/resources/about-us/resilience-framework"
+		},
+		{
+			"year": "2016",
+			"category": "program, platform, investment initiative",
+			"tittle": "“Resilience Measurement Practical Guidance Series” ",
+			"info": "Launched by REAL",
+			"link": "https://www.fsnnetwork.org/resilience-measurement-practical-guidance-note-series-overview"
+		},
+		{
+			"year": "2016",
+			"category": "program, platform, investment initiative",
+			"tittle": "The Resilience Shift",
+			"info": "Launched by the Lloyds Register Foundation and Arup",
+			"link": "https://www.resilienceshift.org/"
+		},
+		{
+			"year": "2016",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "City Resilience Index",
+			"info": "Launched by Arup",
+			"link": "https://www.rockefellerfoundation.org/report/city-resilience-index/"
+		},
+		{
+			"year": "2017",
+			"category": "trend",
+			"tittle": "TREND:",
+			"info": "Four famines led to a push for applying resilience thinking in fragile, conflict-affected contexts",
+			"link": ""
+		},
+		{
+			"year": "2017",
+			"category": "event",
+			"tittle": "USAID",
+			"info": "Resilience Evidence Forum",
+			"link": "https://www.fsnnetwork.org/resilience-evidence-forum-october-3"
+		},
+		{
+			"year": "2017",
+			"category": "event",
+			"tittle": "3rd Convening of RMEL CoP",
+			"info": "Kampala",
+			"link": "http://www.ranlab.org/hosting-the-resilience-community-of-practice-cop-convening-at-maksph"
+		},
+		{
+			"year": "2017",
+			"category": "event",
+			"tittle": "Resilience 2017:",
+			"info": "Resilience Frontiers for Global Sustainability Conference, Stockholm",
+			"link": "http://resilience2017.org/"
+		},
+		{
+			"year": "2017",
+			"category": "program, platform, investment initiative",
+			"tittle": "Zurich Flood Resilience Alliance 2.0",
+			"info": "Launched",
+			"link": "https://www.zurich.com/knowledge/topics/flood-resilience/flood-resilience-alliance-2?page_url_input_url=https%3a%2f%2fwww.zurich.com%2fknowledge%2farticles%2f2018%2f07%2fflood-resilience-alliance-2"
+		},
+		{
+			"year": "2017",
+			"category": "program, platform, investment initiative",
+			"tittle": "\"Analysis of resilience measurement frameworks and Approaches\"",
+			"info": "By RMEL CoP and ODI",
+			"link": "www.measuringresilience.org/category/publications/"
+		},
+		{
+			"year": "2017",
+			"category": "program, platform, investment initiative",
+			"tittle": "REAL",
+			"info": "Resilience Evaluation, Analysis and Learning (REAL) platform launched",
+			"link": "https://www.fsnnetwork.org/REAL"
+		},
+		{
+			"year": "2017",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "\"Resilience\"",
+			"info": "by Carl Folke",
+			"link": "https://www.ecologyandsociety.org/vol21/iss4/art44/ES-2016-9088.pdf"
+		},
+		{
+			"year": "2017",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "\"Building resilient health systems: a proposal for a resilience index\"",
+			"info": "By Margaret E Kruk",
+			"link": "https://www.bmj.com/content/357/bmj.j2323"
+		},
+		{
+			"year": "2018",
+			"category": "trend",
+			"tittle": "TREND: ",
+			"info": "Elevation of resilience to bureau level in USAID leading to broader mandate beyond food, agriculture and nutrition",
+			"link": ""
+		},
+		{
+			"year": "2018",
+			"category": "event",
+			"tittle": "Resilience Measurement, Evidence and Learning",
+			"info": "Conference and Convening 2018",
+			"link": "https://rmelconference.com/"
+		},
+		{
+			"year": "2018",
+			"category": "event",
+			"tittle": "\"Evaluation for More Resilient Socities\"",
+			"info": "European Evaluation Society Conference 2018",
+			"link": "http://www.ees2018.eu/"
+		},
+		{
+			"year": "2018",
+			"category": "program, platform, investment initiative",
+			"tittle": "Resilience Measurement Practical Guidance Series",
+			"info": "launched by REAL",
+			"link": "https://www.fsnnetwork.org/resilience-measurement-practical-guidance-note-series-overview"
+		},
+		{
+			"year": "2018",
+			"category": "program, platform, investment initiative",
+			"tittle": "Stockholm Resilience Centre’s \"Wayfinder\"",
+			"info": "Relaunch",
+			"link": "https://wayfinder.earth/"
+		},
+		{
+			"year": "2018",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "USAID Resilience Evidence",
+			"info": "Forum Report",
+			"link": "https://www.usaid.gov/sites/default/files/documents/1867/0717118_Resilience.pdf"
+		},
+		{
+			"year": "2018",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "100RC mid-term evaluation",
+			"info": "Shows process in institutionalizing resilience, in particular through City Resilience Officers",
+			"link": "https://www.urban.org/research/publication/institutionalizing-urban-resilience"
+		},
+		{
+			"year": "2019",
+			"category": "event",
+			"tittle": "GRP-convened Building a Resilient Future",
+			"info": "in advance of the UN Climate Action Summit",
+			"link": "http://www.globalresiliencepartnership.org/wp-content/uploads/2018/07/Headline-messages-from-Building-a-Resilient-Futre-prepared-for-the-United-Nations-Secretary-Generals-Climate-Action-Summit.pdf"
+		},
+		{
+			"year": "2019",
+			"category": "framework: conceptual, evaluative, operational",
+			"tittle": "Resilience Insights:",
+			"info": "Lessons from the Global Resilience Partnership launched",
+			"link": "http://grpinsightsreport.info/"
+		},
+		{
+			"year": "2019",
+			"category": "publication",
+			"tittle": "Publication",
+			"info": "\"Perception matters: New insights into the subjective dimension of resilience in the context of humanitarian and food security crises\" published",
+			"link": "https://www.fsnnetwork.org/%E2%80%98perception-matters%E2%80%99-new-insights-subjective-dimension-resilience-context-humanitarian-and-food"
+		},
+		{
+			"year": "2019",
+			"category": "event",
+			"tittle": "\"Evaluation for More Resilient Socities\"",
+			"info": "European Evaluation Society Conference 2018",
 			"link": ""
 		}
 	]
