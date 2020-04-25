@@ -16,11 +16,12 @@ export default function App() {
   // 		console.log(category);
   // 	});
   return (
-    <div>
-	  <Header />
-      <RouterComponent />
-      <InformationBoxLayout />
-	  <Filter />
+    <div className={Style.appStyle}>
+	  <div className={Style.headerStyle}><Header/></div>
+	  <div className={Style.routerComponent}> <RouterComponent  /></div>
+      <div className={Style.boxLayoutStyle}> <InformationBoxLayout /></div>
+      <div className={Style.filter}><Filter  /></div>
+	  
     </div>
   );
 }

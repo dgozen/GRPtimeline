@@ -1,9 +1,32 @@
 body {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .test {
-	background-color: var(--color-green);
-	font-family: 'Franklin Gothic Heavy';
-	font-size: 26px;
+  background-color: var(--color-green);
+  font-family: "Franklin Gothic Heavy";
+  font-size: 26px;
+}
+
+.appStyle {
+  padding: 0% 3% 3% 3%;
+  display: grid;
+  grid-template-columns: 10% 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 10% 80% 10%;
+}
+
+.headerStyle {
+  grid-row: 1;
+  grid-column: 2 / span 6;
+  padding-left: 13%;
+}
+
+.boxLayoutStyle {
+  grid-row: 2 / span 2;
+  grid-column: 2 / span 6;
+}
+
+.filter {
+  grid-row: 3;
+  grid-column: 1 / span 7;
 }
