@@ -1,7 +1,9 @@
+
 import React from "react";
 import Style from "./App.module.css";
 import RouterComponent from "./component/pages/RouterComponent/RouterComponent";
 import InformationBoxLayout from "./layouts/InformationBoxLayout/InformationBoxLayout";
+import Header from './component/Header/Header';
 
 export default function App() {
   // axios
@@ -13,8 +15,10 @@ export default function App() {
   // 	});
   return (
     <div>
+	  <Header />
       <RouterComponent />
       <InformationBoxLayout />
     </div>
   );
 }
+
