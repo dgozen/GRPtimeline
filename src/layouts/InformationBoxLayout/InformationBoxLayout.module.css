@@ -14,7 +14,21 @@
 	padding: 60px 30px 60px 30px;
 }
 
-.box1 {
+.leftArrow {
+	grid-area: 1 / 1 / span 2 / span 1;
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
+}
+.rightArrow {
+	grid-area: 1 / 5 / span 2 / span 1;
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
+}
+.rotateArrowRight {
+	transform: rotate(180deg);
+}
+
+/* .box1 {
 	grid-area: 1 / 2 / span 1 / span 1;
 }
 .box2 {
@@ -31,18 +45,4 @@
 }
 .box6 {
 	grid-area: 2 / 4 / span 1 / span 1;
-}
-
-.leftArrow {
-	grid-area: 1 / 1 / span 2 / span 1;
-	border: none;
-	background-color: rgba(0, 0, 0, 0);
-}
-.rightArrow {
-	grid-area: 1 / 5 / span 2 / span 1;
-	border: none;
-	background-color: rgba(0, 0, 0, 0);
-}
-.rotateArrowRight {
-	transform: rotate(180deg);
-}
+} */

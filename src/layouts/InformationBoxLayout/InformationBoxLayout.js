@@ -6,28 +6,30 @@ import arrowButton from '../../assets/arrow-button.svg';
 
 const InformationBoxLayout = (props) => {
 	const [activeYear, setActiveYear] = useState([]);
-	const [splitPages, setSplitPages] = useState([]);
 
 	useEffect(() => {
 		axios
 			.get('http://www.mocky.io/v2/5ea446a43000005900ce2ca3')
 			.then((response) =>
 				setActiveYear(
-					response.data.timelineInfo.filter((item) => item.year === '2018')
+					response.data.timelineInfo.filter((item) => item.year === '2004')
 				)
 			);
 	}, []);
 
-	const splitArray = (array) => {
-		const length = array.length;
-		const chunkedArray = [];
+	console.log('active year array: ', activeYear);
 
-		for (let i = 0; i < length; i += 6) {
-			let slicedPieces = array.splice(i, i + 6);
-			chunkedArray.push(slicedPieces);
+	const arrayChunk = (array, chunkSize) => {
+		const chunkedArray = [];
+		let clonedArray = [...array];
+		const splitPieces = Math.ceil(clonedArray.length / chunkSize);
+		for (let i = 0; i < splitPieces; i++) {
+			chunkedArray.push(clonedArray.splice(0, chunkSize));
 		}
-		setSplitPages(chunkedArray);
+		return chunkedArray;
 	};
+	const chunkedYearArray =
+		activeYear.length > 6 ? arrayChunk(activeYear, 6) : [];
 
 	return (
 		<div className={style.infoBoxLayoutStyle}>
@@ -35,7 +37,16 @@ const InformationBoxLayout = (props) => {
 				<img src={arrowButton} alt='previous-page-button' />
 			</button>
 			{activeYear.length > 6
-				? splitArray(activeYear)
+				? chunkedYearArray.map((component, index) => {
+						return (
+							<InformationBox
+								key={index}
+								title={component.title}
+								text={component.info}
+								link={component.link}
+							/>
+						);
+				  })
 				: activeYear.map((component, index) => {
 						return (
 							<InformationBox
@@ -46,7 +57,7 @@ const InformationBoxLayout = (props) => {
 							/>
 						);
 				  })}
-			{console.log(splitPages)}
+
 			<button className={style.rightArrow}>
 				<img
 					src={arrowButton}
