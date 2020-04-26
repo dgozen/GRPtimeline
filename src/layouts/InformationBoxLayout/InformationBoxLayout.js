@@ -12,7 +12,7 @@ const InformationBoxLayout = (props) => {
 			.get('http://www.mocky.io/v2/5ea446a43000005900ce2ca3')
 			.then((response) =>
 				setActiveYear(
-					response.data.timelineInfo.filter((item) => item.year === '2004')
+					response.data.timelineInfo.filter((item) => item.year === '2014')
 				)
 			);
 	}, []);
@@ -31,13 +31,14 @@ const InformationBoxLayout = (props) => {
 	const chunkedYearArray =
 		activeYear.length > 6 ? arrayChunk(activeYear, 6) : [];
 
+	console.log('chuncked year array', chunkedYearArray);
 	return (
 		<div className={style.infoBoxLayoutStyle}>
 			<button className={style.leftArrow}>
 				<img src={arrowButton} alt='previous-page-button' />
 			</button>
 			{activeYear.length > 6
-				? chunkedYearArray.map((component, index) => {
+				? chunkedYearArray[1].map((component, index) => {
 						return (
 							<InformationBox
 								key={index}
