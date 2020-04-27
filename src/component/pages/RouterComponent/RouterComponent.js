@@ -16,7 +16,7 @@ import Year1958 from '../Year1958/Year1958';
 import Year1959 from '../Year1959/Year1959';
 import Year1960 from '../Year1960/Year1960';
 import Year1961 from '../Year1961/Year1961';
-import Timeline from '../Timeline/Timeline';
+import Timeline from '../../Timeline/Timeline';
 
 
 export default function RouterComponent () {
