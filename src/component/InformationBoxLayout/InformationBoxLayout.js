@@ -6,6 +6,13 @@ import arrowButton from '../../assets/arrow-button.svg';
 
 const InformationBoxLayout = (props) => {
 	const [activeYear, setActiveYear] = useState([]);
+	const [activeIndex, setActiveIndex] = useState(0);
+	const [chunkAmounts, setchunkAmounts] = useState(0);
+
+	const previousChunk = () => {
+		let index = activeIndex;
+		let length = chunkAmounts;
+	};
 
 	useEffect(() => {
 		axios
@@ -20,45 +27,39 @@ const InformationBoxLayout = (props) => {
 	console.log('active year array: ', activeYear);
 
 	const arrayChunk = (array, chunkSize) => {
-		const chunkedArray = [];
-		let clonedArray = [...array];
-		const splitPieces = Math.ceil(clonedArray.length / chunkSize);
-		for (let i = 0; i < splitPieces; i++) {
-			chunkedArray.push(clonedArray.splice(0, chunkSize));
+		if (array.length > 6) {
+			const chunkedArray = [];
+			let clonedArray = [...array];
+			let amountOfChunks = 0;
+			const splitPieces = Math.ceil(clonedArray.length / chunkSize);
+			for (let i = 0; i < splitPieces; i++) {
+				chunkedArray.push(clonedArray.splice(0, chunkSize));
+				amountOfChunks++;
+			}
+			setchunkAmounts(amountOfChunks);
+			return chunkedArray;
+		} else {
+			return array;
 		}
-		return chunkedArray;
 	};
-	const chunkedYearArray =
-		activeYear.length > 6 ? arrayChunk(activeYear, 6) : [];
+	console.log('amount of chunks is', chunkAmounts);
+	const chunkYearArray = arrayChunk(activeYear);
 
-	console.log('chuncked year array', chunkedYearArray);
 	return (
 		<div className={style.infoBoxLayoutStyle}>
 			<button className={style.leftArrow}>
 				<img src={arrowButton} alt='previous-page-button' />
 			</button>
-			{activeYear.length > 6
-				? chunkedYearArray[1].map((component, index) => {
-						return (
-							<InformationBox
-								key={index}
-								title={component.title}
-								text={component.info}
-								link={component.link}
-							/>
-						);
-				  })
-				: activeYear.map((component, index) => {
-						return (
-							<InformationBox
-								key={index}
-								title={component.title}
-								text={component.info}
-								link={component.link}
-							/>
-						);
-				  })}
-
+			{chunkYearArray.map((component, index) => {
+				return (
+					<InformationBox
+						key={index}
+						title={component.title}
+						text={component.info}
+						link={component.link}
+					/>
+				);
+			})}
 			<button className={style.rightArrow}>
 				<img
 					src={arrowButton}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import style from './DefaultLayout.module.css';
 import Header from '../../Header/Header';
 import ButtonArrowSmall from '../../Buttons/ButtonArrowSmall/ButtonArrowSmall';
@@ -7,50 +7,32 @@ import Year from '../../Year/Year';
 import Filter from '../../Filter/Filter';
 import APIFetch from '../../APIFetch/APIFetch';
 
-
-
-
-// const timelineData = [
-// 	'1950',
-// 	'1951',
-// 	'1952',
-// 	'1953',
-// 	'1954',
-// 	'1955',
-// 	'1956',
-// 	'1957',
-// 	'1958',
-// 	'1959',
-// 	'1960',
-// ];
-
 const numbers = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5];
 
 const DefaultLayout = () => {
-
+	const [scalingState, setScalingState] = useState(0);
+	const [yearsArray, setYearsArrayState] = useState([]);
 	const timelineData = APIFetch();
 
-	console.log('HELOOOOO', timelineData);
-
-	timelineData.then(data => {
-		
-		const selectedYear = data.timelineInfo[0];
-
-		console.log('newest',selectedYear);
-
+	timelineData.then((data) => {
+		let yearsArrays = [];
+		for (let item of data.timelineInfo) {
+			yearsArrays.push(item.year);
+		}
+		setArray(yearsArrays);
 	});
 
-
-	const [scalingState, setScalingState] = useState(0);
-	const [currentYearState, setCurrentYearState] = useState('');
+	const setArray = (array) => {
+		const passArray = new Set(array);
+		const oneOfEachYear = [...passArray];
+		console.log('new array is', oneOfEachYear);
+	};
 
 	const toggle = () => {
 		setScalingState((scalingState + 1) % numbers.length);
-		console.log('hello');
 	};
 
 	const num = numbers[scalingState];
-	console.log(scalingState);
 
 	return (
 		<div>
@@ -63,15 +45,9 @@ const DefaultLayout = () => {
 					<div className={style.buttonArrowUp}>
 						<ButtonArrowSmall />
 					</div>
-
-					{timelineData.map((item) => (
+					{yearsArray.map((item) => (
 						<button className={style.buttonYear} onClick={toggle}>
-							<Year
-								year={item}
-								// currentYearState={currentYearState}
-								// setCurrentYearState={setCurrentYearState}
-							/>
-							{console.log('what are we printing', { item })}
+							<Year year={item} />
 						</button>
 					))}
 					<div className={style.buttonArrowDown}>
