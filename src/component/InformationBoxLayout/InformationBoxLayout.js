@@ -12,6 +12,29 @@ const InformationBoxLayout = (props) => {
 	const previousChunk = () => {
 		let index = activeIndex;
 		let length = chunkAmounts;
+
+		if (index < 1) {
+			index = length - 1;
+		} else {
+			index--;
+		}
+		setActiveIndex(index);
+		console.log('state set to', activeIndex);
+	};
+
+	const nextChunk = () => {
+		let index = activeIndex;
+		let length = chunkAmounts;
+
+		console.log('hey');
+		console.log(activeIndex);
+		if (index === length - 1) {
+			index = 0;
+		} else {
+			index++;
+		}
+		setActiveIndex(index);
+		console.log('state set to', activeIndex);
 	};
 
 	useEffect(() => {
@@ -19,7 +42,7 @@ const InformationBoxLayout = (props) => {
 			.get('http://www.mocky.io/v2/5ea446a43000005900ce2ca3')
 			.then((response) =>
 				setActiveYear(
-					response.data.timelineInfo.filter((item) => item.year === '1950')
+					response.data.timelineInfo.filter((item) => item.year === '2018')
 				)
 			);
 	}, []);
@@ -35,6 +58,7 @@ const InformationBoxLayout = (props) => {
 			for (let i = 0; i < splitPieces; i++) {
 				chunkedArray.push(clonedArray.splice(0, chunkSize));
 				amountOfChunks++;
+				console.log(amountOfChunks);
 			}
 			setchunkAmounts(amountOfChunks);
 			return chunkedArray;
@@ -47,7 +71,7 @@ const InformationBoxLayout = (props) => {
 
 	return (
 		<div className={style.infoBoxLayoutStyle}>
-			<button className={style.leftArrow}>
+			<button className={style.leftArrow} onClick={previousChunk}>
 				<img src={arrowButton} alt='previous-page-button' />
 			</button>
 			{chunkYearArray.map((component, index) => {
@@ -60,7 +84,7 @@ const InformationBoxLayout = (props) => {
 					/>
 				);
 			})}
-			<button className={style.rightArrow}>
+			<button className={style.rightArrow} onClick={nextChunk}>
 				<img
 					src={arrowButton}
 					alt='next-page-button'

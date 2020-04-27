@@ -12,6 +12,7 @@ const numbers = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5];
 const DefaultLayout = () => {
 	const [scalingState, setScalingState] = useState(0);
 	const [yearsArray, setYearsArrayState] = useState([]);
+	const [clickedYear, setClickedYear] = useState('');
 	const timelineData = APIFetch();
 
 	timelineData.then((data) => {
@@ -25,8 +26,14 @@ const DefaultLayout = () => {
 	const setArray = (array) => {
 		const passArray = new Set(array);
 		const oneOfEachYear = [...passArray];
-		console.log('new array is', oneOfEachYear);
+		// console.log('set');
+		// setYearsArrayState(oneOfEachYear);
+		// console.log('done');
 	};
+
+	// useEffect(() => {
+	// 	setYearsArrayState(oneOfEachYear);
+	// }, []);
 
 	const toggle = () => {
 		setScalingState((scalingState + 1) % numbers.length);
@@ -46,7 +53,14 @@ const DefaultLayout = () => {
 						<ButtonArrowSmall />
 					</div>
 					{yearsArray.map((item) => (
-						<button className={style.buttonYear} onClick={toggle}>
+						<button
+							className={style.buttonYear}
+							onClick={() => {
+								toggle();
+								setClickedYear(item);
+								console.log(clickedYear);
+							}}
+						>
 							<Year year={item} />
 						</button>
 					))}
