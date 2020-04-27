@@ -7,11 +7,11 @@ import arrowButton from '../../assets/arrow-button.svg';
 const InformationBoxLayout = (props) => {
 	const [activeYear, setActiveYear] = useState([]);
 	const [activeIndex, setActiveIndex] = useState(0);
-	const [chunkAmounts, setchunkAmounts] = useState(0);
+	const [chunksAmountInArray, setChunkAmountInArray] = useState(0);
 
 	const previousChunk = () => {
 		let index = activeIndex;
-		let length = chunkAmounts;
+		let length = chunksAmountInArray;
 
 		if (index < 1) {
 			index = length - 1;
@@ -24,7 +24,7 @@ const InformationBoxLayout = (props) => {
 
 	const nextChunk = () => {
 		let index = activeIndex;
-		let length = chunkAmounts;
+		let length = chunksAmountInArray;
 
 		console.log('hey');
 		console.log(activeIndex);
@@ -60,13 +60,13 @@ const InformationBoxLayout = (props) => {
 				amountOfChunks++;
 				console.log(amountOfChunks);
 			}
-			setchunkAmounts(amountOfChunks);
+			setChunkAmountInArray(amountOfChunks);
 			return chunkedArray;
 		} else {
 			return array;
 		}
 	};
-	console.log('amount of chunks is', chunkAmounts);
+	console.log('amount of chunks is', chunksAmountInArray);
 	const chunkYearArray = arrayChunk(activeYear);
 
 	return (
@@ -74,7 +74,16 @@ const InformationBoxLayout = (props) => {
 			<button className={style.leftArrow} onClick={previousChunk}>
 				<img src={arrowButton} alt='previous-page-button' />
 			</button>
-			{chunkYearArray.map((component, index) => {
+			{chunksAmountInArray > 0 ? chunkYearArray[activeIndex].map((component, index) => {
+				return (
+					<InformationBox
+						key={index}
+						title={component.title}
+						text={component.info}
+						link={component.link}
+					/>
+				); :
+			chunkYearArray.map((component, index) => {
 				return (
 					<InformationBox
 						key={index}
@@ -83,7 +92,7 @@ const InformationBoxLayout = (props) => {
 						link={component.link}
 					/>
 				);
-			})}
+			}) }
 			<button className={style.rightArrow} onClick={nextChunk}>
 				<img
 					src={arrowButton}
