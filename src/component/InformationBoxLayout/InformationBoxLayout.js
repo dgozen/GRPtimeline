@@ -12,7 +12,7 @@ const InformationBoxLayout = (props) => {
 			.get('http://www.mocky.io/v2/5ea446a43000005900ce2ca3')
 			.then((response) =>
 				setActiveYear(
-					response.data.timelineInfo.filter((item) => item.year === '2014')
+					response.data.timelineInfo.filter((item) => item.year === '1950')
 				)
 			);
 	}, []);
