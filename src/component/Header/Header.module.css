@@ -10,6 +10,7 @@
 }
 
 .headerContainer {
+    position: relative;
     justify-self: center;
     text-align: center;
 }

@@ -4,6 +4,7 @@ import {
     Switch,
     Route,
   } from "react-router-dom";
+import style from "./Router.module.css"
 import Year1950 from '../Year1950/Year1950';
 import Year1951 from '../Year1951/Year1951';
 import Year1952 from '../Year1952/Year1952';
@@ -15,15 +16,15 @@ import Year1957 from '../Year1957/Year1957';
 import Year1958 from '../Year1958/Year1958';
 import Year1959 from '../Year1959/Year1959';
 import Year1960 from '../Year1960/Year1960';
-import Timeline from '../../Timeline/Timeline';
+import DefaultLayout from '../DefaultLayout/DefaultLayout';
 
 
 export default function RouterComponent () {
     return (
-        <Router>
-            <Timeline /> 
+        <Router> 
+            <DefaultLayout />
             <Switch>
-                <Route exact path="/" component={Year1950} />
+                <Route exact path="/" component={Year1950} className={style.year1950} />
                 <Route exact path="/1950" component={Year1950} />
 				<Route exact path="/1951" component={Year1951} />
 				<Route exact path="/1952" component={Year1952} />
