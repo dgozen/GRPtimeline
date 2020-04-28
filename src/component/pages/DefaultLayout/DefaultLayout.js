@@ -6,6 +6,7 @@ import ButtonArrowSmall from '../../Buttons/ButtonArrowSmall/ButtonArrowSmall';
 import InformationBoxLayout from '../../InformationBoxLayout/InformationBoxLayout';
 import Filter from '../../Filter/Filter';
 import APIFetch from '../../APIFetch/APIFetch';
+import AddButton from '../../Buttons/AddButton/AddButton';
 
 const numbers = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5];
 
@@ -72,6 +73,9 @@ const DefaultLayout = () => {
 				<InformationBoxLayout clickedYear={clickedYear} />
 				<div className={style.filter}>
 					<Filter />
+				</div>
+				<div className={style.addbutton}>
+					<AddButton />
 				</div>
 			</div>
 		</div>

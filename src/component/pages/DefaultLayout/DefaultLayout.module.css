@@ -1,6 +1,6 @@
 .container {
     display: grid;
-    grid-template-rows: 92vh 8vh;
+    grid-template-rows: 90vh 10vh;
     grid-template-columns: 10vw 1fr;
     position: relative;
     
@@ -9,7 +9,7 @@
 .header {
     grid-row-start: 1;
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 4;
     justify-self: center;
 }
 
@@ -69,5 +69,11 @@
 
 .filter {
     grid-column: span 2;
+    margin-top: 10px;
     
+}
+
+.addbutton {
+    grid-column-start: 3;
+    grid-row-start: 2;
 }
