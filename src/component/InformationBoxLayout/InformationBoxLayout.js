@@ -46,7 +46,7 @@ const InformationBoxLayout = (props) => {
 				)
 			);
 	}, []);
-	let chunkYearArray = [];
+
 	useEffect(() => {
 		const arrayChunk = (array, chunkSize) => {
 			if (array.length > 6) {
@@ -65,9 +65,8 @@ const InformationBoxLayout = (props) => {
 				return array;
 			}
 		};
-		chunkYearArray = arrayChunk(activeYear);
 	}, []);
-
+	const chunkYearArray = arrayChunk(activeYear);
 	return (
 		<div className={style.infoBoxLayoutStyle}>
 			<button className={style.leftArrow} onClick={previousChunk}>
