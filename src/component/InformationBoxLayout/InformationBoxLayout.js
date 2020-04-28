@@ -80,22 +80,29 @@ const InformationBoxLayout = ({ clickedYear }) => {
 			{chunksAmountInArray > 0
 				? chunkYearArray[activeIndex].map((component, index) => {
 						return (
+							<div className={style.informationBoxLayer}>
 							<InformationBox
 								key={index}
 								title={component.title}
 								text={component.info}
+								category={component.category}
 								link={component.link}
 							/>
+							</div>
 						);
 				  })
 				: chunkYearArray.map((component, index) => {
 						return (
+							<div className={style.informationBoxLayer}>
 							<InformationBox
 								key={index}
 								title={component.title}
 								text={component.info}
+								category={component.category}
 								link={component.link}
+	
 							/>
+							</div>
 						);
 				  })}
 			<button className={style.rightArrow} onClick={nextChunk}>
