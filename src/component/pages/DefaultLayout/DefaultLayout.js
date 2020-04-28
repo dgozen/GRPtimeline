@@ -48,8 +48,9 @@ const DefaultLayout = () => {
 					<div className={style.buttonArrowUp}>
 						<ButtonArrowSmall />
 					</div>
-					{yearsArray.map((item) => (
+					{yearsArray.map((item, index) => (
 						<button
+							key={index}
 							className={style.buttonYear}
 							onClick={() => {
 								toggle();
@@ -68,7 +69,7 @@ const DefaultLayout = () => {
 				<div className={style.header}>
 					<Header />
 				</div>
-				<InformationBoxLayout />
+				<InformationBoxLayout clickedYear={clickedYear} />
 				<div className={style.filter}>
 					<Filter />
 				</div>
