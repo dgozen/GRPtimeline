@@ -8,6 +8,8 @@ const InformationBoxLayout = (props) => {
 	const [activeYear, setActiveYear] = useState([]);
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [chunksAmountInArray, setChunkAmountInArray] = useState(0);
+	const clickedYears = props.clickedYear;
+	console.log('this is clicked', clickedYears);
 
 	const previousChunk = () => {
 		let index = activeIndex;
@@ -42,7 +44,7 @@ const InformationBoxLayout = (props) => {
 			.get('http://www.mocky.io/v2/5ea446a43000005900ce2ca3')
 			.then((response) =>
 				setActiveYear(
-					response.data.timelineInfo.filter((item) => item.year === '2018')
+					response.data.timelineInfo.filter((item) => item.year === '1950')
 				)
 			);
 	}, []);
@@ -66,7 +68,9 @@ const InformationBoxLayout = (props) => {
 			}
 		};
 	}, []);
-	const chunkYearArray = arrayChunk(activeYear);
+
+	const chunkYearArray = activeYear;
+
 	return (
 		<div className={style.infoBoxLayoutStyle}>
 			<button className={style.leftArrow} onClick={previousChunk}>

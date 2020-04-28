@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import style from './DefaultLayout.module.css';
 import Header from '../../Header/Header';
 import ButtonArrowSmall from '../../Buttons/ButtonArrowSmall/ButtonArrowSmall';
-import Year from '../../Year/Year';
+import InformationBoxLayout from '../../InformationBoxLayout/InformationBoxLayout';
 import Filter from '../../Filter/Filter';
 import APIFetch from '../../APIFetch/APIFetch';
 
@@ -57,9 +57,10 @@ const DefaultLayout = () => {
 								console.log(clickedYear);
 							}}
 						>
-							<Year year={item} />
+							{item}
 						</button>
 					))}
+
 					<div className={style.buttonArrowDown}>
 						<ButtonArrowSmall />
 					</div>
@@ -67,6 +68,7 @@ const DefaultLayout = () => {
 				<div className={style.header}>
 					<Header />
 				</div>
+				<InformationBoxLayout />
 				<div className={style.filter}>
 					<Filter />
 				</div>
