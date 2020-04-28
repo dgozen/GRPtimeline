@@ -15,8 +15,8 @@
     width: 66.67px;
     height: 66.67px;
     justify-content: center;
-    position: relative;
-    float: right;
-    margin: 28.66px;
+    /* position: relative;
+    float: right; */
+    margin: 0 28.66px 28.66px 28.66px;
     
 }
