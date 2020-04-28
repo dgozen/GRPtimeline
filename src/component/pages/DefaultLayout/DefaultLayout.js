@@ -14,6 +14,7 @@ const DefaultLayout = () => {
 	const [scalingState, setScalingState] = useState(0);
 	const [yearsArray, setYearsArrayState] = useState([]);
 	const [clickedYear, setClickedYear] = useState('');
+	const [selectedCategory, setSelectedCategory] = useState('AllCategories');
 	const timelineData = APIFetch();
 
 	useEffect(() => {
@@ -22,6 +23,7 @@ const DefaultLayout = () => {
 			for (let item of data.timelineInfo) {
 				yearsArrays.push(item.year);
 			}
+
 			setArray(yearsArrays);
 		});
 	}, []);
