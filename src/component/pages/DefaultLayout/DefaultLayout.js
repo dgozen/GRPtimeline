@@ -5,6 +5,7 @@ import Header from '../../Header/Header';
 import ButtonArrowSmall from '../../Buttons/ButtonArrowSmall/ButtonArrowSmall';
 import Year from '../../Year/Year';
 import Filter from '../../Filter/Filter';
+import AddButton from '../../Buttons/AddButton/AddButton';
 
 //
 const timelineData = [
@@ -66,6 +67,9 @@ const DefaultLayout = () => {
 				</div>
 				<div className={style.filter}>
 					<Filter />
+				</div>
+				<div className={style.addbutton}>
+				<AddButton />
 				</div>
 			</div>
 		</div>
