@@ -15,25 +15,21 @@ const DefaultLayout = () => {
 	const [clickedYear, setClickedYear] = useState('');
 	const timelineData = APIFetch();
 
-	timelineData.then((data) => {
-		let yearsArrays = [];
-		for (let item of data.timelineInfo) {
-			yearsArrays.push(item.year);
-		}
-		setArray(yearsArrays);
-	});
+	useEffect(() => {
+		timelineData.then((data) => {
+			let yearsArrays = [];
+			for (let item of data.timelineInfo) {
+				yearsArrays.push(item.year);
+			}
+			setArray(yearsArrays);
+		});
+	}, []);
 
 	const setArray = (array) => {
 		const passArray = new Set(array);
 		const oneOfEachYear = [...passArray];
-		// console.log('set');
-		// setYearsArrayState(oneOfEachYear);
-		// console.log('done');
+		setYearsArrayState(oneOfEachYear);
 	};
-
-	// useEffect(() => {
-	// 	setYearsArrayState(oneOfEachYear);
-	// }, []);
 
 	const toggle = () => {
 		setScalingState((scalingState + 1) % numbers.length);

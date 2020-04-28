@@ -46,53 +46,55 @@ const InformationBoxLayout = (props) => {
 				)
 			);
 	}, []);
-
-	console.log('active year array: ', activeYear);
-
-	const arrayChunk = (array, chunkSize) => {
-		if (array.length > 6) {
-			const chunkedArray = [];
-			let clonedArray = [...array];
-			let amountOfChunks = 0;
-			const splitPieces = Math.ceil(clonedArray.length / chunkSize);
-			for (let i = 0; i < splitPieces; i++) {
-				chunkedArray.push(clonedArray.splice(0, chunkSize));
-				amountOfChunks++;
-				console.log(amountOfChunks);
+	let chunkYearArray = [];
+	useEffect(() => {
+		const arrayChunk = (array, chunkSize) => {
+			if (array.length > 6) {
+				const chunkedArray = [];
+				let clonedArray = [...array];
+				let amountOfChunks = 0;
+				const splitPieces = Math.ceil(clonedArray.length / chunkSize);
+				for (let i = 0; i < splitPieces; i++) {
+					chunkedArray.push(clonedArray.splice(0, chunkSize));
+					amountOfChunks++;
+					console.log(amountOfChunks);
+				}
+				setChunkAmountInArray(amountOfChunks);
+				return chunkedArray;
+			} else {
+				return array;
 			}
-			setChunkAmountInArray(amountOfChunks);
-			return chunkedArray;
-		} else {
-			return array;
-		}
-	};
-	console.log('amount of chunks is', chunksAmountInArray);
-	const chunkYearArray = arrayChunk(activeYear);
+		};
+		chunkYearArray = arrayChunk(activeYear);
+	}, []);
 
 	return (
 		<div className={style.infoBoxLayoutStyle}>
 			<button className={style.leftArrow} onClick={previousChunk}>
 				<img src={arrowButton} alt='previous-page-button' />
 			</button>
-			{chunksAmountInArray > 0 ? chunkYearArray[activeIndex].map((component, index) => {
-				return (
-					<InformationBox
-						key={index}
-						title={component.title}
-						text={component.info}
-						link={component.link}
-					/>
-				); :
-			chunkYearArray.map((component, index) => {
-				return (
-					<InformationBox
-						key={index}
-						title={component.title}
-						text={component.info}
-						link={component.link}
-					/>
-				);
-			}) }
+
+			{chunksAmountInArray > 0
+				? chunkYearArray[activeIndex].map((component, index) => {
+						return (
+							<InformationBox
+								key={index}
+								title={component.title}
+								text={component.info}
+								link={component.link}
+							/>
+						);
+				  })
+				: chunkYearArray.map((component, index) => {
+						return (
+							<InformationBox
+								key={index}
+								title={component.title}
+								text={component.info}
+								link={component.link}
+							/>
+						);
+				  })}
 			<button className={style.rightArrow} onClick={nextChunk}>
 				<img
 					src={arrowButton}
