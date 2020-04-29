@@ -24,25 +24,26 @@ const InformationBoxLayout = ({ clickedYear }) => {
 		let index = activeIndex;
 		let length = chunksAmountInArray;
 
-		if (index < 1) {
-			index = length - 1;
+		if (index < 0) {
+			index = 0;
 		} else {
 			index--;
 		}
 		setActiveIndex(index);
-		console.log('active index has become', activeIndex);
+		console.log('active index no is: ', activeIndex);
 	};
-
+	//
 	const nextChunk = () => {
 		let index = activeIndex;
 		let length = chunksAmountInArray;
 
-		if (index === length - 1) {
+		if (index === length) {
 			index = 0;
 		} else {
 			index++;
 		}
 		setActiveIndex(index);
+		console.log('active index no is: ', activeIndex);
 	};
 
 	const arrayChunk = (array, chunkSize) => {
@@ -56,8 +57,7 @@ const InformationBoxLayout = ({ clickedYear }) => {
 				amountOfChunks++;
 			}
 
-			setChunkAmountInArray(amountOfChunks);
-			console.log('chunked array looks like this', chunkedArray);
+			setChunkAmountInArray(amountOfChunks--);
 			return chunkedArray;
 		} else {
 			return array;
@@ -65,13 +65,9 @@ const InformationBoxLayout = ({ clickedYear }) => {
 	};
 
 	useEffect(() => {
-		console.log('trigger');
 		setChunkYearArray(arrayChunk(activeYear, 6));
 	}, [activeYear]);
-
-	console.log('here is the whole year objects', chunkYearArray);
-	console.log('objets at ', activeIndex, chunkYearArray[activeIndex]);
-
+	console.log('amount of chunks', chunksAmountInArray);
 	return (
 		<div className={style.infoBoxLayoutStyle}>
 			<button className={style.leftArrow} onClick={previousChunk}>
@@ -82,7 +78,6 @@ const InformationBoxLayout = ({ clickedYear }) => {
 						return (
 							<div className={style.informationBoxLayer}>
 								<InformationBox
-									key={index}
 									title={component.title}
 									text={component.info}
 									category={component.category}

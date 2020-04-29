@@ -13,7 +13,7 @@ const numbers = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5];
 const DefaultLayout = () => {
 	const [scalingState, setScalingState] = useState(0);
 	const [yearsArray, setYearsArrayState] = useState([]);
-	const [clickedYear, setClickedYear] = useState('');
+	const [clickedYear, setClickedYear] = useState('onload');
 	const [selectedCategory, setSelectedCategory] = useState('AllCategories');
 	const timelineData = APIFetch();
 
