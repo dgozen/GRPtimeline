@@ -6,7 +6,7 @@ import arrowButton from '../../assets/arrow-button.svg';
 
 const InformationBoxLayout = ({ clickedYear }) => {
 	const [activeYear, setActiveYear] = useState([]);
-	const [activeIndex, setActiveIndex] = useState(0);
+	const [activeIndex, setActiveIndex] = useState(1);
 	const [chunksAmountInArray, setChunkAmountInArray] = useState(0);
 
 	useEffect(() => {
@@ -22,6 +22,7 @@ const InformationBoxLayout = ({ clickedYear }) => {
 	const previousChunk = () => {
 		let index = activeIndex;
 		let length = chunksAmountInArray;
+		console.log('active index is', index);
 
 		if (index < 1) {
 			index = length - 1;
@@ -34,6 +35,7 @@ const InformationBoxLayout = ({ clickedYear }) => {
 	const nextChunk = () => {
 		let index = activeIndex;
 		let length = chunksAmountInArray;
+		console.log('active index is', index);
 
 		if (index === length - 1) {
 			index = 0;
@@ -43,27 +45,30 @@ const InformationBoxLayout = ({ clickedYear }) => {
 		setActiveIndex(index);
 	};
 
-	useEffect(() => {
-		const arrayChunk = (array, chunkSize) => {
-			if (array.length > 6) {
-				const chunkedArray = [];
-				let clonedArray = [...array];
-				let amountOfChunks = 0;
-				const splitPieces = Math.ceil(clonedArray.length / chunkSize);
-				for (let i = 0; i < splitPieces; i++) {
-					chunkedArray.push(clonedArray.splice(0, chunkSize));
-					amountOfChunks++;
-					console.log(amountOfChunks);
-				}
-				setChunkAmountInArray(amountOfChunks);
-				return chunkedArray;
-			} else {
-				return array;
-			}
-		};
-	}, []);
+	let amountOfChunks = 0;
+	const arrayChunk = (array, chunkSize) => {
+		if (array.length > 6) {
+			const chunkedArray = [];
+			let clonedArray = [...array];
 
-	const chunkYearArray = arrayChunk(activeYear);
+			const splitPieces = Math.ceil(clonedArray.length / chunkSize);
+			for (let i = 0; i < splitPieces; i++) {
+				chunkedArray.push(...clonedArray.splice(0, chunkSize));
+				amountOfChunks++;
+				console.log('amout of chunks is', amountOfChunks);
+			}
+			return chunkedArray;
+		} else {
+			return array;
+		}
+	};
+	console.log('after the functionhas run', amountOfChunks);
+
+	useEffect(() => {
+		setChunkAmountInArray(amountOfChunks);
+	}, [amountOfChunks]);
+
+	const chunkYearArray = arrayChunk(activeYear, 6);
 
 	return (
 		<div className={style.infoBoxLayoutStyle}>

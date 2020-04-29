@@ -58,7 +58,6 @@ const DefaultLayout = () => {
 							onClick={() => {
 								toggle();
 								setClickedYear(item);
-								console.log(clickedYear);
 							}}
 						>
 							{item}
