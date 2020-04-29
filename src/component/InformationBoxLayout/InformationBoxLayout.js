@@ -47,7 +47,7 @@ const InformationBoxLayout = ({ clickedYear }) => {
 
 	let amountOfChunks = 0;
 	const arrayChunk = (array, chunkSize) => {
-		if (array.length > 6) {
+		if (array.length > chunkSize) {
 			const chunkedArray = [];
 			let clonedArray = [...array];
 
