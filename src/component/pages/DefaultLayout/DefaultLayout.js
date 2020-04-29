@@ -8,6 +8,39 @@ import Filter from '../../Filter/Filter';
 import APIFetch from '../../APIFetch/APIFetch';
 import AddButton from '../../Buttons/AddButton/AddButton';
 
+
+// ToDo:
+
+// - Export each layer as an SVG with the year it’s representing as name and place in assets folder. Default color: white
+
+// - Place all images in an array.
+
+// - Use inline styling and if else statements to decide which background to show onClick on each year. 
+
+// let background=” ”
+
+// backgroundArray = [
+// img(src=””),
+// img(),
+// img(),
+// ]
+
+// const backroundHandler = ()
+//  => { 
+// if(year state === 1999) {
+// background = [0, 9]
+// }};
+
+
+// background: background onClick=backgroundHandler
+
+
+// CSS:
+
+// - fix the size and placement of the images (absolut positioning, z-index)
+
+// -  Look up how to change colors on SVG:s
+
 const numbers = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5];
 
 const DefaultLayout = () => {
