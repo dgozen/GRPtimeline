@@ -34,7 +34,7 @@ const InformationBoxLayout = ({ clickedYear }) => {
 		setActiveIndex(index);
 		console.log('active index no is: ', activeIndex);
 	};
-	//
+
 	const nextChunk = () => {
 		let index = activeIndex;
 		let length = chunksAmountInArray;
@@ -73,14 +73,22 @@ const InformationBoxLayout = ({ clickedYear }) => {
 	console.log('amount of chunks', chunksAmountInArray);
 	return (
 		<div className={style.infoBoxLayoutStyle}>
-			<button className={style.leftArrow} onClick={previousChunk}>
-				<img src={arrowButton} alt='previous-page-button' />
-			</button>
+			{chunksAmountInArray > 0 ? (
+				<button className={style.leftArrow} onClick={previousChunk}>
+					<img src={arrowButton} alt='previous-page-button' />
+				</button>
+			) : (
+				<button className={style.leftArrowHidden} onClick={previousChunk}>
+					<img src={arrowButton} alt='previous-page-button' />
+				</button>
+			)}
+
 			{chunksAmountInArray > 0
 				? chunkYearArray[activeIndex].map((component, index) => {
 						return (
 							<div className={style.informationBoxLayer}>
 								<InformationBox
+									key={index}
 									title={component.title}
 									text={component.info}
 									category={component.category}
@@ -89,7 +97,7 @@ const InformationBoxLayout = ({ clickedYear }) => {
 							</div>
 						);
 				  })
-				: chunkYearArray.map((component, index) => {
+				: activeYear.map((component, index) => {
 						return (
 							<div className={style.informationBoxLayer}>
 								<InformationBox
@@ -102,13 +110,23 @@ const InformationBoxLayout = ({ clickedYear }) => {
 							</div>
 						);
 				  })}
-			<button className={style.rightArrow} onClick={nextChunk}>
-				<img
-					src={arrowButton}
-					alt='next-page-button'
-					className={style.rotateArrowRight}
-				/>
-			</button>
+			{chunksAmountInArray > 0 ? (
+				<button className={style.rightArrow} onClick={nextChunk}>
+					<img
+						src={arrowButton}
+						alt='next-page-button'
+						className={style.rotateArrowRight}
+					/>
+				</button>
+			) : (
+				<button className={style.rightArrowHidden} onClick={nextChunk}>
+					<img
+						src={arrowButton}
+						alt='next-page-button'
+						className={style.rotateArrowRight}
+					/>
+				</button>
+			)}
 		</div>
 	);
 };

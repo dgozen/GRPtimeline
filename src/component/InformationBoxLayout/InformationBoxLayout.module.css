@@ -3,15 +3,15 @@
 	height: 600px;
 	background: rgba(255, 255, 255, 0.5);
 	border-radius: 45px;
-	position: absolute;
-	top: 10%;
-	left: 15%;
+	position: relative;
+	top: -500px;
+	left: 150px;
 	display: grid;
 	grid-template-columns: 5% repeat(3, 1fr) 5%;
 	grid-template-rows: 50% 50%;
 	align-items: center;
 	justify-items: center;
-	padding: 60px 30px 60px 30px;
+	padding: 30px 15px 30px 15px;
 }
 
 .leftArrow {
@@ -27,7 +27,18 @@
 .rotateArrowRight {
 	transform: rotate(180deg);
 }
-
 .informationBoxLayer {
 	z-index: 1;
+}
+.hidden {
+	visibility: hidden;
+}
+.leftArrowHidden {
+	grid-area: 1 / 1 / span 2 / span 1;
+	visibility: hidden;
+}
+.rightArrowHidden {
+	grid-area: 1 / 5 / span 2 / span 1;
+	border: none;
+	visibility: hidden;
 }
