@@ -9,34 +9,6 @@ const InformationBoxLayout = ({ clickedYear }) => {
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [chunksAmountInArray, setChunkAmountInArray] = useState(0);
 
-	const previousChunk = () => {
-		let index = activeIndex;
-		let length = chunksAmountInArray;
-
-		if (index < 1) {
-			index = length - 1;
-		} else {
-			index--;
-		}
-		setActiveIndex(index);
-		console.log('state set to', activeIndex);
-	};
-
-	const nextChunk = () => {
-		let index = activeIndex;
-		let length = chunksAmountInArray;
-
-		console.log('hey');
-		console.log(activeIndex);
-		if (index === length - 1) {
-			index = 0;
-		} else {
-			index++;
-		}
-		setActiveIndex(index);
-		console.log('state set to', activeIndex);
-	};
-
 	useEffect(() => {
 		axios
 			.get('http://www.mocky.io/v2/5ea446a43000005900ce2ca3')
@@ -47,7 +19,29 @@ const InformationBoxLayout = ({ clickedYear }) => {
 			);
 	}, [clickedYear]);
 
-	console.log('active year is', activeYear);
+	const previousChunk = () => {
+		let index = activeIndex;
+		let length = chunksAmountInArray;
+
+		if (index < 1) {
+			index = length - 1;
+		} else {
+			index--;
+		}
+		setActiveIndex(index);
+	};
+
+	const nextChunk = () => {
+		let index = activeIndex;
+		let length = chunksAmountInArray;
+
+		if (index === length - 1) {
+			index = 0;
+		} else {
+			index++;
+		}
+		setActiveIndex(index);
+	};
 
 	useEffect(() => {
 		const arrayChunk = (array, chunkSize) => {
@@ -69,7 +63,7 @@ const InformationBoxLayout = ({ clickedYear }) => {
 		};
 	}, []);
 
-	const chunkYearArray = activeYear;
+	const chunkYearArray = arrayChunk(activeYear);
 
 	return (
 		<div className={style.infoBoxLayoutStyle}>
@@ -81,27 +75,26 @@ const InformationBoxLayout = ({ clickedYear }) => {
 				? chunkYearArray[activeIndex].map((component, index) => {
 						return (
 							<div className={style.informationBoxLayer}>
-							<InformationBox
-								key={index}
-								title={component.title}
-								text={component.info}
-								category={component.category}
-								link={component.link}
-							/>
+								<InformationBox
+									key={index}
+									title={component.title}
+									text={component.info}
+									category={component.category}
+									link={component.link}
+								/>
 							</div>
 						);
 				  })
 				: chunkYearArray.map((component, index) => {
 						return (
 							<div className={style.informationBoxLayer}>
-							<InformationBox
-								key={index}
-								title={component.title}
-								text={component.info}
-								category={component.category}
-								link={component.link}
-	
-							/>
+								<InformationBox
+									key={index}
+									title={component.title}
+									text={component.info}
+									category={component.category}
+									link={component.link}
+								/>
 							</div>
 						);
 				  })}
