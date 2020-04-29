@@ -24,8 +24,10 @@ const InformationBoxLayout = ({ clickedYear }) => {
 		let index = activeIndex;
 		let length = chunksAmountInArray;
 
-		if (index < 0) {
+		if (index === 0) {
 			index = 0;
+		} else if (index < 1) {
+			index = length - 1;
 		} else {
 			index--;
 		}
@@ -37,7 +39,7 @@ const InformationBoxLayout = ({ clickedYear }) => {
 		let index = activeIndex;
 		let length = chunksAmountInArray;
 
-		if (index === length) {
+		if (index === length - 1) {
 			index = 0;
 		} else {
 			index++;
@@ -57,9 +59,10 @@ const InformationBoxLayout = ({ clickedYear }) => {
 				amountOfChunks++;
 			}
 
-			setChunkAmountInArray(amountOfChunks--);
+			setChunkAmountInArray(amountOfChunks);
 			return chunkedArray;
 		} else {
+			setChunkAmountInArray(0);
 			return array;
 		}
 	};
