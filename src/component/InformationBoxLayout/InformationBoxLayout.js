@@ -6,7 +6,7 @@ import arrowButton from '../../assets/arrow-button.svg';
 
 const InformationBoxLayout = ({ clickedYear }) => {
 	const [activeYear, setActiveYear] = useState([]);
-	const [activeIndex, setActiveIndex] = useState(1);
+	const [activeIndex, setActiveIndex] = useState(0);
 	const [chunksAmountInArray, setChunkAmountInArray] = useState(0);
 
 	useEffect(() => {
