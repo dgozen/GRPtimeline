@@ -8,6 +8,7 @@ const InformationBoxLayout = ({ clickedYear }) => {
 	const [activeYear, setActiveYear] = useState([]);
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [chunksAmountInArray, setChunkAmountInArray] = useState(0);
+	const [chunkYearArray, setChunkYearArray] = useState([]);
 
 	useEffect(() => {
 		axios
@@ -22,7 +23,6 @@ const InformationBoxLayout = ({ clickedYear }) => {
 	const previousChunk = () => {
 		let index = activeIndex;
 		let length = chunksAmountInArray;
-		console.log('active index is', index);
 
 		if (index < 1) {
 			index = length - 1;
@@ -35,7 +35,6 @@ const InformationBoxLayout = ({ clickedYear }) => {
 	const nextChunk = () => {
 		let index = activeIndex;
 		let length = chunksAmountInArray;
-		console.log('active index is', index);
 
 		if (index === length - 1) {
 			index = 0;
@@ -45,37 +44,33 @@ const InformationBoxLayout = ({ clickedYear }) => {
 		setActiveIndex(index);
 	};
 
-	let amountOfChunks = 0;
 	const arrayChunk = (array, chunkSize) => {
+		let amountOfChunks = 0;
 		if (array.length > chunkSize) {
 			const chunkedArray = [];
 			let clonedArray = [...array];
-
 			const splitPieces = Math.ceil(clonedArray.length / chunkSize);
 			for (let i = 0; i < splitPieces; i++) {
 				chunkedArray.push(...clonedArray.splice(0, chunkSize));
 				amountOfChunks++;
 				console.log('amout of chunks is', amountOfChunks);
 			}
+			setChunkAmountInArray(amountOfChunks);
 			return chunkedArray;
 		} else {
 			return array;
 		}
 	};
-	console.log('after the functionhas run', amountOfChunks);
 
 	useEffect(() => {
-		setChunkAmountInArray(amountOfChunks);
-	}, [amountOfChunks]);
-
-	const chunkYearArray = arrayChunk(activeYear, 6);
+		setChunkYearArray(arrayChunk(activeYear, 6));
+	}, [activeYear]);
 
 	return (
 		<div className={style.infoBoxLayoutStyle}>
 			<button className={style.leftArrow} onClick={previousChunk}>
 				<img src={arrowButton} alt='previous-page-button' />
 			</button>
-
 			{chunksAmountInArray > 0
 				? chunkYearArray[activeIndex].map((component, index) => {
 						return (
