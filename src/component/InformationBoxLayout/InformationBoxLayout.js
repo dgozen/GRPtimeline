@@ -30,6 +30,7 @@ const InformationBoxLayout = ({ clickedYear }) => {
 			index--;
 		}
 		setActiveIndex(index);
+		console.log('active index has become', activeIndex);
 	};
 
 	const nextChunk = () => {
@@ -46,16 +47,17 @@ const InformationBoxLayout = ({ clickedYear }) => {
 
 	const arrayChunk = (array, chunkSize) => {
 		let amountOfChunks = 0;
+		const chunkedArray = [];
+		let clonedArray = [...array];
 		if (array.length > chunkSize) {
-			const chunkedArray = [];
-			let clonedArray = [...array];
 			const splitPieces = Math.ceil(clonedArray.length / chunkSize);
 			for (let i = 0; i < splitPieces; i++) {
-				chunkedArray.push(...clonedArray.splice(0, chunkSize));
+				chunkedArray.push(clonedArray.splice(0, chunkSize));
 				amountOfChunks++;
-				console.log('amout of chunks is', amountOfChunks);
 			}
+
 			setChunkAmountInArray(amountOfChunks);
+			console.log('chunked array looks like this', chunkedArray);
 			return chunkedArray;
 		} else {
 			return array;
@@ -63,8 +65,12 @@ const InformationBoxLayout = ({ clickedYear }) => {
 	};
 
 	useEffect(() => {
+		console.log('trigger');
 		setChunkYearArray(arrayChunk(activeYear, 6));
 	}, [activeYear]);
+
+	console.log('here is the whole year objects', chunkYearArray);
+	console.log('objets at ', activeIndex, chunkYearArray[activeIndex]);
 
 	return (
 		<div className={style.infoBoxLayoutStyle}>
