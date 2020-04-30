@@ -3,7 +3,10 @@ import style from "./Filter.module.css";
 
 const Filter = () => {
   // filter through input boxes, return ID's if selectedCategory is true
+  // const [selectedCategory, setSelectedCategory] = useState();
+
   const selectedCategoryArray = [];
+
   const editCategoryArray = (checked, id) => {
     if (checked) {
       selectedCategoryArray.push(id);
@@ -53,7 +56,9 @@ const Filter = () => {
             onChange={(event) => {
               let checked = event.target.checked;
               editCategoryArray(checked, data.id);
-            }}
+              // console.log('look here', setSelectedCategory(...selectedCategoryArray));
+            }
+          }
             type="checkbox"
             id={data.id}
           ></input>{" "}
