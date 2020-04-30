@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import style from "./InformationBoxLayout.module.css";
-import InformationBox from "../../component/InformationBox/InformationBox";
-import arrowButton from "../../assets/arrow-button.svg";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import style from './InformationBoxLayout.module.css';
+import InformationBox from '../../component/InformationBox/InformationBox';
+import arrowButton from '../../assets/arrow-button.svg';
 
-const InformationBoxLayout = ({ clickedYear }) => {
+const InformationBoxLayout = ({
+	clickedYear,
+	selectedCategory,
+	setSelectedCategory,
+}) => {
 	const [activeYear, setActiveYear] = useState([]);
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [chunksAmountInArray, setChunkAmountInArray] = useState(0);
@@ -20,9 +24,9 @@ const InformationBoxLayout = ({ clickedYear }) => {
 			);
 	}, [clickedYear]);
 
-  const previousChunk = () => {
-    let index = activeIndex;
-    let length = chunksAmountInArray;
+	const previousChunk = () => {
+		let index = activeIndex;
+		let length = chunksAmountInArray;
 
 		if (index === 0) {
 			index = 0;
@@ -34,9 +38,9 @@ const InformationBoxLayout = ({ clickedYear }) => {
 		setActiveIndex(index);
 	};
 
-  const nextChunk = () => {
-    let index = activeIndex;
-    let length = chunksAmountInArray;
+	const nextChunk = () => {
+		let index = activeIndex;
+		let length = chunksAmountInArray;
 
 		if (index === length - 1) {
 			index = 0;
