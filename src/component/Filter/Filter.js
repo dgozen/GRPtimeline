@@ -3,15 +3,15 @@ import style from "./Filter.module.css";
 
 const Filter = () => {
   // filter through input boxes, return ID's if selectedCategory is true
-  const myArray = [];
-  const selectedCategoryArray = (checked, id) => {
+  const selectedCategoryArray = [];
+  const editCategoryArray = (checked, id) => {
     if (checked) {
-      myArray.push(id);
+      selectedCategoryArray.push(id);
     } else if (!checked) {
-        myArray.splice( myArray.indexOf(id), 1 );
+      selectedCategoryArray.splice( selectedCategoryArray.indexOf(id), 1 );
     }
 
-    console.log(myArray);
+    console.log(selectedCategoryArray);
   };
 
   const filterList = [
@@ -52,7 +52,7 @@ const Filter = () => {
           <input
             onChange={(event) => {
               let checked = event.target.checked;
-              selectedCategoryArray(checked, data.id);
+              editCategoryArray(checked, data.id);
             }}
             type="checkbox"
             id={data.id}
