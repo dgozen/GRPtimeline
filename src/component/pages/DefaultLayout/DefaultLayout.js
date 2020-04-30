@@ -71,11 +71,13 @@ const DefaultLayout = () => {
 				<div className={style.header}>
 					<Header />
 				</div>
+				<div className={style.informationLayout}>
 				<InformationBoxLayout
 					clickedYear={clickedYear}
 					selectedCategory={selectedCategory}
 					setSelectedCategory={setSelectedCategory}
 				/>
+				</div>
 				<div className={style.filter}>
 					<Filter
 						selectedCategory={selectedCategory}
