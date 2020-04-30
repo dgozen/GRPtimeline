@@ -11,11 +11,11 @@ import AddButton from "../../Buttons/AddButton/AddButton";
 const numbers = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5];
 
 const DefaultLayout = () => {
-  const [scalingState, setScalingState] = useState(0);
-  const [yearsArray, setYearsArrayState] = useState([]);
-  const [clickedYear, setClickedYear] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState();
-  const timelineData = APIFetch();
+	const [scalingState, setScalingState] = useState(0);
+	const [yearsArray, setYearsArrayState] = useState([]);
+	const [clickedYear, setClickedYear] = useState('onload');
+	const [selectedCategory, setSelectedCategory] = useState('AllCategories');
+	const timelineData = APIFetch();
 
   useEffect(() => {
     timelineData.then((data) => {
@@ -40,30 +40,29 @@ const DefaultLayout = () => {
 
   const num = numbers[scalingState];
 
-  return (
-    <div>
-      <div
-        className={style.background}
-        style={{ transform: `scale(${num})` }}
-      ></div>
-      <div className={style.container}>
-        <div className={style.timeline}>
-          <div className={style.buttonArrowUp}>
-            <ButtonArrowSmall />
-          </div>
-          {yearsArray.map((item, index) => (
-            <button
-              key={index}
-              className={style.buttonYear}
-              onClick={() => {
-                toggle();
-                setClickedYear(item);
-                console.log(clickedYear);
-              }}
-            >
-              {item}
-            </button>
-          ))}
+	return (
+		<div>
+			<div
+				className={style.background}
+				style={{ transform: `scale(${num})` }}
+			></div>
+			<div className={style.container}>
+				<div className={style.timeline}>
+					<div className={style.buttonArrowUp}>
+						<ButtonArrowSmall />
+					</div>
+					{yearsArray.map((item, index) => (
+						<button
+							key={index}
+							className={style.buttonYear}
+							onClick={() => {
+								toggle();
+								setClickedYear(item);
+							}}
+						>
+							{item}
+						</button>
+					))}
 
           <div className={style.buttonArrowDown}>
             <ButtonArrowSmall />
