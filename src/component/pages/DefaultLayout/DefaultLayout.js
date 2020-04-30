@@ -92,7 +92,7 @@ const backgrounds = {
 
 const DefaultLayout = () => {
   const [yearsArray, setYearsArrayState] = useState([]);
-  const [clickedYear, setClickedYear] = useState('');
+  const [clickedYear, setClickedYear] = useState('onload');
   const timelineData = APIFetch();
 
   const yearsToRender = Object.entries(backgrounds).filter(

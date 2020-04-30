@@ -8,34 +8,7 @@ const InformationBoxLayout = ({ clickedYear }) => {
 	const [activeYear, setActiveYear] = useState([]);
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [chunksAmountInArray, setChunkAmountInArray] = useState(0);
-
-	const previousChunk = () => {
-		let index = activeIndex;
-		let length = chunksAmountInArray;
-
-		if (index < 1) {
-			index = length - 1;
-		} else {
-			index--;
-		}
-		setActiveIndex(index);
-		console.log('state set to', activeIndex);
-	};
-
-	const nextChunk = () => {
-		let index = activeIndex;
-		let length = chunksAmountInArray;
-
-		console.log('hey');
-		console.log(activeIndex);
-		if (index === length - 1) {
-			index = 0;
-		} else {
-			index++;
-		}
-		setActiveIndex(index);
-		console.log('state set to', activeIndex);
-	};
+	const [chunkYearArray, setChunkYearArray] = useState([]);
 
 	useEffect(() => {
 		axios
@@ -47,71 +20,112 @@ const InformationBoxLayout = ({ clickedYear }) => {
 			);
 	}, [clickedYear]);
 
-	console.log('active year is', activeYear);
+	const previousChunk = () => {
+		let index = activeIndex;
+		let length = chunksAmountInArray;
+
+		if (index === 0) {
+			index = 0;
+		} else if (index < 1) {
+			index = length - 1;
+		} else {
+			index--;
+		}
+		setActiveIndex(index);
+	};
+
+	const nextChunk = () => {
+		let index = activeIndex;
+		let length = chunksAmountInArray;
+
+		if (index === length - 1) {
+			index = 0;
+		} else {
+			index++;
+		}
+		setActiveIndex(index);
+	};
+
+	const arrayChunk = (array, chunkSize) => {
+		let amountOfChunks = 0;
+		const chunkedArray = [];
+		let clonedArray = [...array];
+		if (array.length > chunkSize) {
+			const splitPieces = Math.ceil(clonedArray.length / chunkSize);
+			for (let i = 0; i < splitPieces; i++) {
+				chunkedArray.push(clonedArray.splice(0, chunkSize));
+				amountOfChunks++;
+			}
+
+			setChunkAmountInArray(amountOfChunks);
+			return chunkedArray;
+		} else {
+			setChunkAmountInArray(0);
+			return array;
+		}
+	};
 
 	useEffect(() => {
-		const arrayChunk = (array, chunkSize) => {
-			if (array.length > 6) {
-				const chunkedArray = [];
-				let clonedArray = [...array];
-				let amountOfChunks = 0;
-				const splitPieces = Math.ceil(clonedArray.length / chunkSize);
-				for (let i = 0; i < splitPieces; i++) {
-					chunkedArray.push(clonedArray.splice(0, chunkSize));
-					amountOfChunks++;
-					console.log(amountOfChunks);
-				}
-				setChunkAmountInArray(amountOfChunks);
-				return chunkedArray;
-			} else {
-				return array;
-			}
-		};
-	}, []);
-
-	const chunkYearArray = activeYear;
+		setChunkYearArray(arrayChunk(activeYear, 6));
+		setActiveIndex(0);
+	}, [activeYear]);
 
 	return (
 		<div className={style.infoBoxLayoutStyle}>
-			<button className={style.leftArrow} onClick={previousChunk}>
-				<img src={arrowButton} alt='previous-page-button' />
-			</button>
+			{chunksAmountInArray > 0 ? (
+				<button className={style.leftArrow} onClick={previousChunk}>
+					<img src={arrowButton} alt='previous-page-button' />
+				</button>
+			) : (
+				<button className={style.leftArrowHidden} onClick={previousChunk}>
+					<img src={arrowButton} alt='previous-page-button' />
+				</button>
+			)}
 
 			{chunksAmountInArray > 0
 				? chunkYearArray[activeIndex].map((component, index) => {
 						return (
 							<div className={style.informationBoxLayer}>
-							<InformationBox
-								key={index}
-								title={component.title}
-								text={component.info}
-								category={component.category}
-								link={component.link}
-							/>
+								<InformationBox
+									key={index}
+									title={component.title}
+									text={component.info}
+									category={component.category}
+									link={component.link}
+								/>
 							</div>
 						);
 				  })
-				: chunkYearArray.map((component, index) => {
+				: activeYear.map((component, index) => {
 						return (
 							<div className={style.informationBoxLayer}>
-							<InformationBox
-								key={index}
-								title={component.title}
-								text={component.info}
-								category={component.category}
-								link={component.link}
-	
-							/>
+								<InformationBox
+									key={index}
+									title={component.title}
+									text={component.info}
+									category={component.category}
+									link={component.link}
+								/>
 							</div>
 						);
 				  })}
-			<button className={style.rightArrow} onClick={nextChunk}>
-				<img
-					src={arrowButton}
-					alt='next-page-button'
-					className={style.rotateArrowRight}
-				/>
-			</button>
+			{chunksAmountInArray > 0 ? (
+				<button className={style.rightArrow} onClick={nextChunk}>
+					<img
+						src={arrowButton}
+						alt='next-page-button'
+						className={style.rotateArrowRight}
+					/>
+				</button>
+			) : (
+				<button className={style.rightArrowHidden} onClick={nextChunk}>
+					<img
+						src={arrowButton}
+						alt='next-page-button'
+						className={style.rotateArrowRight}
+					/>
+				</button>
+			)}
 		</div>
 	);
 };
