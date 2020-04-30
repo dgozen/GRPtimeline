@@ -37,7 +37,7 @@ const InformationBox = (props) => {
 	return (
 		<div className={style.boxStyle} style={{ backgroundColor: categoryColors }}>
 			<h2>{props.title}</h2>
-			<div style={{ overflow:'scroll' }}>
+			<div style={{ overflow:'auto' }}>
 			<p>{props.text}</p></div>
 			<div className={style.linkPlacement}>
 				<ReadMoreLink link={props.link} />
