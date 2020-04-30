@@ -8,7 +8,7 @@ const Filter = () => {
     if (checked) {
       myArray.push(id);
     } else if (!checked) {
-        myArray.pop(id);
+        myArray.splice( myArray.indexOf(id), 1 );
     }
 
     console.log(myArray);
