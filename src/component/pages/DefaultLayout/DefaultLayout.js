@@ -14,7 +14,7 @@ const DefaultLayout = () => {
 	const [scalingState, setScalingState] = useState(0);
 	const [yearsArray, setYearsArrayState] = useState([]);
 	const [clickedYear, setClickedYear] = useState('onload');
-	const [selectedCategory, setSelectedCategory] = useState('AllCategories');
+	const [selectedCategory, setSelectedCategory] = useState([]);
 	const timelineData = APIFetch();
 
 	useEffect(() => {
@@ -71,9 +71,16 @@ const DefaultLayout = () => {
 				<div className={style.header}>
 					<Header />
 				</div>
-				<InformationBoxLayout clickedYear={clickedYear} />
+				<InformationBoxLayout
+					clickedYear={clickedYear}
+					selectedCategory={selectedCategory}
+					setSelectedCategory={setSelectedCategory}
+				/>
 				<div className={style.filter}>
-					<Filter />
+					<Filter
+						selectedCategory={selectedCategory}
+						setSelectedCategory={setSelectedCategory}
+					/>
 				</div>
 				<div className={style.addbutton}>
 					<AddButton />

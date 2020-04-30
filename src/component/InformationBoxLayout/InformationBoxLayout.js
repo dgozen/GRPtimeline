@@ -4,7 +4,11 @@ import style from './InformationBoxLayout.module.css';
 import InformationBox from '../../component/InformationBox/InformationBox';
 import arrowButton from '../../assets/arrow-button.svg';
 
-const InformationBoxLayout = ({ clickedYear }) => {
+const InformationBoxLayout = ({
+	clickedYear,
+	selectedCategory,
+	setSelectedCategory,
+}) => {
 	const [activeYear, setActiveYear] = useState([]);
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [chunksAmountInArray, setChunkAmountInArray] = useState(0);
