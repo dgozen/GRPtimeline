@@ -2,8 +2,16 @@ import React, { useState } from "react";
 import style from "./Filter.module.css";
 
 const Filter = () => {
-  const selectedCategoryArray = () => {
-    // filter through input boxes, return ID's if selectedCategory is true
+  // filter through input boxes, return ID's if selectedCategory is true
+  const myArray = [];
+  const selectedCategoryArray = (checked, id) => {
+    if (checked) {
+      myArray.push(id);
+    } else if (!checked) {
+        myArray.pop(id);
+    }
+
+    console.log(myArray);
   };
 
   const filterList = [
@@ -41,7 +49,14 @@ const Filter = () => {
     <div className={style.filterStyle}>
       {filterList.map((data) => (
         <div>
-          <input type="checkbox" id={data.id}></input>{" "}
+          <input
+            onChange={(event) => {
+              let checked = event.target.checked;
+              selectedCategoryArray(checked, data.id);
+            }}
+            type="checkbox"
+            id={data.id}
+          ></input>{" "}
           <label for={data.id}>{data.label}</label>
         </div>
       ))}
