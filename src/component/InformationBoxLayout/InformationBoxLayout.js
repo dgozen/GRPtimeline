@@ -32,7 +32,6 @@ const InformationBoxLayout = ({ clickedYear }) => {
 			index--;
 		}
 		setActiveIndex(index);
-		console.log('active index no is: ', activeIndex);
 	};
 
 	const nextChunk = () => {
@@ -45,7 +44,6 @@ const InformationBoxLayout = ({ clickedYear }) => {
 			index++;
 		}
 		setActiveIndex(index);
-		console.log('active index no is: ', activeIndex);
 	};
 
 	const arrayChunk = (array, chunkSize) => {
@@ -69,8 +67,9 @@ const InformationBoxLayout = ({ clickedYear }) => {
 
 	useEffect(() => {
 		setChunkYearArray(arrayChunk(activeYear, 6));
+		setActiveIndex(0);
 	}, [activeYear]);
-	console.log('amount of chunks', chunksAmountInArray);
+
 	return (
 		<div className={style.infoBoxLayoutStyle}>
 			{chunksAmountInArray > 0 ? (
