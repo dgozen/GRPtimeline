@@ -86,33 +86,35 @@ const InformationBoxLayout = ({
 				</button>
 			)}
 
-			{chunksAmountInArray > 0
-				? chunkYearArray[activeIndex].map((component, index) => {
-						return (
-							<div className={style.informationBoxLayer}>
-								<InformationBox
-									key={index}
-									title={component.title}
-									text={component.info}
-									category={component.category}
-									link={component.link}
-								/>
-							</div>
-						);
-				  })
-				: activeYear.map((component, index) => {
-						return (
-							<div className={style.informationBoxLayer}>
-								<InformationBox
-									key={index}
-									title={component.title}
-									text={component.info}
-									category={component.category}
-									link={component.link}
-								/>
-							</div>
-						);
-				  })}
+			{selectedCategory[0] === 'AllCategories'
+				? chunksAmountInArray > 0
+					? chunkYearArray[activeIndex].map((component, index) => {
+							return (
+								<div className={style.informationBoxLayer}>
+									<InformationBox
+										key={index}
+										title={component.title}
+										text={component.info}
+										category={component.category}
+										link={component.link}
+									/>
+								</div>
+							);
+					  })
+					: activeYear.map((component, index) => {
+							return (
+								<div className={style.informationBoxLayer}>
+									<InformationBox
+										key={index}
+										title={component.title}
+										text={component.info}
+										category={component.category}
+										link={component.link}
+									/>
+								</div>
+							);
+					  })
+				: null}
 			{chunksAmountInArray > 0 ? (
 				<button className={style.rightArrow} onClick={nextChunk}>
 					<img
