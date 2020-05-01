@@ -37,12 +37,15 @@ const InformationBox = (props) => {
 	return (
 		<div className={style.boxStyle} style={{ backgroundColor: categoryColors }}>
 			<h2>{props.title}</h2>
-			<p>{props.text}</p>
+			<div style={{ overflow:'auto' }}>
+			<p>{props.text}</p></div>
 			<div className={style.linkPlacement}>
 				<ReadMoreLink link={props.link} />
 			</div>
 		</div>
 	);
 };
+
+
 
 export default InformationBox;

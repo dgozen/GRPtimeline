@@ -218,6 +218,7 @@ const backgrounds = {
 const DefaultLayout = () => {
   const [yearsArray, setYearsArrayState] = useState([]);
   const [clickedYear, setClickedYear] = useState('onload');
+  const [selectedCategory, setSelectedCategory] = useState();
   const timelineData = APIFetch();
 
   const yearsToRender = Object.entries(backgrounds).filter(
@@ -293,11 +294,18 @@ const DefaultLayout = () => {
         <div className={style.header}>
           <Header />
         </div>
-        {/* <div className={style.informationBoxLayout}>
-          <InformationBoxLayout clickedYear={clickedYear} />
-        </div> */}
+        <div className={style.informationLayout}>
+          <InformationBoxLayout
+            clickedYear={clickedYear}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+        </div>
         <div className={style.filter}>
-          <Filter />
+          <Filter
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
         </div>
         <div className={style.addbutton}>
           <AddButton />
