@@ -16,12 +16,9 @@
 
 
 .background {
-	background-position: center, center;
-    transition: transform 1.2s;
     position: absolute;
-    width: 150%;
-    top: -95%;
-    left: -65%;
+    animation: slide-tr 1s ease-in;
+    
 }
 
 .timeline {
@@ -46,11 +43,12 @@
     justify-self: center;
     height: 25px;
     width: 25px;
+   
     
 }
 
 .buttonArrowDown {
-    transform: rotate(270deg);
+    transform: rotate(230deg);
     align-self: center;
     justify-self: center;
     height: 25px;
@@ -84,3 +82,31 @@
     align-self: center;
     justify-self: center;
 }
+
+
+  .slide-tr {
+	-webkit-animation: slide-tr 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-tr 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-tr {
+    0% {
+      -webkit-transform: translateY(-100vh) translateX(-30vw);
+              transform: translateY(-100vh) translateX(-30vw);
+    }
+    100% {
+      -webkit-transform: translateY(0) translateX(0);
+              transform: translateY(0) translateX(0);
+    }
+  }
+  @keyframes slide-tr {
+    0% {
+      -webkit-transform: translateY(-100vh) translateX(-30vw);
+              transform: translateY(-100vh) translateX(-30vw);
+    }
+    100% {
+      -webkit-transform: translateY(0) translateX(0);
+              transform: translateY(0) translateX(0);
+    }
+  }
+  
