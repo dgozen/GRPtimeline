@@ -4,11 +4,7 @@ import style from './InformationBoxLayout.module.css';
 import InformationBox from '../../component/InformationBox/InformationBox';
 import arrowButton from '../../assets/arrow-button.svg';
 
-const InformationBoxLayout = ({
-	clickedYear,
-	selectedCategory,
-	setSelectedCategory,
-}) => {
+const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 	const [activeYear, setActiveYear] = useState([]);
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [chunksAmountInArray, setChunkAmountInArray] = useState(0);
@@ -24,16 +20,49 @@ const InformationBoxLayout = ({
 			);
 	}, [clickedYear]);
 
-	const filterCategory = (array) => {
-		const category = selectedCategory.toString().toLowerCase();
-		console.log('category is', category);
-		console.log('array', array);
+	const filterChecker = (checkArray, checkStringCategory) => {
+		let checkResponse = false;
 
-		array = array.filter((item) => item.category.includes(category));
-		console.log('array', array);
+		for (let item of checkArray) {
+			if (checkStringCategory.includes(item.toLowerCase())) {
+				checkResponse = true;
+				break;
+			}
+		}
+		return checkResponse;
 	};
 
-	filterCategory(activeYear);
+	const filterCategory = (array) => {
+		const category = selectedCategory;
+		array = array.filter((item) => filterChecker(category, item.category));
+		return array;
+	};
+
+	let filteredCategories = filterCategory(activeYear);
+
+	const arrayChunk = (array, chunkSize) => {
+		let amountOfChunks = 0;
+		const chunkedArray = [];
+		let clonedArray = [...array];
+		if (array.length > chunkSize) {
+			const splitPieces = Math.ceil(clonedArray.length / chunkSize);
+			for (let i = 0; i < splitPieces; i++) {
+				chunkedArray.push(clonedArray.splice(0, chunkSize));
+				amountOfChunks++;
+			}
+
+			setChunkAmountInArray(amountOfChunks);
+			return chunkedArray;
+		} else {
+			setChunkAmountInArray(0);
+			return array;
+		}
+	};
+
+	useEffect(() => {
+		setChunkYearArray(arrayChunk(activeYear, 6));
+		setActiveIndex(0);
+	}, [activeYear]);
 
 	const previousChunk = () => {
 		let index = activeIndex;
@@ -60,30 +89,6 @@ const InformationBoxLayout = ({
 		}
 		setActiveIndex(index);
 	};
-
-	const arrayChunk = (array, chunkSize) => {
-		let amountOfChunks = 0;
-		const chunkedArray = [];
-		let clonedArray = [...array];
-		if (array.length > chunkSize) {
-			const splitPieces = Math.ceil(clonedArray.length / chunkSize);
-			for (let i = 0; i < splitPieces; i++) {
-				chunkedArray.push(clonedArray.splice(0, chunkSize));
-				amountOfChunks++;
-			}
-
-			setChunkAmountInArray(amountOfChunks);
-			return chunkedArray;
-		} else {
-			setChunkAmountInArray(0);
-			return array;
-		}
-	};
-
-	useEffect(() => {
-		setChunkYearArray(arrayChunk(activeYear, 6));
-		setActiveIndex(0);
-	}, [activeYear]);
 
 	return (
 		<div className={style.infoBoxLayoutStyle}>
@@ -125,7 +130,20 @@ const InformationBoxLayout = ({
 								</div>
 							);
 					  })
-				: null}
+				: filteredCategories.map((component, index) => {
+						return (
+							<div className={style.informationBoxLayer}>
+								<InformationBox
+									key={index}
+									title={component.title}
+									text={component.info}
+									category={component.category}
+									link={component.link}
+								/>
+							</div>
+						);
+				  })}
+
 			{chunksAmountInArray > 0 ? (
 				<button className={style.rightArrow} onClick={nextChunk}>
 					<img
