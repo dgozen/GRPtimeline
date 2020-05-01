@@ -205,13 +205,13 @@ const backgrounds = {
     year: y2018,
     width: '112vw',
     left: '-37vw',
-    top: '-71vh',
+    top: '-72vh',
   },
   2019: {
     year: y2019,
     width: '113vw',
     left: '-38vw',
-    top: '-64vh',
+    top: '-66vh',
   },
 };
 
@@ -294,13 +294,13 @@ const DefaultLayout = () => {
         <div className={style.header}>
           <Header />
         </div>
-        <div className={style.informationLayout}>
+        {/* <div className={style.informationLayout}>
           <InformationBoxLayout
             clickedYear={clickedYear}
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
           />
-        </div>
+        </div> */}
         <div className={style.filter}>
           <Filter
             selectedCategory={selectedCategory}
