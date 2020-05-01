@@ -2,7 +2,7 @@
 
 .container {
     display: grid;
-    grid-template-rows: 90vh 10vh;
+    grid-template-rows: 10vh, 70vh 10vh;
     grid-template-columns: 10vw 1fr;
     position: relative;
     
@@ -27,7 +27,7 @@
 
 .timeline {
     grid-column-start: 1;
-    grid-row-start: 1;
+    grid-row-start: 2;
     position: relative;
     align-self: center;
     display: grid;
@@ -75,4 +75,10 @@
 .addbutton {
     grid-column-start: 3;
     grid-row-start: 2;
+}
+
+.informationBoxLayout {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    align-self: center;
 }
