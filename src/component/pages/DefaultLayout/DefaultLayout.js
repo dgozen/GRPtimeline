@@ -7,6 +7,7 @@ import InformationBoxLayout from '../../InformationBoxLayout/InformationBoxLayou
 import Filter from '../../Filter/Filter';
 import APIFetch from '../../APIFetch/APIFetch';
 import AddButton from '../../Buttons/AddButton/AddButton';
+import Form from '../../Form/Form';
 
 const numbers = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5];
 
@@ -78,6 +79,9 @@ const DefaultLayout = () => {
 				</div>
 				<div className={style.addbutton}>
 					<AddButton />
+				</div>
+				<div className={style.form}>
+					<Form />
 				</div>
 			</div>
 		</div>

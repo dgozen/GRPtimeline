@@ -1,0 +1,101 @@
+.formContainer {
+    width: 582.05px;
+    height: 630px;
+    background: #0071B8;
+    color: #FFFFFF;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10%;
+    padding: 30px;
+    box-sizing: border-box;
+    font-family: arial;
+    text-align: center;
+
+}
+
+.formLayout {
+    display: inline-grid;
+    grid-template-columns: 20vw 20vw;
+    grid-template-rows: 10vh 10vh 40vh 10vh;
+    
+    
+
+
+}
+
+.year {
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 28px;
+display: flex;
+flex-direction: column;
+place-items: flex-start;
+
+}
+
+.title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    flex-direction: column;
+    place-items: flex-start;
+
+}
+
+.description {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    grid-column-start: 1;
+    grid-row-start: 3;
+    flex-direction: column;
+    place-items: flex-start;
+
+}
+
+input {
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin: 2px;
+   
+}
+
+.radioButtons {
+    display: flex;
+    flex-direction: column;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    place-items: baseline;
+
+}
+
+.radioButtons > label > input {
+    height: 20px;
+}
+
+.buttonContainer {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+}
+.button {
+    width: 150px;
+    height: 60px;
+    font-family: var(--p-font);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 34px;
+    justify-content: center;
+    color: #FFFFFF;
+}

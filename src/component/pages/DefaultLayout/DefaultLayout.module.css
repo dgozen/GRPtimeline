@@ -77,3 +77,11 @@
     grid-column-start: 3;
     grid-row-start: 2;
 }
+
+.form {
+    position: absolute;
+    left: 400px;
+    top: 100px;
+    z-index: 999;
+    
+}
