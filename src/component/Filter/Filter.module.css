@@ -1,82 +1,82 @@
 .filterStyle {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
 /* First I'm hiding the default buttons */
 .filterStyle input {
-  display: none;
+	display: none;
 }
 
 /* Adds style to the labels */
-[type="radio"]:checked + label,
-[type="radio"]:not(:checked) + label {
-  position: relative;
-  padding-top: 8px;
-  padding-left: 40px;
-  cursor: pointer;
-  display: inline-block;
+[type='checkbox']:checked + label,
+[type='checkbox']:not(:checked) + label {
+	position: relative;
+	padding-top: 8px;
+	padding-left: 40px;
+	cursor: pointer;
+	display: inline-block;
 }
 
 /* Adds style of the new radio buttons background */
-[type="radio"]:checked + label:before,
-[type="radio"]:not(:checked) + label:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 30px;
-  height: 30px;
-  border: 1px solid #58595b;
-  border-radius: 100%;
+[type='checkbox']:checked + label:before,
+[type='checkbox']:not(:checked) + label:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #58595b;
+	border-radius: 100%;
 }
 
 /* Adds styling of the selected category */
-.filterStyle [type="radio"]:checked + label:after,
-.filterStyle [type="radio"]:not(:checked) + label:after {
-  content: "";
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  border-radius: 100%;
+.filterStyle [type='checkbox']:checked + label:after,
+.filterStyle [type='checkbox']:not(:checked) + label:after {
+	content: '';
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 6px;
+	left: 6px;
+	border-radius: 100%;
 }
 
-.filterStyle [id="AllCategories"]:checked + label:after,
-.filterStyle [id="AllCategories"]:not(:checked) + label:after {
-  background: #000;
+.filterStyle [id='AllCategories']:checked + label:after,
+.filterStyle [id='AllCategories']:not(:checked) + label:after {
+	background: #000;
 }
 
-.filterStyle [id="Publication"]:checked + label:after,
-.filterStyle [id="Publication"]:not(:checked) + label:after {
-  background: #33622a;
+.filterStyle [id='Publication']:checked + label:after,
+.filterStyle [id='Publication']:not(:checked) + label:after {
+	background: #33622a;
 }
 
-.filterStyle [id="Trend"]:checked + label:after,
-.filterStyle [id="Trend"]:not(:checked) + label:after {
-  background: #49853e;
+.filterStyle [id='Trend']:checked + label:after,
+.filterStyle [id='Trend']:not(:checked) + label:after {
+	background: #49853e;
 }
 
-.filterStyle [id="Event"]:checked + label:after,
-.filterStyle [id="Event"]:not(:checked) + label:after {
-  background: #0071b8;
+.filterStyle [id='Event']:checked + label:after,
+.filterStyle [id='Event']:not(:checked) + label:after {
+	background: #0071b8;
 }
 
-.filterStyle [id="Program"]:checked + label:after,
-.filterStyle [id="Program"]:not(:checked) + label:after {
-  background: #009ede;
+.filterStyle [id='Program']:checked + label:after,
+.filterStyle [id='Program']:not(:checked) + label:after {
+	background: #009ede;
 }
 
-.filterStyle [id="Framework"]:checked + label:after,
-.filterStyle [id="Framework"]:not(:checked) + label:after {
-  background: #58595b;
+.filterStyle [id='Framework']:checked + label:after,
+.filterStyle [id='Framework']:not(:checked) + label:after {
+	background: #58595b;
 }
 
-[type="radio"]:not(:checked) + label:after {
-  opacity: 0;
+[type='checkbox']:not(:checked) + label:after {
+	opacity: 0;
 }
-[type="radio"]:checked + label:after {
-  opacity: 1;
+[type='checkbox']:checked + label:after {
+	opacity: 1;
 }

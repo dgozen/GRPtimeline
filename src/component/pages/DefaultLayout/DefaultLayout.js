@@ -14,8 +14,8 @@ const numbers = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5];
 const DefaultLayout = () => {
 	const [scalingState, setScalingState] = useState(0);
 	const [yearsArray, setYearsArrayState] = useState([]);
-	const [clickedYear, setClickedYear] = useState('');
-	const [selectedCategory, setSelectedCategory] = useState('AllCategories');
+	const [clickedYear, setClickedYear] = useState('onload');
+	const [selectedCategory, setSelectedCategory] = useState([]);
 	const timelineData = APIFetch();
 
 	useEffect(() => {
@@ -59,7 +59,6 @@ const DefaultLayout = () => {
 							onClick={() => {
 								toggle();
 								setClickedYear(item);
-								console.log(clickedYear);
 							}}
 						>
 							{item}
@@ -73,9 +72,18 @@ const DefaultLayout = () => {
 				<div className={style.header}>
 					<Header />
 				</div>
-				<InformationBoxLayout clickedYear={clickedYear} />
+				<div className={style.informationLayout}>
+				<InformationBoxLayout
+					clickedYear={clickedYear}
+					selectedCategory={selectedCategory}
+					setSelectedCategory={setSelectedCategory}
+				/>
+				</div>
 				<div className={style.filter}>
-					<Filter />
+					<Filter
+						selectedCategory={selectedCategory}
+						setSelectedCategory={setSelectedCategory}
+					/>
 				</div>
 				<div className={style.addbutton}>
 					<AddButton />
