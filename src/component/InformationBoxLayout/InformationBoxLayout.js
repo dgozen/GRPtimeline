@@ -24,6 +24,17 @@ const InformationBoxLayout = ({
 			);
 	}, [clickedYear]);
 
+	const filterCategory = (array) => {
+		const category = selectedCategory.toString().toLowerCase();
+		console.log('category is', category);
+		console.log('array', array);
+
+		array = array.filter((item) => item.category.includes(category));
+		console.log('array', array);
+	};
+
+	filterCategory(activeYear);
+
 	const previousChunk = () => {
 		let index = activeIndex;
 		let length = chunksAmountInArray;
