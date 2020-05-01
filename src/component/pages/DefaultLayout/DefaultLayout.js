@@ -33,35 +33,6 @@ import y2017 from '../../../assets/2017.svg';
 import y2018 from '../../../assets/2018.svg';
 import y2019 from '../../../assets/2019.svg';
 
-// ToDo:
-
-// - Export each layer as an SVG with the year it’s representing as name and place in assets folder. Default color: white
-
-// - Place all images in an array.
-
-// - Use inline styling and if else statements to decide which background to show onClick on each year.
-
-// let background=” ”
-
-// backgroundArray = [
-// img(src=””),
-// img(),
-// img(),
-// ]
-
-// const backroundHandler = ()
-//  => {
-// if(year state === 1999) {
-// background = [0, 9]
-// }};
-
-// background: background onClick=backgroundHandler
-
-// CSS:
-
-// - fix the size and placement of the images (absolut positioning, z-index)
-
-// -  Look up how to change colors on SVG:s
 const backgrounds = {
   1950: {
     year: y1950,
@@ -218,26 +189,15 @@ const backgrounds = {
 const DefaultLayout = () => {
   const [yearsArray, setYearsArrayState] = useState([]);
   const [clickedYear, setClickedYear] = useState('onload');
-  const [selectedCategory, setSelectedCategory] = useState();
+  const [selectedCategory, setSelectedCategory] = useState([]);
   const timelineData = APIFetch();
 
+  // this function yearsToRender filters the images on the keys < or = clickedYear
+  // and transforms the key and clickedYear from string to integer using parseInt()
   const yearsToRender = Object.entries(backgrounds).filter(
     ([key]) => parseInt(key) <= parseInt(clickedYear)
   );
 
-  // backgroundArray;
-
-  // if (clickedYear > backgroundsToDisplay) {
-  //   backgroundsToDisplay = backgroundsToDisplay++;
-  // } else {
-  //   backgroundsToDisplay = backgroundsToDisplay--;
-  // }
-
-  // console.log('This is the clickedYear!', clickedYear);
-
-  // console.log('this is the Object!!!!!', Object.values(backgrounds));
-
-  console.log(clickedYear);
   useEffect(() => {
     timelineData.then((data) => {
       let yearsArrays = [];
@@ -257,19 +217,19 @@ const DefaultLayout = () => {
 
   return (
     <div>
-      {clickedYear !== '' &&
-        yearsToRender.map(([, yearToRender]) => (
-          <img
-            className={style.background}
-            style={{
-              width: yearToRender.width,
-              left: yearToRender.left,
-              top: yearToRender.top,
-            }}
-            src={yearToRender.year}
-            alt=""
-          />
-        ))}
+      {/* this function maps through the yearsToRender function, and renders all images < = to clickedYear  */}
+      {yearsToRender.map(([, yearToRender]) => (
+        <img
+          className={style.background}
+          style={{
+            width: yearToRender.width,
+            left: yearToRender.left,
+            top: yearToRender.top,
+          }}
+          src={yearToRender.year}
+          alt=""
+        />
+      ))}
       <div className={style.container}>
         <div className={style.timeline}>
           <div className={style.buttonArrowUp}>
@@ -294,13 +254,13 @@ const DefaultLayout = () => {
         <div className={style.header}>
           <Header />
         </div>
-        {/* <div className={style.informationLayout}>
+        <div className={style.informationLayout}>
           <InformationBoxLayout
             clickedYear={clickedYear}
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
           />
-        </div> */}
+        </div>
         <div className={style.filter}>
           <Filter
             selectedCategory={selectedCategory}
