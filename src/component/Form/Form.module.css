@@ -1,6 +1,6 @@
 .formContainer {
-    width: 582.05px;
-    height: 630px;
+    width: 600px;
+    height: 610px;
     background: #0071B8;
     color: #FFFFFF;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25);
@@ -14,18 +14,15 @@
 
 .formLayout {
     display: inline-grid;
-    grid-template-columns: 20vw 20vw;
+    grid-template-columns: 25vw 10vw;
     grid-template-rows: 10vh 10vh 40vh 10vh;
     
-    
-
-
 }
 
 .year {
 font-style: normal;
 font-weight: normal;
-font-size: 24px;
+font-size: 20px;
 line-height: 28px;
 display: flex;
 flex-direction: column;
@@ -36,7 +33,7 @@ place-items: flex-start;
 .title {
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 28px;
     display: flex;
     flex-direction: column;
@@ -47,22 +44,39 @@ place-items: flex-start;
 .description {
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 28px;
     display: flex;
-    grid-column-start: 1;
+    grid-column: span 2;
     grid-row-start: 3;
     flex-direction: column;
     place-items: flex-start;
 
 }
 
+.yearInput { 
+    height: 50px;
+    width: 100px;
+}
+
+.titleInput {
+    height: 60px;
+    width: 180px;
+}
+
+.descriptionInput {
+    height: 220px;
+    width: 400px;
+}
+
 input {
     background: #FFFFFF;
     border-radius: 10px;
-    margin: 2px;
+    margin: 7px;
    
 }
+
+
 
 .radioButtons {
     display: flex;

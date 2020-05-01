@@ -6,13 +6,15 @@ const Form = () => {
         <div className={style.formContainer}>
         <form className={style.formLayout}>
             <div className={style.year}>Year:
-                <input type="text" id={style.inputText}></input>
+                <input type="text" className={style.yearInput}></input>
             </div> 
+
             <div className={style.title}>Title:
-            <input type="text"></input>
+            <input type="text" className={style.titleInput}></input>
             </div> 
+
             <div className={style.description}>Description:
-            <input type="text"></input>
+            <input type="text" className={style.descriptionInput}></input>
             </div>
 
             <div className={style.radioButtons}>
