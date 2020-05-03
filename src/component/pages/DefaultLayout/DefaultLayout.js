@@ -72,10 +72,12 @@ const DefaultLayout = () => {
 					<Header />
 				</div>
 				<div className={style.informationLayout}>
-					<InformationBoxLayout
-						clickedYear={clickedYear}
-						selectedCategory={selectedCategory}
-					/>
+					{clickedYear === 'onload' ? null : (
+						<InformationBoxLayout
+							clickedYear={clickedYear}
+							selectedCategory={selectedCategory}
+						/>
+					)}
 				</div>
 				<div className={style.filter}>
 					<Filter
