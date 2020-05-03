@@ -1,7 +1,6 @@
 .boxStyle {
 	display: grid;
 	grid-template-rows: auto auto 25%;
-	/* 15% 60% 25%; */
 	width: 260px;
 	height: 200px;
 	background-color: var(--color-sky);
@@ -11,7 +10,6 @@
 	font-family: var(--h2-font);
 	padding: 30px;
 	margin: 0;
-	
 }
 
 h2 {
@@ -22,9 +20,24 @@ h2 {
 p {
 	margin-top: 0;
 	font-size: var(--p-size);
+	overflow: auto;
 }
 
 .linkPlacement {
 	justify-self: center;
 	align-self: center;
+}
+
+p::-webkit-scrollbar {
+	width: 12px;
+}
+
+p::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+}
+
+p::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
