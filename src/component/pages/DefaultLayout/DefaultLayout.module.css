@@ -91,4 +91,17 @@
     left: 400px;
     top: 100px;
     z-index: 999;
+	animation: slide-left 0.5s both;
+    
 }
+
+@keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(-200px);
+              transform: translateX(-200px);
+    }
+  }

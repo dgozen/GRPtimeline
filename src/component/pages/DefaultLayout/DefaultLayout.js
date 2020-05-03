@@ -41,6 +41,15 @@ const DefaultLayout = () => {
 
 	const num = numbers[scalingState];
 
+	// Add button
+	const [showForm, setShowForm] = useState(false);
+
+
+ 	const clickHandler = () => {
+	setShowForm(!showForm);
+	
+  	}
+
 	return (
 		<div>
 			<div
@@ -85,12 +94,16 @@ const DefaultLayout = () => {
 						setSelectedCategory={setSelectedCategory}
 					/>
 				</div>
-				<div className={style.addbutton}>
+				<div className={style.addbutton} onClick={() => clickHandler()}>
 					<AddButton />
+					
 				</div>
 				<div className={style.form}>
-					<Form />
-				</div>
+						{ showForm ?
+             			 <Form />
+              			: setShowForm
+             			}
+					</div>
 			</div>
 		</div>
 	);

@@ -3,10 +3,11 @@ import style from './Form.module.css';
 
 const Form = () => {
     return (
+        <div id="container">
         <div className={style.formContainer}>
         <form className={style.formLayout}>
             <div className={style.year}>Year:
-                <input type="text" className={style.yearInput}></input>
+                <input type="number" className={style.yearInput}></input>
             </div> 
 
             <div className={style.title}>Title:
@@ -14,7 +15,7 @@ const Form = () => {
             </div> 
 
             <div className={style.description}>Description:
-            <input type="text" className={style.descriptionInput}></input>
+            <textarea className={style.descriptionInput}></textarea>
             </div>
 
             <div className={style.radioButtons}>
@@ -29,6 +30,7 @@ const Form = () => {
             </div>
             
         </form>
+        </div>
         </div>
     )
 }

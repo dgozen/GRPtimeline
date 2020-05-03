@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './AddButton.module.css';
 
-const AddButton = (props) => {
-    return (
-            <a href={props.link} className={style.buttonStyle}>+
-		</a>
+
+const AddButton = () => {
+  return (
+        <div>
     
+            <button className={style.buttonStyle}>+
+		        </button>
+
+        </div>
     )
 
 }
