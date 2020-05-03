@@ -100,7 +100,7 @@ const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 
 	return (
 		<div className={style.infoBoxLayoutStyle}>
-			{chunksAmountInArray > 0 ? (
+			{chunksAmountInArray > 0 || filteredCategories.length > 6 ? (
 				<button className={style.leftArrow} onClick={previousChunk}>
 					<img src={arrowButton} alt='previous-page-button' />
 				</button>
@@ -152,7 +152,7 @@ const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 						);
 				  })}
 
-			{chunksAmountInArray > 0 ? (
+			{chunksAmountInArray > 0 || filteredCategories.length > 6 ? (
 				<button className={style.rightArrow} onClick={nextChunk}>
 					<img
 						src={arrowButton}

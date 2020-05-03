@@ -1,7 +1,6 @@
 .boxStyle {
 	display: grid;
 	grid-template-rows: auto auto 25%;
-	/* 15% 60% 25%; */
 	width: 260px;
 	height: 200px;
 	background-color: var(--color-sky);
@@ -11,7 +10,6 @@
 	font-family: var(--h2-font);
 	padding: 30px;
 	margin: 0;
-	
 }
 
 h2 {
