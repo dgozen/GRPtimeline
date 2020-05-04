@@ -1,0 +1,119 @@
+.formContainer {
+    width: 600px;
+    height: 610px;
+    background: #0071B8;
+    color: #FFFFFF;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10%;
+    padding: 30px;
+    box-sizing: border-box;
+    font-family: arial;
+    text-align: center;
+    
+
+}
+
+.formLayout {
+    display: inline-grid;
+    grid-template-columns: 21vw 10vw;
+    grid-template-rows: 11vh 11vh 38vh 10vh;
+    
+}
+
+.year {
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 28px;
+display: flex;
+flex-direction: column;
+place-items: flex-start;
+
+}
+
+.title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    display: flex;
+    flex-direction: column;
+    place-items: flex-start;
+
+}
+
+.description {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    display: flex;
+    grid-column: span 2;
+    grid-row-start: 3;
+    flex-direction: column;
+    place-items: flex-start;
+
+}
+
+.yearInput { 
+    height: 50px;
+    width: 100px;
+    font-size: 25px;
+}
+
+.titleInput {
+    height: 60px;
+    width: 180px;
+}
+
+.descriptionInput {
+    height: 220px;
+    width: 400px;
+}
+
+input, textarea {
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin: 7px;
+    font-size: 20px;
+    border-color: #FFFFFF;
+   
+}
+
+
+
+.radioButtons {
+    display: flex;
+    flex-direction: column;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    place-items: baseline;
+
+}
+
+.radioButtons > label > input {
+    height: 20px;
+}
+
+.buttonContainer {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+}
+.button {
+    width: 150px;
+    height: 60px;
+    font-family: var(--p-font);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 34px;
+    justify-content: center;
+    color: #FFFFFF;
+}

@@ -83,6 +83,27 @@
     justify-self: center;
 }
 
+.form {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    justify-self: center;
+    z-index: 999;
+    animation: slide-left;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    transition: ease;
+    
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(0);
+      }
+    
+      100% {
+        transform: translateX(100%);
+      }
+    }
 
   .slide-tr {
 	-webkit-animation: slide-tr 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;

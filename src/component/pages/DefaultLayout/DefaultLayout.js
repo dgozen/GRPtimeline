@@ -8,6 +8,7 @@ import Filter from '../../Filter/Filter';
 import APIFetch from '../../APIFetch/APIFetch';
 import AddButton from '../../Buttons/AddButton/AddButton';
 import backgrounds from './backgrounds';
+import Form from '../../Form/Form';
 
 const DefaultLayout = () => {
 	const [yearsArray, setYearsArrayState] = useState([]);
@@ -38,6 +39,15 @@ const DefaultLayout = () => {
 		const oneOfEachYear = [...passArray];
 		setYearsArrayState(oneOfEachYear);
 	};
+
+	// Add button
+	const [showForm, setShowForm] = useState(false);
+
+
+	const clickHandler = () => {
+   setShowForm(!showForm);
+   
+	 };
 
 	return (
 		<div>
@@ -92,11 +102,18 @@ const DefaultLayout = () => {
 						setSelectedCategory={setSelectedCategory}
 					/>
 				</div>
-				<div className={style.addbutton}>
+				<div className={style.addbutton} onClick={() => clickHandler()}>
 					<AddButton />
+					
 				</div>
+				<div className={style.form}>
+						{ showForm ?
+             			 <Form />
+              			: setShowForm
+             			}
+					</div>
 			</div>
-		</div>
+			</div>
 	);
 };
 
