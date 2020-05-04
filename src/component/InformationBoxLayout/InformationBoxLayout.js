@@ -120,34 +120,36 @@ const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 				</button>
 			)}
 
-			{selectedCategory[0] === 'AllCategories'
-				? chunksAmountInArray > 0
-					? chunkYearArray[activeIndex].map((component, index) => {
-							return (
-								<div className={style.informationBoxLayer}>
-									<InformationBox
-										key={index}
-										title={component.title}
-										text={component.info}
-										category={component.category}
-										link={component.link}
-									/>
-								</div>
-							);
-					  })
-					: activeYear.map((component, index) => {
-							return (
-								<div className={style.informationBoxLayer}>
-									<InformationBox
-										key={index}
-										title={component.title}
-										text={component.info}
-										category={component.category}
-										link={component.link}
-									/>
-								</div>
-							);
-					  })
+			{selectedCategory.length === 0
+				? null
+				: chunksAmountInArray > 0
+				? chunkYearArray[activeIndex].map((component, index) => {
+						return (
+							<div className={style.informationBoxLayer}>
+								<InformationBox
+									key={index}
+									title={component.title}
+									text={component.info}
+									category={component.category}
+									link={component.link}
+								/>
+							</div>
+						);
+				  })
+				: selectedCategory[0] === 'AllCategories'
+				? activeYear.map((component, index) => {
+						return (
+							<div className={style.informationBoxLayer}>
+								<InformationBox
+									key={index}
+									title={component.title}
+									text={component.info}
+									category={component.category}
+									link={component.link}
+								/>
+							</div>
+						);
+				  })
 				: filteredCategories.map((component, index) => {
 						return (
 							<div className={style.informationBoxLayer}>
