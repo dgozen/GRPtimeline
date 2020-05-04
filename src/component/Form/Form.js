@@ -7,7 +7,7 @@ const Form = () => {
         <div className={style.formContainer}>
         <form className={style.formLayout}>
             <div className={style.year}>Year:
-                <input type="number" className={style.yearInput}></input>
+                <input type="text" className={style.yearInput}></input>
             </div> 
 
             <div className={style.title}>Title:
