@@ -2,6 +2,13 @@ import React from 'react';
 import style from './Form.module.css';
 
 const Form = () => {
+    /* const [showForm, setShowForm] = useState(true);
+
+    const clickHandler = () => {
+        setShowForm(!showForm);
+    }
+    onClick={() => clickHandler() */
+
     return (
         <div id="container">
         <div className={style.formContainer}>
@@ -31,7 +38,7 @@ const Form = () => {
                 <label><input type="radio" value="Publication" name="category" /> Publication</label>
             </div>
             <div className={style.buttonContainer}>
-            <div className={style.cancelButton}>Cancel</div>    
+            <div className={style.cancelButton} >Cancel</div>    
             <div className={style.submitButton}>Submit</div>
             </div>
             
