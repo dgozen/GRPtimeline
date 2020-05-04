@@ -14,7 +14,6 @@ const DefaultLayout = () => {
 	const [yearsArray, setYearsArrayState] = useState([]);
 	const [clickedYear, setClickedYear] = useState('onload');
 	const [selectedCategory, setSelectedCategory] = useState([]);
-
 	const timelineData = APIFetch();
 
 	// this function yearsToRender filters the images on the keys < or = clickedYear
@@ -42,6 +41,8 @@ const DefaultLayout = () => {
 
 	// Add button
 	const [showForm, setShowForm] = useState(false);
+
+
 
 
 	const clickHandler = () => {
@@ -80,6 +81,7 @@ const DefaultLayout = () => {
 							{item}
 						</button>
 					))}
+
 
 					<div className={style.buttonArrowDown}>
 						<ButtonArrowSmall />
