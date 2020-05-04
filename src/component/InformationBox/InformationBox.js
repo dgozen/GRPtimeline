@@ -17,6 +17,7 @@ const InformationBox = (props) => {
 		case 'program, platform, investment initiative':
 			categoryColors = '#009ede';
 			break;
+
 		case 'trend':
 			categoryColors = '#49853e';
 			break;

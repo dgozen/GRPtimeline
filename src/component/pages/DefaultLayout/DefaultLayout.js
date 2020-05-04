@@ -83,6 +83,7 @@ const DefaultLayout = () => {
 						<InformationBoxLayout
 							clickedYear={clickedYear}
 							selectedCategory={selectedCategory}
+							setSelectedCategory={setSelectedCategory}
 						/>
 					)}
 				</div>

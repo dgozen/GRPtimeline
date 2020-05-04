@@ -76,9 +76,7 @@ const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 		let index = activeIndex;
 		let length = chunksAmountInArray;
 
-		if (index === 0) {
-			index = 0;
-		} else if (index < 1) {
+		if (index < 1) {
 			index = length - 1;
 		} else {
 			index--;
