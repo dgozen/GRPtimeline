@@ -35,7 +35,7 @@ const InformationBox = (props) => {
 				<p>{props.text}</p>
 			</div>
 			<div className={style.linkPlacement}>
-				<ReadMoreLink link={props.link} />
+				{props.link !== '' ? <ReadMoreLink link={props.link} /> : null}
 			</div>
 		</div>
 	);
