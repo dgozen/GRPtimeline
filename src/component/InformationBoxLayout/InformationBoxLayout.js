@@ -9,6 +9,7 @@ const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [chunksAmountInArray, setChunkAmountInArray] = useState(0);
 	const [chunkYearArray, setChunkYearArray] = useState([]);
+	const [filteredCategories, setFilteredCategories] = useState([]);
 
 	useEffect(() => {
 		axios
@@ -36,14 +37,6 @@ const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 	};
 
 	//this function check the selected year array and filters accourding to checked boxes
-	const filterCategory = (array) => {
-		const category = selectedCategory;
-		array = array.filter((item) => filterChecker(category, item.category));
-		return array;
-	};
-
-	//this stores all the categories in to one array so that it can be later mapped through to view the information boxes
-	let filteredCategories = filterCategory(activeYear);
 
 	//if the array is more then 6 items this will chunk it up to pieces
 	const arrayChunk = (array, chunkSize) => {
@@ -58,18 +51,37 @@ const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 			}
 
 			setChunkAmountInArray(amountOfChunks);
+			console.log('chunkedAray:', chunkedArray);
 			return chunkedArray;
 		} else {
 			setChunkAmountInArray(0);
+			console.log('array:', array);
 			return array;
 		}
 	};
 
 	//this triggers everytime active year is clicked, also resets the active index to 0 on each year click on a new year
 	useEffect(() => {
-		setChunkYearArray(arrayChunk(activeYear, 6));
+		const filterCategory = (array, category) => {
+			array = array.filter((item) => filterChecker(category, item.category));
+			return array;
+		};
+		if (
+			selectedCategory.length > 0 &&
+			selectedCategory[0] !== 'AllCategories'
+		) {
+			setChunkYearArray(
+				arrayChunk(filterCategory(activeYear, selectedCategory), 6)
+			);
+			console.log('full array');
+			console.log(selectedCategory.length, selectedCategory[0]);
+		} else {
+			setChunkYearArray(arrayChunk(activeYear, 6));
+			console.log('empty array');
+		}
 		setActiveIndex(0);
-	}, [activeYear]);
+		setFilteredCategories(filterCategory(activeYear, selectedCategory));
+	}, [activeYear, selectedCategory]);
 
 	//these are the page flip functions
 	const previousChunk = () => {
