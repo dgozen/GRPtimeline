@@ -143,7 +143,9 @@ const DefaultLayout = () => {
 				<div className={style.backdrop}>
 					{showForm ? <Backdrop /> : setShowForm}
 				</div>
-				<div className={style.form}>{showForm ? <Form /> : setShowForm}</div>
+				<div className={style.form}>{showForm ? <Form 
+				clickHandler = {clickHandler}
+				/> : setShowForm}</div>
 			</div>
 		</div>
 	);
