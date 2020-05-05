@@ -87,7 +87,7 @@ const DefaultLayout = () => {
 					<div className={style.buttonArrowUp}>
 						<ButtonArrowSmall />
 					</div>
-					{splittedTimeline.map((item, index) => (
+					{splittedTimeline[0].map((item, index) => (
 						<button
 							key={index}
 							className={style.buttonYear}
