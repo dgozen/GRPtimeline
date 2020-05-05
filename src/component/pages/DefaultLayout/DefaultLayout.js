@@ -43,11 +43,9 @@ const DefaultLayout = () => {
 	// Add button
 	const [showForm, setShowForm] = useState(false);
 
-
 	const clickHandler = () => {
-   setShowForm(!showForm);
-   
-	 };
+		setShowForm(!showForm);
+	};
 
 	return (
 		<div>
@@ -105,16 +103,10 @@ const DefaultLayout = () => {
 				</div>
 				<div className={style.addbutton} onClick={() => clickHandler()}>
 					<AddButton />
-					
 				</div>
-				<div className={style.form}>
-						{ showForm ?
-             			 <Form />
-              			: setShowForm
-             			}
-					</div>
+				<div className={style.form}>{showForm ? <Form /> : setShowForm}</div>
 			</div>
-			</div>
+		</div>
 	);
 };
 

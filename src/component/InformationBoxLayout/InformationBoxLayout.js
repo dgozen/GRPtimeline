@@ -114,7 +114,7 @@ const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 		<div className={style.infoBoxLayoutStyle}>
 			<button
 				className={showArrow ? style.leftArrow : style.leftArrowHidden}
-				onClick={nextChunk}
+				onClick={previousChunk}
 			>
 				<img
 					src={arrowButton}
