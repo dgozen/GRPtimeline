@@ -17,6 +17,7 @@ const InformationBox = (props) => {
 		case 'program, platform, investment initiative':
 			categoryColors = '#009ede';
 			break;
+
 		case 'trend':
 			categoryColors = '#49853e';
 			break;
@@ -35,7 +36,7 @@ const InformationBox = (props) => {
 				<p>{props.text}</p>
 			</div>
 			<div className={style.linkPlacement}>
-				<ReadMoreLink link={props.link} />
+				{props.link !== '' ? <ReadMoreLink link={props.link} /> : null}
 			</div>
 		</div>
 	);
