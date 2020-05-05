@@ -105,26 +105,16 @@ const DefaultLayout = () => {
 			<div className={style.container}>
 				<div className={style.timeline}>
 					<div className={style.buttonArrowUp}>
-						<button onClick={previous}>
+						<button className={style.transparentBackground} onClick={previous}>
 							<ButtonArrowSmall />
 						</button>
 					</div>
 					{splittedTimeline[timelineIndex] &&
 						splittedTimeline[timelineIndex].map((item, index) => (
-							<button
-								key={index}
-								className={
-									clickedYear === item ? style.buttonClick : style.buttonYear
-								}
-								onClick={() => {
-									setClickedYear(item);
-								}}
-							>
-								{item}
-							</button>
+							<button key={index} className={clickedYear === item ? style.buttonClick : style.buttonYear}onClick={() => {setClickedYear(item);}}>{item}</button>
 						))}
 					<div className={style.buttonArrowDown}>
-						<button onClick={next}>
+						<button className={style.transparentBackground} onClick={next}>
 							<ButtonArrowSmall />
 						</button>
 					</div>
