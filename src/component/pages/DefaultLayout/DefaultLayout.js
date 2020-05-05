@@ -15,6 +15,7 @@ const DefaultLayout = () => {
 	const [yearsArray, setYearsArrayState] = useState([]);
 	const [clickedYear, setClickedYear] = useState('onload');
 	const [index, setIndex] = useState(0);
+	const [splittedTimeline, setSplittedTimeline] = useState([]);
 	const [selectedCategory, setSelectedCategory] = useState([]);
 
 	const timelineData = APIFetch();
@@ -40,8 +41,14 @@ const DefaultLayout = () => {
 		const passArray = new Set(array);
 		const oneOfEachYear = [...passArray];
 		const latestOnTop = oneOfEachYear.sort((a, b) => b - a);
+		const splitList = splitTimeline(latestOnTop, 9);
+		setSplittedTimeline(splitList);
+		console.log('the split', splitList);
+
 		setYearsArrayState(latestOnTop);
 	};
+
+	console.log('splittedTimeline[0]', Array.isArray(splittedTimeline[0]));
 
 	// Add button
 	const [showForm, setShowForm] = useState(false);
@@ -57,6 +64,7 @@ const DefaultLayout = () => {
 		for (let i = 0; i < splitPieces; i++) {
 			choppedTimeline.push(timelineClone.splice(0, chopSize));
 		}
+		return choppedTimeline;
 	}
 
 	return (
@@ -79,7 +87,7 @@ const DefaultLayout = () => {
 					<div className={style.buttonArrowUp}>
 						<ButtonArrowSmall />
 					</div>
-					{yearsArray.map((item, index) => (
+					{splittedTimeline.map((item, index) => (
 						<button
 							key={index}
 							className={style.buttonYear}
@@ -90,7 +98,6 @@ const DefaultLayout = () => {
 							{item}
 						</button>
 					))}
-
 					<div className={style.buttonArrowDown}>
 						<ButtonArrowSmall />
 					</div>
