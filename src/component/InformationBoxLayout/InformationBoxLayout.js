@@ -10,6 +10,7 @@ const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 	const [chunksAmountInArray, setChunkAmountInArray] = useState(0);
 	const [chunkYearArray, setChunkYearArray] = useState([]);
 	const [filteredCategories, setFilteredCategories] = useState([]);
+	const showArrow = chunksAmountInArray > 0 || filteredCategories.length > 6;
 
 	useEffect(() => {
 		axios
@@ -22,7 +23,8 @@ const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 	}, [clickedYear]);
 
 	//this function is triggered filterCategory to see if there is more then one category selected
-	//it loops through each item of the array checking for the matched category
+	//it loops through each item of the array checking for the matched category and returns
+	//true if it matches
 	//toLowerCase() is used because I realised the buttons have capital casing and does not match with the JSON file
 	const filterChecker = (checkArray, checkStringCategory) => {
 		let checkResponse = false;
@@ -36,9 +38,7 @@ const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 		return checkResponse;
 	};
 
-	//this function check the selected year array and filters accourding to checked boxes
-
-	//if the array is more then 6 items this will chunk it up to pieces
+	//if the array has more then 6 items this will chunk it up to pieces
 	const arrayChunk = (array, chunkSize) => {
 		let amountOfChunks = 0;
 		const chunkedArray = [];
@@ -61,6 +61,8 @@ const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 	};
 
 	//this triggers everytime active year is clicked, also resets the active index to 0 on each year click on a new year
+	//filter category works by first getting the category from previous component
+	//the array is chunked depending on which category is selected
 	useEffect(() => {
 		const filterCategory = (array, category) => {
 			array = array.filter((item) => filterChecker(category, item.category));
@@ -110,15 +112,16 @@ const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 
 	return (
 		<div className={style.infoBoxLayoutStyle}>
-			{chunksAmountInArray > 0 || filteredCategories.length > 6 ? (
-				<button className={style.leftArrow} onClick={previousChunk}>
-					<img src={arrowButton} alt='previous-page-button' />
-				</button>
-			) : (
-				<button className={style.leftArrowHidden} onClick={previousChunk}>
-					<img src={arrowButton} alt='previous-page-button' />
-				</button>
-			)}
+			<button
+				className={showArrow ? style.leftArrow : style.leftArrowHidden}
+				onClick={nextChunk}
+			>
+				<img
+					src={arrowButton}
+					alt='next-page-button'
+					className={style.rotateArrowRight}
+				/>
+			</button>
 
 			{selectedCategory.length === 0
 				? null
@@ -164,23 +167,16 @@ const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 						);
 				  })}
 
-			{chunksAmountInArray > 0 || filteredCategories.length > 6 ? (
-				<button className={style.rightArrow} onClick={nextChunk}>
-					<img
-						src={arrowButton}
-						alt='next-page-button'
-						className={style.rotateArrowRight}
-					/>
-				</button>
-			) : (
-				<button className={style.rightArrowHidden} onClick={nextChunk}>
-					<img
-						src={arrowButton}
-						alt='next-page-button'
-						className={style.rotateArrowRight}
-					/>
-				</button>
-			)}
+			<button
+				className={showArrow ? style.rightArrow : style.rightArrowHidden}
+				onClick={nextChunk}
+			>
+				<img
+					src={arrowButton}
+					alt='next-page-button'
+					className={style.rotateArrowRight}
+				/>
+			</button>
 		</div>
 	);
 };
