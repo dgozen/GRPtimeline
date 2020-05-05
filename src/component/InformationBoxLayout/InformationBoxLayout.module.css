@@ -1,7 +1,6 @@
 .infoBoxLayoutStyle {
-	width: 1200px;
-	height: 690px;
-	background: rgba(255, 255, 255, 0.5);
+	width: 80vw;
+	height: 75vh;
 	border-radius: 45px;
 	display: grid;
 	grid-template-columns: 5% repeat(3, 1fr) 5%;
