@@ -52,11 +52,11 @@ const DefaultLayout = () => {
 
 	function splitTimeline(timeline, chopSize) {
 		let choppedTimeline = [];
-		let timelineClone =[...timeline];
+		let timelineClone = [...timeline];
 		const splitPieces = Math.ceil(timelineClone.length / chopSize);
 		for (let i = 0; i < splitPieces; i++) {
 			choppedTimeline.push(timelineClone.splice(0, chopSize));
-
+		}
 	}
 
 	return (
