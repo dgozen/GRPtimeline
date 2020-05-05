@@ -37,7 +37,8 @@ const DefaultLayout = () => {
 	const setArray = (array) => {
 		const passArray = new Set(array);
 		const oneOfEachYear = [...passArray];
-		setYearsArrayState(oneOfEachYear);
+		const latestOnTop = oneOfEachYear.sort((a, b) => b - a);
+		setYearsArrayState(latestOnTop);
 	};
 
 	// Add button
