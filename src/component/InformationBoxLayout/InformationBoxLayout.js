@@ -51,11 +51,9 @@ const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 			}
 
 			setChunkAmountInArray(amountOfChunks);
-			console.log('chunkedAray:', chunkedArray);
 			return chunkedArray;
 		} else {
 			setChunkAmountInArray(0);
-			console.log('array:', array);
 			return array;
 		}
 	};
@@ -75,11 +73,8 @@ const InformationBoxLayout = ({ clickedYear, selectedCategory }) => {
 			setChunkYearArray(
 				arrayChunk(filterCategory(activeYear, selectedCategory), 6)
 			);
-			console.log('full array');
-			console.log(selectedCategory.length, selectedCategory[0]);
 		} else {
 			setChunkYearArray(arrayChunk(activeYear, 6));
-			console.log('empty array');
 		}
 		setActiveIndex(0);
 		setFilteredCategories(filterCategory(activeYear, selectedCategory));
