@@ -47,11 +47,15 @@ const DefaultLayout = () => {
 	// Add button
 	const [showForm, setShowForm] = useState(false);
 
-
 	const clickHandler = () => {
+<<<<<<< HEAD
    setShowForm(!showForm);
 
 	 };
+=======
+		setShowForm(!showForm);
+	};
+>>>>>>> master
 
 	return (
 		<div>
@@ -97,6 +101,7 @@ const DefaultLayout = () => {
 						<InformationBoxLayout
 							clickedYear={clickedYear}
 							selectedCategory={selectedCategory}
+							setSelectedCategory={setSelectedCategory}
 						/>
 					)}
 				</div>
@@ -108,8 +113,8 @@ const DefaultLayout = () => {
 				</div>
 				<div className={style.addbutton} onClick={() => clickHandler()}>
 					<AddButton />
-					
 				</div>
+<<<<<<< HEAD
 				<div className={style.backdrop}>
 						{ showForm ?
 						<Backdrop />
@@ -123,7 +128,11 @@ const DefaultLayout = () => {
              			}
 					</div>
 			</div>
+=======
+				<div className={style.form}>{showForm ? <Form /> : setShowForm}</div>
+>>>>>>> master
 			</div>
+		</div>
 	);
 };
 
