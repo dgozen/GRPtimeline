@@ -15,15 +15,16 @@
 
 .formLayout {
     display: inline-grid;
-    grid-template-columns: 21vw 10vw;
-    grid-template-rows: 11vh 11vh 38vh 10vh;
+    grid-template-columns: 21vw 14vw;
+    grid-template-rows: 10vh 10vh 10vh 30vh 10vh;
+    margin-left: 55px;
     
 }
 
 .year {
 font-style: normal;
 font-weight: normal;
-font-size: 20px;
+font-size: 18px;
 line-height: 28px;
 display: flex;
 flex-direction: column;
@@ -34,7 +35,7 @@ place-items: flex-start;
 .title {
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 28px;
     display: flex;
     flex-direction: column;
@@ -45,29 +46,45 @@ place-items: flex-start;
 .description {
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 28px;
     display: flex;
     grid-column: span 2;
-    grid-row-start: 3;
+    grid-row-start: 4;
     flex-direction: column;
     place-items: flex-start;
 
 }
 
+.link {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    display: flex;
+    flex-direction: column;
+    place-items: flex-start;
+    grid-column-start: 1;
+} 
+
 .yearInput { 
-    height: 50px;
+    height: 45px;
     width: 100px;
     font-size: 25px;
 }
 
 .titleInput {
-    height: 60px;
+    height: 45px;
     width: 180px;
 }
 
 .descriptionInput {
-    height: 220px;
+    height: 177px;
+    width: 400px;
+}
+
+.linkInput {
+    height: 45px;
     width: 400px;
 }
 
@@ -77,6 +94,7 @@ input, textarea {
     margin: 7px;
     font-size: 20px;
     border-color: #FFFFFF;
+    box-shadow: inset 4px 4px 12px rgba(0, 0, 0, 0.25);
    
 }
 
@@ -98,9 +116,9 @@ input, textarea {
 .buttonContainer {
     grid-column: span 2;
     display: flex;
-    justify-content: center;
+    grid-row-start: 5;
 }
-.button {
+.submitButton {
     width: 150px;
     height: 60px;
     font-family: var(--p-font);
@@ -113,7 +131,36 @@ input, textarea {
     text-align: center;
     border: 1px solid #FFFFFF;
     box-sizing: border-box;
-    border-radius: 34px;
+    border-radius: 25px;
     justify-content: center;
     color: #FFFFFF;
 }
+
+.cancelButton {
+    width: 150px;
+    height: 60px;
+    font-family: var(--p-font);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 25px;
+    justify-content: center;
+    color: #FFFFFF;
+    margin-right: 115px;
+}
+
+
+.submitButton:hover {
+    background-color: rgb(2, 88, 141);
+}
+
+.cancelButton:hover {
+    background-color: rgb(2, 88, 141);
+} 
+

@@ -9,6 +9,7 @@ import APIFetch from '../../APIFetch/APIFetch';
 import AddButton from '../../Buttons/AddButton/AddButton';
 import backgrounds from './backgrounds';
 import Form from '../../Form/Form';
+import Backdrop from '../../Backdrop/Backdrop';
 
 const DefaultLayout = () => {
 	const [yearsArray, setYearsArrayState] = useState([]);
@@ -40,12 +41,21 @@ const DefaultLayout = () => {
 		setYearsArrayState(oneOfEachYear);
 	};
 
+	
+	
+
 	// Add button
 	const [showForm, setShowForm] = useState(false);
 
 	const clickHandler = () => {
+<<<<<<< HEAD
+   setShowForm(!showForm);
+
+	 };
+=======
 		setShowForm(!showForm);
 	};
+>>>>>>> master
 
 	return (
 		<div>
@@ -104,7 +114,23 @@ const DefaultLayout = () => {
 				<div className={style.addbutton} onClick={() => clickHandler()}>
 					<AddButton />
 				</div>
+<<<<<<< HEAD
+				<div className={style.backdrop}>
+						{ showForm ?
+						<Backdrop />
+              			: setShowForm
+             			}
+				</div>
+				<div className={style.form}>
+						{ showForm ?
+							<Form />
+              			: setShowForm
+             			}
+					</div>
+			</div>
+=======
 				<div className={style.form}>{showForm ? <Form /> : setShowForm}</div>
+>>>>>>> master
 			</div>
 		</div>
 	);
