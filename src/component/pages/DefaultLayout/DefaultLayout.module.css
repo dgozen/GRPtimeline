@@ -1,109 +1,110 @@
-
-
 .container {
-    display: grid;
-    grid-template-rows: 10vh 80vh 10vh;
-    grid-template-columns: 10vw 1fr 10vw;
-    position: relative;
+	display: grid;
+	grid-template-rows: 10vh 80vh 10vh;
+	grid-template-columns: 10vw 1fr 10vw;
+	position: relative;
 }
 
 .header {
-    grid-row-start: 1;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    justify-self: center;
+	grid-row-start: 1;
+	grid-column-start: 1;
+	grid-column-end: 4;
+	justify-self: center;
 }
 
-
 .background {
-    position: absolute;
-    animation: slide-tr 1s ease-in;
-    
+	position: absolute;
+	animation: slide-tr 1s ease-in;
 }
 
 .timeline {
-    grid-column-start: 1;
-    grid-row-start: 2;
-    position: relative;
-    align-self: center;
-    display: grid;
-    grid-template-rows: repeat(13, 1fr);
-    justify-self: center;
-    background: rgba(216, 216, 216, 0.253);
-    border-radius: 45px;
-    width: 90px;
-    height: 80vh;
-    text-align: center;
-    
+	grid-column-start: 1;
+	grid-row-start: 2;
+	position: relative;
+	align-self: center;
+	display: grid;
+	grid-template-rows: repeat(auto, 1fr);
+	justify-self: center;
+	background: rgba(216, 216, 216, 0.253);
+	border-radius: 45px;
+	width: 90px;
+	height: 50vh;
+	text-align: center;
+}
+.transparentBackground {
+  border: none;
+  background: rgba(216, 216, 216, 0);
 }
 
 .buttonArrowUp {
-    transform: rotate(90deg);
-    align-self: center;
-    justify-self: center;
-    height: 25px;
-    width: 25px;
-   
-    
+	transform: rotate(90deg);
+	align-self: center;
+	justify-self: center;
+	height: 25px;
+  width: 25px;
+  border: none;
 }
 
 .buttonArrowDown {
-    transform: rotate(230deg);
-    align-self: center;
-    justify-self: center;
-    height: 25px;
-    width: 25px;
+	transform: rotate(270deg);
+	align-self: center;
+	justify-self: center;
+	height: 25px;
+  width: 25px;
+  border: none;
 }
 
 .buttonYear {
-    padding: 0%;
-    border: none;
-    background-color: transparent;
-    outline: none;
+	padding: 0%;
+	border: none;
+	background-color: transparent;
+	outline: none;
+}
+.buttonClick {
+	font-size: 20px;
+	border: none;
+	background-color: transparent;
+	outline: none;
 }
 
 .filter {
-    grid-column-start: 2;
-    grid-row-start: 3;
-    align-self: center;
-
+	grid-column-start: 2;
+	grid-row-start: 3;
+	align-self: center;
 }
 
 .addbutton {
-    grid-column-start: 3;
-    grid-row-start: 3;
-    align-self: center;
-    justify-self: center;
+	grid-column-start: 3;
+	grid-row-start: 3;
+	align-self: center;
+	justify-self: center;
 }
 
 .informationLayout {
-    grid-column-start: 2;
-    grid-row-start: 2;
-    align-self: center;
-    justify-self: center;
+	grid-column-start: 2;
+	grid-row-start: 2;
+	align-self: center;
+	justify-self: center;
 }
 
-
 .form {
-    top: 11vh;
-    left: 30vw;
-    z-index: 999;
-    animation: slide-left 1s ease-in;
-    position: absolute;
-    
+	top: 11vh;
+	left: 30vw;
+	z-index: 999;
+	animation: slide-left 1s ease-in;
+	position: absolute;
 }
 
 .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    pointer-events: none;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	pointer-events: none;
+	width: 100%;
+	height: 100vh;
+	position: absolute;
 }
-
 
 /* @keyframes slide-left {
     0% {
@@ -115,31 +116,28 @@
       }
     }  */
 
-
-
-  .slide-tr {
-	-webkit-animation: slide-tr 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-tr 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.slide-tr {
+	-webkit-animation: slide-tr 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: slide-tr 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @-webkit-keyframes slide-tr {
-    0% {
-      -webkit-transform: translateY(-100vh) translateX(-30vw);
-              transform: translateY(-100vh) translateX(-30vw);
-    }
-    100% {
-      -webkit-transform: translateY(0) translateX(0);
-              transform: translateY(0) translateX(0);
-    }
-  }
-  @keyframes slide-tr {
-    0% {
-      -webkit-transform: translateY(-100vh) translateX(-30vw);
-              transform: translateY(-100vh) translateX(-30vw);
-    }
-    100% {
-      -webkit-transform: translateY(0) translateX(0);
-              transform: translateY(0) translateX(0);
-    }
-  }
-  
+	0% {
+		-webkit-transform: translateY(-100vh) translateX(-30vw);
+		transform: translateY(-100vh) translateX(-30vw);
+	}
+	100% {
+		-webkit-transform: translateY(0) translateX(0);
+		transform: translateY(0) translateX(0);
+	}
+}
+@keyframes slide-tr {
+	0% {
+		-webkit-transform: translateY(-100vh) translateX(-30vw);
+		transform: translateY(-100vh) translateX(-30vw);
+	}
+	100% {
+		-webkit-transform: translateY(0) translateX(0);
+		transform: translateY(0) translateX(0);
+	}
+}
