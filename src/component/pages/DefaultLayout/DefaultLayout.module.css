@@ -85,11 +85,12 @@
 
 
 .form {
-    top: 11vh;
-    left: 30vw;
+    top: 50%;
+    left: 50%;
     z-index: 999;
     animation: slide-left 1s ease-in;
     position: absolute;
+    transform: translate(-50%, -50%);
     
 }
 

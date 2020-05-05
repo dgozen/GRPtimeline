@@ -48,6 +48,8 @@ const DefaultLayout = () => {
 		setShowForm(!showForm);
 	};
 
+	
+
 	return (
 		<div>
 			{/* this function maps through the yearsToRender function, and renders all images < = to clickedYear  */}
@@ -108,7 +110,9 @@ const DefaultLayout = () => {
 				<div className={style.backdrop}>
 					{showForm ? <Backdrop /> : setShowForm}
 				</div>
-				<div className={style.form}>{showForm ? <Form /> : setShowForm}</div>
+				<div className={style.form}>{showForm ? <Form 
+				clickHandler = {clickHandler}
+				/> : setShowForm}</div>
 			</div>
 		</div>
 	);
