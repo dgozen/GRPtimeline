@@ -105,6 +105,9 @@ const DefaultLayout = () => {
 				<div className={style.addbutton} onClick={() => clickHandler()}>
 					<AddButton />
 				</div>
+				<div className={style.backdrop}>
+					{showForm ? <Backdrop /> : setShowForm}
+				</div>
 				<div className={style.form}>{showForm ? <Form /> : setShowForm}</div>
 			</div>
 		</div>
