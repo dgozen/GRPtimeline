@@ -14,6 +14,7 @@ import Backdrop from '../../Backdrop/Backdrop';
 const DefaultLayout = () => {
 	const [yearsArray, setYearsArrayState] = useState([]);
 	const [clickedYear, setClickedYear] = useState('onload');
+	const [index, setIndex] = useState(0);
 	const [selectedCategory, setSelectedCategory] = useState([]);
 
 	const timelineData = APIFetch();
@@ -48,6 +49,15 @@ const DefaultLayout = () => {
 	const clickHandler = () => {
 		setShowForm(!showForm);
 	};
+
+	function splitTimeline(timeline, chopSize) {
+		let choppedTimeline = [];
+		let timelineClone =[...timeline];
+		const splitPieces = Math.ceil(timelineClone.length / chopSize);
+		for (let i = 0; i < splitPieces; i++) {
+			choppedTimeline.push(timelineClone.splice(0, chopSize));
+
+	}
 
 	return (
 		<div>
