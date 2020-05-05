@@ -40,7 +40,7 @@ const DefaultLayout = () => {
 	const setArray = (array) => {
 		const passArray = new Set(array);
 		const oneOfEachYear = [...passArray];
-		const splitList = splitTimeline(oneOfEachYear, 9);
+		const splitList = splitTimeline(oneOfEachYear, 5);
 		setSplittedTimeline(splitList);
 		setYearsArrayState(oneOfEachYear);
 	};
@@ -63,7 +63,7 @@ const DefaultLayout = () => {
 	}
 	const previous = () => {
 		let index = timelineIndex;
-		let length = 3;
+		let length = 5;
 
 		if (index < 1) {
 			index = length - 1;
@@ -76,7 +76,7 @@ const DefaultLayout = () => {
 
 	const next = () => {
 		let index = timelineIndex;
-		let length = 3;
+		let length = 5;
 
 		if (index === length - 1) {
 			index = 0;
@@ -113,7 +113,9 @@ const DefaultLayout = () => {
 						splittedTimeline[timelineIndex].map((item, index) => (
 							<button
 								key={index}
-								className={style.buttonYear}
+								className={
+									clickedYear === item ? style.buttonClick : style.buttonYear
+								}
 								onClick={() => {
 									setClickedYear(item);
 								}}
