@@ -14,7 +14,7 @@ import Backdrop from '../../Backdrop/Backdrop';
 const DefaultLayout = () => {
 	const [yearsArray, setYearsArrayState] = useState([]);
 	const [clickedYear, setClickedYear] = useState('onload');
-	const [index, setIndex] = useState(0);
+	const [timelineIndex, setTimelineIndex] = useState(0);
 	const [splittedTimeline, setSplittedTimeline] = useState([]);
 	const [selectedCategory, setSelectedCategory] = useState([]);
 
@@ -40,15 +40,10 @@ const DefaultLayout = () => {
 	const setArray = (array) => {
 		const passArray = new Set(array);
 		const oneOfEachYear = [...passArray];
-		const latestOnTop = oneOfEachYear.sort((a, b) => b - a);
-		const splitList = splitTimeline(latestOnTop, 9);
+		const splitList = splitTimeline(oneOfEachYear, 9);
 		setSplittedTimeline(splitList);
-		console.log('the split', splitList);
-
-		setYearsArrayState(latestOnTop);
+		setYearsArrayState(oneOfEachYear);
 	};
-
-	console.log('splittedTimeline[0]', Array.isArray(splittedTimeline[0]));
 
 	// Add button
 	const [showForm, setShowForm] = useState(false);
@@ -66,6 +61,31 @@ const DefaultLayout = () => {
 		}
 		return choppedTimeline;
 	}
+	const previous = () => {
+		let index = timelineIndex;
+		let length = 3;
+
+		if (index < 1) {
+			index = length - 1;
+		} else {
+			index--;
+		}
+		setTimelineIndex(index);
+		console.log('previous');
+	};
+
+	const next = () => {
+		let index = timelineIndex;
+		let length = 3;
+
+		if (index === length - 1) {
+			index = 0;
+		} else {
+			index++;
+		}
+		setTimelineIndex(index);
+		console.log('next');
+	};
 
 	return (
 		<div>
@@ -85,21 +105,26 @@ const DefaultLayout = () => {
 			<div className={style.container}>
 				<div className={style.timeline}>
 					<div className={style.buttonArrowUp}>
-						<ButtonArrowSmall />
-					</div>
-					{splittedTimeline[0].map((item, index) => (
-						<button
-							key={index}
-							className={style.buttonYear}
-							onClick={() => {
-								setClickedYear(item);
-							}}
-						>
-							{item}
+						<button onClick={previous}>
+							<ButtonArrowSmall />
 						</button>
-					))}
+					</div>
+					{splittedTimeline[timelineIndex] &&
+						splittedTimeline[timelineIndex].map((item, index) => (
+							<button
+								key={index}
+								className={style.buttonYear}
+								onClick={() => {
+									setClickedYear(item);
+								}}
+							>
+								{item}
+							</button>
+						))}
 					<div className={style.buttonArrowDown}>
-						<ButtonArrowSmall />
+						<button onClick={next}>
+							<ButtonArrowSmall />
+						</button>
 					</div>
 				</div>
 				<div className={style.header}>
