@@ -13,7 +13,7 @@ import Backdrop from '../../Backdrop/Backdrop';
 
 const DefaultLayout = () => {
 	const [yearsArray, setYearsArrayState] = useState([]);
-	const [clickedYear, setClickedYear] = useState('onload');
+	const [clickedYear, setClickedYear] = useState('1950');
 	const [timelineIndex, setTimelineIndex] = useState(0);
 	const [splittedTimeline, setSplittedTimeline] = useState([]);
 	const [selectedCategory, setSelectedCategory] = useState([]);
@@ -134,13 +134,11 @@ const DefaultLayout = () => {
 					<Header />
 				</div>
 				<div className={style.informationLayout}>
-					{clickedYear === 'onload' ? null : (
-						<InformationBoxLayout
-							clickedYear={clickedYear}
-							selectedCategory={selectedCategory}
-							setSelectedCategory={setSelectedCategory}
-						/>
-					)}
+					<InformationBoxLayout
+						clickedYear={clickedYear}
+						selectedCategory={selectedCategory}
+						setSelectedCategory={setSelectedCategory}
+					/>
 				</div>
 				<div className={style.filter}>
 					<Filter
