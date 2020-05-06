@@ -57,10 +57,13 @@ const DefaultLayout = () => {
 		let timelineClone = [...timeline];
 		const splitPieces = Math.ceil(timelineClone.length / chopSize);
 		for (let i = 0; i < splitPieces; i++) {
-			choppedTimeline.push(timelineClone.splice(0, chopSize));
+			choppedTimeline.push(
+				timelineClone.splice(0, chopSize).sort((a, b) => b - a)
+			);
 		}
 		return choppedTimeline;
 	}
+	//navigation functions
 	const previous = () => {
 		let index = timelineIndex;
 		let length = 5;
@@ -71,7 +74,6 @@ const DefaultLayout = () => {
 			index--;
 		}
 		setTimelineIndex(index);
-		console.log('previous');
 	};
 
 	const next = () => {
@@ -84,7 +86,6 @@ const DefaultLayout = () => {
 			index++;
 		}
 		setTimelineIndex(index);
-		console.log('next');
 	};
 
 	return (
@@ -105,16 +106,26 @@ const DefaultLayout = () => {
 			<div className={style.container}>
 				<div className={style.timeline}>
 					<div className={style.buttonArrowUp}>
-						<button className={style.transparentBackground} onClick={previous}>
+						<button className={style.transparentBackground} onClick={next}>
 							<ButtonArrowSmall />
 						</button>
 					</div>
 					{splittedTimeline[timelineIndex] &&
 						splittedTimeline[timelineIndex].map((item, index) => (
-							<button key={index} className={clickedYear === item ? style.buttonClick : style.buttonYear}onClick={() => {setClickedYear(item);}}>{item}</button>
+							<button
+								key={index}
+								className={
+									clickedYear === item ? style.buttonClick : style.buttonYear
+								}
+								onClick={() => {
+									setClickedYear(item);
+								}}
+							>
+								{item}
+							</button>
 						))}
 					<div className={style.buttonArrowDown}>
-						<button className={style.transparentBackground} onClick={next}>
+						<button className={style.transparentBackground} onClick={previous}>
 							<ButtonArrowSmall />
 						</button>
 					</div>
@@ -143,9 +154,9 @@ const DefaultLayout = () => {
 				<div className={style.backdrop}>
 					{showForm ? <Backdrop /> : setShowForm}
 				</div>
-				<div className={style.form}>{showForm ? <Form 
-				clickHandler = {clickHandler}
-				/> : setShowForm}</div>
+				<div className={style.form}>
+					{showForm ? <Form clickHandler={clickHandler} /> : setShowForm}
+				</div>
 			</div>
 		</div>
 	);
