@@ -1,3 +1,12 @@
+.formAnimationSlideIn {
+    animation: slide-left 1s ease-in; 
+}
+
+.formAnimationSlideOut {
+    animation: slide-right 1s ease-out;
+}
+
+
 .formContainer {
     width: 40vw;
     height: 85vh;
@@ -7,8 +16,7 @@
     border-radius: 10%;
     box-sizing: border-box;
     font-family: arial;
-    text-align: center;
-    animation: slide-left 1s ease-in; 
+    text-align: center; 
     
 
 }
@@ -194,6 +202,10 @@ input, textarea {
 	        animation: slide-left 0.5s ease-in both;
 }
 
+.slide-right {
+    -webkit-animation: slide-right 0.5s ease-out both;
+            animation: slide-right 0.5s ease-out both;
+}
 
  @-webkit-keyframes slide-left {
     0% {
@@ -213,6 +225,17 @@ input, textarea {
     100% {
       -webkit-transform: translateX(0);
               transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-right {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(100vw);
+              transform: translateX(100vw);
     }
   }
   
