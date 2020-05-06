@@ -1,66 +1,106 @@
-import React, { useState, useEffect } from 'react';
-import style from './Filter.module.css';
+import React, { useState, useEffect } from "react";
+import style from "./Filter.module.css";
 
-const Filter = ({ selectedCategory, setSelectedCategory }) => {
-	// filter through input boxes, return ID's if selectedCategory is true
-	const editCategoryArray = (checked, id) => {
-		const selectedCategoryArray = [...selectedCategory];
-		if (checked) {
-			selectedCategoryArray.push(id);
-		} else if (!checked) {
-			selectedCategoryArray.splice(selectedCategoryArray.indexOf(id), 1);
-		}
-		setSelectedCategory(selectedCategoryArray);
-	};
+const filterList = [
+  {
+    id: "AllCategories",
+    label: "All Categories",
+    isChecked: true,
+  },
+  {
+    id: "Publication",
+    label: "Publication",
+    isChecked: true,
+  },
+  {
+    id: "Trend",
+    label: "Trend",
+    isChecked: true,
+  },
+  {
+    id: "Event",
+    label: "Event",
+    isChecked: true,
+  },
 
-	const filterList = [
-		{
-			id: 'AllCategories',
-			label: 'All Categories',
-		},
-		{
-			id: 'Publication',
-			label: 'Publication',
-		},
-		{
-			id: 'Trend',
-			label: 'Trend',
-		},
-		{
-			id: 'Event',
-			label: 'Event',
-		},
+  {
+    id: "Program",
+    label: "Program, platform or investment initiative",
+    isChecked: true,
+  },
 
-		{
-			id: 'Program',
-			label: 'Program, platform or investment initiative',
-		},
+  {
+    id: "Framework",
+    label: "Framework: conceptual, evaluative, operational",
+    isChecked: true,
+  },
+];
 
-		{
-			id: 'Framework',
-			label: 'Framework: conceptual, evaluative, operational',
-		},
-	];
+const Filter = ({ setSelectedCategory }) => {
+  const [filterListState, setFilterListState] = useState(filterList);
 
-	//needed: function so allcategories check all boxes on click
+  const handleCategoryChange = ({ id: checkedID }) => {
+    let updatedCategory = [];
 
-	return (
-		<div className={style.filterStyle}>
-			{filterList.map((data) => (
-				<div>
-					<input
-						onChange={(event) => {
-							let checked = event.target.checked;
-							editCategoryArray(checked, data.id);
-						}}
-						type='checkbox'
-						id={data.id}
-					></input>{' '}
-					<label for={data.id}>{data.label}</label>
-				</div>
-			))}
-		</div>
-	);
+    updatedCategory = filterListState.map(({ id, isChecked, ...rest }) => {
+      let category = { ...rest, id, isChecked };
+      if (checkedID !== "AllCategories" && id === "AllCategories") {
+        category = { ...category, isChecked: false };
+      }
+      if (id === checkedID) {
+        category = { ...category, isChecked: !isChecked };
+      }
+      return category;
+    });
+
+    if (checkedID === "AllCategories") {
+      const { isChecked } = updatedCategory.find(
+        ({ id }) => id === "AllCategories"
+      );
+      updatedCategory = checkAll(isChecked);
+    }
+    setFilterListState(updatedCategory);
+  };
+
+  const checkAll = (isChecked) => {
+    return filterListState.map((category) => ({
+      ...category,
+      isChecked,
+    }));
+  };
+
+  useEffect(() => {
+    handleUpdate();
+  }, [filterListState]);
+
+  const handleUpdate = () => {
+    const idArray = filterListState.reduce((accumulator, currentValue) => {
+      return currentValue.isChecked
+        ? [...accumulator, currentValue.id]
+        : accumulator;
+    }, []);
+
+    console.log(idArray);
+    setSelectedCategory(idArray);
+  };
+
+  return (
+    <div className={style.filterStyle}>
+      {filterListState.map((data) => (
+        <div>
+          <input
+            onChange={(event) => {
+              handleCategoryChange(event.target);
+            }}
+            type="checkbox"
+            id={data.id}
+            checked={data.isChecked}
+          ></input>{" "}
+          <label for={data.id}>{data.label}</label>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default Filter;
