@@ -13,10 +13,12 @@ import Backdrop from '../../Backdrop/Backdrop';
 
 const DefaultLayout = () => {
 	const [yearsArray, setYearsArrayState] = useState([]);
-	const [clickedYear, setClickedYear] = useState('onload');
+	const [clickedYear, setClickedYear] = useState('1950');
 	const [timelineIndex, setTimelineIndex] = useState(0);
 	const [splittedTimeline, setSplittedTimeline] = useState([]);
 	const [selectedCategory, setSelectedCategory] = useState([]);
+	const [nextClicked, setNextClicked] = useState(false);
+	const [previousClicked, setPreviousClicked] = useState(false);
 
 	const timelineData = APIFetch();
 
@@ -73,8 +75,11 @@ const DefaultLayout = () => {
 		} else {
 			index--;
 		}
+		setPreviousClicked(!previousClicked);
 		setTimelineIndex(index);
 	};
+
+	console.log('test');
 
 	const next = () => {
 		let index = timelineIndex;
@@ -85,6 +90,7 @@ const DefaultLayout = () => {
 		} else {
 			index++;
 		}
+		setNextClicked(!nextClicked);
 		setTimelineIndex(index);
 	};
 
@@ -114,6 +120,13 @@ const DefaultLayout = () => {
 						splittedTimeline[timelineIndex].map((item, index) => (
 							<button
 								key={index}
+								id={
+									nextClicked
+										? style.yearSlideTop
+										: previousClicked
+										? style.yearSlideBottom
+										: null
+								}
 								className={
 									clickedYear === item ? style.buttonClick : style.buttonYear
 								}
