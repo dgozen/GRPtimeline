@@ -1,3 +1,5 @@
+@import '../../../index.module.css';
+
 .container {
 	display: grid;
 	grid-template-rows: 10vh 80vh 10vh;
@@ -5,22 +7,18 @@
 	position: relative;
 }
 
-
 .year {
 	position: absolute;
 	top: 20px;
 	left: 20px;
-	 font-family: Arial, Helvetica, sans-serif;
-	 font-weight: bolder;
-	 font-size: 64px;
-	 line-height: 75px;
-	 color: transparent;
-	 text-shadow: 1px 2px 4px white, 0 0 0 lightgrey, 1px 4px 6px white;
-	 animation: slide-tr 1s ease-in;
- 
-	 
- }
- 
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bolder;
+	font-size: 64px;
+	line-height: 75px;
+	color: transparent;
+	text-shadow: 1px 2px 4px white, 0 0 0 lightgrey, 1px 4px 6px white;
+	animation: slide-tr 1s ease-in;
+}
 
 .header {
 	grid-row-start: 1;
@@ -77,11 +75,14 @@
 	background-color: transparent;
 	outline: none;
 }
+
 .buttonClick {
 	font-size: 20px;
 	border: none;
 	background-color: transparent;
 	outline: none;
+	color: var(--color-ocean);
+	font-weight: bold;
 }
 
 .filter {
@@ -123,7 +124,6 @@
 	height: 100vh;
 	position: absolute;
 }
-
 
 .slide-tr {
 	-webkit-animation: slide-tr 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
