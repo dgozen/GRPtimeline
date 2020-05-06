@@ -1,12 +1,12 @@
 .linkStyle {
-  background-color: white;
-  font-family: "Arial";
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
-  text-align: center;
-  color: black;
-  text-decoration: none;
-  padding: 10px 30px 10px 30px;
-  font-size: var(--p-size);
-  font-weight: bold;
+	background-color: white;
+	font-family: 'Arial';
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 12px;
+	text-align: center;
+	color: black;
+	text-decoration: none;
+	padding: 10px 30px 10px 30px;
+	font-size: var(--p-size);
+	font-weight: bold;
 }

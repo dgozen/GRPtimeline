@@ -1,11 +1,7 @@
 import React from 'react';
 import Style from './App.module.css';
-import RouterComponent from './component/pages/RouterComponent/RouterComponent';
+import DefaultLayout from './DefaultLayout/DefaultLayout';
 
 export default function App() {
-	return (
-		<div>
-			<RouterComponent />
-		</div>
-	);
+	return <DefaultLayout />;
 }
