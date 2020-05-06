@@ -32,8 +32,8 @@
 	text-align: center;
 }
 .transparentBackground {
-  border: none;
-  background: rgba(216, 216, 216, 0);
+	border: none;
+	background: rgba(216, 216, 216, 0);
 }
 
 .buttonArrowUp {
@@ -41,8 +41,8 @@
 	align-self: center;
 	justify-self: center;
 	height: 25px;
-  width: 25px;
-  border: none;
+	width: 25px;
+	border: none;
 }
 
 .buttonArrowDown {
@@ -50,8 +50,8 @@
 	align-self: center;
 	justify-self: center;
 	height: 25px;
-  width: 25px;
-  border: none;
+	width: 25px;
+	border: none;
 }
 
 .buttonYear {
@@ -88,12 +88,12 @@
 }
 
 .form {
-    top: 50%;
-    left: 50%;
-    z-index: 999;
-    animation: slide-left 1s ease-in;
-    position: absolute;
-    transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	z-index: 999;
+	animation: slide-left 1s ease-in;
+	position: absolute;
+	transform: translate(-50%, -50%);
 }
 
 .backdrop {
