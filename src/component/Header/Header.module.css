@@ -1,16 +1,17 @@
+@import '../../index.module.css';
 .headerStyle {
-    font-family: var(--h1-font);
-    font-style: normal;
-    font-weight: bold;
-    font-size: 38px;
-    line-height: 45px;
-    letter-spacing: 0.38em;
-    text-transform: uppercase;
-    color: #3D3D3D;
+	font-family: var(--h1-font);
+	font-style: normal;
+	font-weight: bold;
+	font-size: 38px;
+	line-height: 45px;
+	letter-spacing: 0.38em;
+	text-transform: uppercase;
+	color: #3d3d3d;
 }
 
 .headerContainer {
-    position: relative;
-    justify-self: center;
-    text-align: center;
+	position: relative;
+	justify-self: center;
+	text-align: center;
 }
