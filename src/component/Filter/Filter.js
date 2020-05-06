@@ -1,99 +1,104 @@
 import React, { useState, useEffect } from "react";
 import style from "./Filter.module.css";
 
-const Filter = ({ selectedCategory, setSelectedCategory }) => {
-  const [allChecked, setAllChecked] = useState(true);
-  // filter through input boxes, return ID's if selectedCategory is true
+const filterList = [
+  {
+    id: "AllCategories",
+    label: "All Categories",
+    isChecked: true,
+  },
+  {
+    id: "Publication",
+    label: "Publication",
+    isChecked: true,
+  },
+  {
+    id: "Trend",
+    label: "Trend",
+    isChecked: true,
+  },
+  {
+    id: "Event",
+    label: "Event",
+    isChecked: true,
+  },
 
-  const filterList = [
-    {
-      id: "Publication",
-      label: "Publication",
-      isChecked: true,
-    },
-    {
-      id: "Trend",
-      label: "Trend",
-      isChecked: true,
-    },
-    {
-      id: "Event",
-      label: "Event",
-      isChecked: true,
-    },
+  {
+    id: "Program",
+    label: "Program, platform or investment initiative",
+    isChecked: true,
+  },
 
-    {
-      id: "Program",
-      label: "Program, platform or investment initiative",
-      isChecked: true,
-    },
+  {
+    id: "Framework",
+    label: "Framework: conceptual, evaluative, operational",
+    isChecked: true,
+  },
+];
 
-    {
-      id: "Framework",
-      label: "Framework: conceptual, evaluative, operational",
-      isChecked: true,
-    },
-  ];
+const Filter = ({ setSelectedCategory }) => {
   const [filterListState, setFilterListState] = useState(filterList);
 
-  // const updateRenderList = () => {};
+  const handleCategoryChange = ({ id: checkedID }) => {
+    let updatedCategory = [];
 
-  const handleCategoryChange = (checked, categoryName) => {
-    setFilterListState((prevState) => {
-      let filterListState = prevState;
-
-      if (categoryName === "AllCategories") {
-        setAllChecked((prevState) => (prevState = !prevState));
-        filterListState = filterListState.map((category) => ({
-          ...category,
-          isChecked: checked,
-        }));
-      } else {
-        filterListState = filterListState.map((category) =>
-          category.id === categoryName
-            ? { ...category, isChecked: checked }
-            : category
-        );
-        setAllChecked(filterListState.every((category) => category.isChecked));
+    updatedCategory = filterListState.map(({ id, isChecked, ...rest }) => {
+      let category = { ...rest, id, isChecked };
+      if (checkedID !== "AllCategories" && id === "AllCategories") {
+        category = { ...category, isChecked: false };
       }
-      return filterListState;
+      if (id === checkedID) {
+        category = { ...category, isChecked: !isChecked };
+      }
+      return category;
     });
+
+    if (checkedID === "AllCategories") {
+      const { isChecked } = updatedCategory.find(
+        ({ id }) => id === "AllCategories"
+      );
+      updatedCategory = checkAll(isChecked);
+    }
+    setFilterListState(updatedCategory);
+  };
+
+  const checkAll = (isChecked) => {
+    return filterListState.map((category) => ({
+      ...category,
+      isChecked,
+    }));
+  };
+
+  useEffect(() => {
+    handleUpdate();
+  }, [filterListState]);
+
+  const handleUpdate = () => {
+    const idArray = filterListState.reduce((accumulator, currentValue) => {
+      return currentValue.isChecked
+        ? [...accumulator, currentValue.id]
+        : accumulator;
+    }, []);
+
+    console.log(idArray);
+    setSelectedCategory(idArray);
   };
 
   return (
     <div className={style.filterStyle}>
-      <div>
-        <input
-          onChange={(event) => {
-            let checked = event.target.checked;
-            let category = event.target.id;
-
-            handleCategoryChange(checked, event.target.id);
-          }}
-          type="checkbox"
-          id="AllCategories"
-          checked={allChecked}
-        />
-        <label for="AllCategories">All Categories</label>
-      </div>
-      {filterListState.map((data) =>
-        data.id ? (
-          <div>
-            <input
-              onChange={(event) => {
-                let checked = event.target.checked;
-                let category = event.target.id;
-
-                handleCategoryChange(checked, category);
-              }}
-              type="checkbox"
-              id={data.id}
-              checked={data.isChecked}
-            ></input>{" "}
-            <label for={data.id}>{data.label}</label>
-          </div>
-        ) : null
-      )}
+      {filterListState.map((data) => (
+        <div>
+          <input
+            onChange={(event) => {
+              handleCategoryChange(event.target);
+            }}
+            type="checkbox"
+            id={data.id}
+            checked={data.isChecked}
+          ></input>{" "}
+          <label for={data.id}>{data.label}</label>
+        </div>
+      ))}
     </div>
   );
 };
