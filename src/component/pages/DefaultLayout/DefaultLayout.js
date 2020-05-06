@@ -45,7 +45,7 @@ const DefaultLayout = () => {
 		setYearsArrayState(oneOfEachYear);
 	};
 
-	// Add button
+	// Add button function
 	const [showForm, setShowForm] = useState(false);
 
 	const clickHandler = () => {
@@ -150,10 +150,10 @@ const DefaultLayout = () => {
 					<AddButton />
 				</div>
 				<div className={style.backdrop}>
-					{showForm ? <Backdrop /> : setShowForm}
+					{showForm ? <Backdrop /> : null}
 				</div>
 				<div className={style.form}>
-					{showForm ? <Form clickHandler={clickHandler} /> : setShowForm}
+					{showForm ? <Form clickHandler={clickHandler} /> : null}
 				</div>
 			</div>
 		</div>

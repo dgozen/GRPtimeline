@@ -2,14 +2,6 @@ import React from 'react';
 import style from './Form.module.css';
 
 const Form = ({clickHandler}) => {
-    /* const [showForm, setShowForm] = useState(true);
-
-    const clickHandler = () => {
-        setShowForm(!showForm);
-    }
-    onClick={() => clickHandler() */
-        console.log('this is the clickhandler', {clickHandler})
-
     return (
         <div id="container">
         <div className={style.formContainer}>
@@ -38,11 +30,9 @@ const Form = ({clickHandler}) => {
                 <label><input type="radio" value="Trend" name="category" /> Trend</label>
                 <label><input type="radio" value="Publication" name="category" /> Publication</label>
             </div>
-            {/* <div className={style.buttonContainer}> */}
             <button className={style.cancelButton} onClick={clickHandler}>Cancel</button>    
             <button className={style.submitButton}>Submit</button>
-           {/*  </div> */}
-            
+  
         </form>
         </div>
         </div>

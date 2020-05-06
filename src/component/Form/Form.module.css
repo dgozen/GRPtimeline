@@ -129,11 +129,6 @@ input, textarea {
     height: 20px;
 }
 
-/* .buttonContainer {
-    grid-column: span 2;
-    display: flex;
-    grid-row-start: 5;
-} */
 .submitButton {
     width: 150px;
     height: 60px;

@@ -107,15 +107,6 @@
 	position: absolute;
 }
 
-/* @keyframes slide-left {
-    0% {
-        transform: translateX(0);
-      }
-    
-      100% {
-        transform: translateX(-30vw);
-      }
-    }  */
 
 .slide-tr {
 	-webkit-animation: slide-tr 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
