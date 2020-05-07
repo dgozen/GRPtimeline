@@ -26,27 +26,23 @@ const DefaultLayout = () => {
 	);
 
 	useEffect(() => {
-		getData();
+		APIFetch().then((data) => {
+			const setArray = (array) => {
+				const passArray = new Set(array);
+				const oneOfEachYear = [...passArray];
+				const splitList = splitTimeline(oneOfEachYear, 5);
+				setSplittedTimeline(splitList);
+				setYearsArrayState(oneOfEachYear);
+			};
+			console.log('eskil', data);
+			let yearsArrays = [];
+			for (let item of data) {
+				yearsArrays.push(item.year);
+			}
 
-		const setArray = (array) => {
-			const passArray = new Set(array);
-			const oneOfEachYear = [...passArray];
-			const splitList = splitTimeline(oneOfEachYear, 5);
-			setSplittedTimeline(splitList);
-			setYearsArrayState(oneOfEachYear);
-		};
-
-		let yearsArrays = [];
-		for (let item of data) {
-			yearsArrays.push(item.year);
-		}
-
-		setArray(yearsArrays);
-	}, [data]);
-
-	const getData = () => {
-		setData(APIFetch());
-	};
+			setArray(yearsArrays);
+		});
+	}, []);
 
 	// Add button function
 	const [showForm, setShowForm] = useState(false);
