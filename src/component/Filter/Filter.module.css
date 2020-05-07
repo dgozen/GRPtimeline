@@ -1,3 +1,5 @@
+@import '../../index.module.css';
+
 .filterStyle {
 	display: flex;
 	justify-content: space-around;
@@ -8,7 +10,6 @@
 .filterStyle input {
 	display: none;
 }
-
 /* Adds style to the labels */
 [type='checkbox']:checked + label,
 [type='checkbox']:not(:checked) + label {
@@ -17,6 +18,7 @@
 	padding-left: 40px;
 	cursor: pointer;
 	display: inline-block;
+	font-family: var(--p-font);
 }
 
 /* Adds style of the new radio buttons background */
