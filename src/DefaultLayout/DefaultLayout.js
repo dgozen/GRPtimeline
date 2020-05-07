@@ -17,8 +17,7 @@ const DefaultLayout = () => {
 	const [timelineIndex, setTimelineIndex] = useState(0);
 	const [splittedTimeline, setSplittedTimeline] = useState([]);
 	const [selectedCategory, setSelectedCategory] = useState([]);
-
-	const timelineData = APIFetch();
+	const [data, setData] = useState([]);
 
 	// this function yearsToRender filters the images on the keys < or = clickedYear
 	// and transforms the key and clickedYear from string to integer using parseInt()
@@ -27,22 +26,26 @@ const DefaultLayout = () => {
 	);
 
 	useEffect(() => {
-		timelineData.then((data) => {
-			let yearsArrays = [];
-			for (let item of data.timelineInfo) {
-				yearsArrays.push(item.year);
-			}
+		getData();
 
-			setArray(yearsArrays);
-		});
-	}, []);
+		const setArray = (array) => {
+			const passArray = new Set(array);
+			const oneOfEachYear = [...passArray];
+			const splitList = splitTimeline(oneOfEachYear, 5);
+			setSplittedTimeline(splitList);
+			setYearsArrayState(oneOfEachYear);
+		};
 
-	const setArray = (array) => {
-		const passArray = new Set(array);
-		const oneOfEachYear = [...passArray];
-		const splitList = splitTimeline(oneOfEachYear, 5);
-		setSplittedTimeline(splitList);
-		setYearsArrayState(oneOfEachYear);
+		let yearsArrays = [];
+		for (let item of data) {
+			yearsArrays.push(item.year);
+		}
+
+		setArray(yearsArrays);
+	}, [data]);
+
+	const getData = () => {
+		setData(APIFetch());
 	};
 
 	// Add button function
