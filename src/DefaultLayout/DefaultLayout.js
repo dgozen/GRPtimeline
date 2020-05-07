@@ -27,12 +27,19 @@ const DefaultLayout = () => {
 	);
 
 	useEffect(() => {
-		timelineData.then((data) => {
-			let yearsArrays = [];
-			for (let item of data.timelineInfo) {
-				yearsArrays.push(item.year);
-			}
+		APIFetch().then((data) => {
+			const setArray = (array) => {
+				const passArray = new Set(array);
+				const oneOfEachYear = [...passArray];
+				const splitList = splitTimeline(oneOfEachYear, 5);
+				setSplittedTimeline(splitList);
+				setYearsArrayState(oneOfEachYear);
+			};
 
+			let yearsArrays = [];
+			for (let element of data.timelineInfo) {
+				yearsArrays.push(element.year);
+			}
 			setArray(yearsArrays);
 		});
 	}, []);
