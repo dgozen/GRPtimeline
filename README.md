@@ -1,3 +1,14 @@
+# Global Resilience Timeline
+
+## About:
+
+This project was made in collaboration with GRP (Global Resilience Partnership). The brief was to take their resilience timeline in pdf-format and transform the data into an interactive web feature they could implement in their website.
+
+![Spring 2020 assessment Emelie Edman(10)](https://user-images.githubusercontent.com/55784269/87706997-b561c600-c7a0-11ea-918f-b124848d92de.png)
+![Spring 2020 assessment Emelie Edman(11)](https://user-images.githubusercontent.com/55784269/87707003-b8f54d00-c7a0-11ea-93ba-0131004902d8.png)
+![Spring 2020 assessment Emelie Edman(12)](https://user-images.githubusercontent.com/55784269/87707014-bd216a80-c7a0-11ea-8680-d15ed9096215.png)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
